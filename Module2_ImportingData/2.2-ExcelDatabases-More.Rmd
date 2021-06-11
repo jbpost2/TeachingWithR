@@ -1,0 +1,680 @@
+---
+title: "Importing Data: Excel Data, Databases, & More"
+author: "Justin Post"
+output: 
+      ioslides_presentation:
+         css: ../css/style.css
+         widescreen: true
+         md_extensions: +fenced_code_attributes
+logo: ../img/logo.png
+---
+
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+library(tidyverse)
+library(haven)
+library(knitr)
+library(RSQLite)
+library(methods)
+options(dplyr.print_min = 5)
+options(tibble.print_min = 5)
+opts_chunk$set(message = FALSE, cache = FALSE)
+```
+
+
+## What is this course about?
+
+Basic use of R for reading, manipulating, and plotting data!
+
+- read and write basic R programs   
+- **import well formatted data into R**
+- do basic data manipulation in R   
+- produce common numerical and graphical summaries in R  
+- describe a use case of an analysis done in R  
+
+
+## Recap/Next  
+
+- Read data from other sources
+
+Type of file       | Package   | Function   
+------------------ | --------- | -----------------
+Delimited          | `readr`   | `read_csv()`, `read_tsv()`, `read_table()`, `read_delim()`
+Excel (.xls,.xlsx) | `readxl`  | `read_excel()`
+SAS (.sas7bdat)    | `haven`   | `read_sas()`
+SPSS (.sav)        | `haven`   | `read_spss()`
+
+<br> 
+
+- Resources for JSON, XML, databases, and APIs
+
+
+
+## Excel Data
+
+- Read in [censusEd.xlsx](https://www4.stat.ncsu.edu/~online/datasets/censusEd.xlsx)  
+
+- Use `read_excel()` from `readxl` package!  
+
+
+
+## Excel Data
+
+- Read in [censusEd.xlsx](https://www4.stat.ncsu.edu/~online/datasets/censusEd.xlsx)  
+
+- Use `read_excel()` from `readxl` package!  
+
+    + Reads both xls and xlsx files  
+
+    + Detects format from extension given  
+
+    + Can't pull from web though!  
+
+
+## Excel Data
+
+```{r, warning = FALSE}
+#install package if necessary
+library(readxl)
+#reads first sheet by default
+edData <- read_excel("../datasets/censusEd.xlsx")
+edData
+```
+
+
+## Excel Data
+
+- Read in [censusEd.xlsx](https://www4.stat.ncsu.edu/~online/datasets/censusEd.xlsx)  
+
+- Use `read_excel()` from `readxl` package!    
+
+    + Specify sheet with name or integers (or `NULL` for 1st) using `sheet =`  
+
+    + Can look at sheets available
+
+```{r}
+excel_sheets("../datasets/censusEd.xlsx")
+```
+
+```{r, eval = FALSE}
+read_excel("../datasets/censusEd.xlsx", sheet = "EDU01D")
+```
+
+
+## Excel Data
+
+- Use `read_excel()` from `readxl` package!    
+
+    + Specify cells with contiguous range with `range =`  
+    
+```{r}
+edData <- read_excel("../datasets/censusEd.xlsx", sheet = "EDU01A", 
+                   range = cell_cols("A:D"))
+edData
+```
+
+
+
+## SAS Data
+
+- SAS data has extension '.sas7bdat' 
+
+- Read in [smoke2003.sas7bdat](https://www4.stat.ncsu.edu/~online/datasets/smoke2003.sas7bdat)  
+
+> - Use `read_sas()` from `haven` package  
+
+> - Not many options!
+
+
+
+## SAS Data
+
+- SAS data has extension '.sas7bdat' 
+
+- Read in [smoke2003.sas7bdat](https://www4.stat.ncsu.edu/~online/datasets/smoke2003.sas7bdat)  
+
+- Use `read_sas()` from `haven` package  
+
+- Not many options!
+
+```{r,eval=TRUE}
+#install if necessary
+library(haven)
+smokeData <- read_sas("https://www4.stat.ncsu.edu/~online/datasets/smoke2003.sas7bdat")
+smokeData
+```
+
+
+
+## SAS Data
+
+- Note: Variables had SAS labels. Don't show on print!  
+
+    + Will show on `View(smokeData)` (or click on data from environment)  
+    
+```{r}
+str(smokeData)
+```
+    
+    
+## SAS Data
+
+- Note: Variables had SAS labels.  Don't show on print!  
+
+    + Will show on `View(smokeData)` (or click on data from environment)  
+    + Can access via
+
+```{r}
+attr(smokeData$SDDSRVYR, "label")
+```
+
+
+## SPSS Data  
+
+- SPSS data has extension ".sav"  
+
+- Read in [bodyFat.sav](https://www4.stat.ncsu.edu/~online/datasets/bodyFat.sav)  
+
+> - Use `read_spss()` from `haven` package  
+
+> - Not many options!
+
+
+## SPSS Data  
+
+- SPSS data has extension ".sav"  
+
+- Read in [bodyFat.sav](https://www4.stat.ncsu.edu/~online/datasets/bodyFat.sav)  
+
+- Use `read_spss()` from `haven` package  
+
+- Not many options!
+```{r,eval=TRUE}
+bodyFatData <- read_spss("https://www4.stat.ncsu.edu/~online/datasets/bodyFat.sav")
+bodyFatData
+```
+
+
+## Recap
+
+- Reading Data  
+
+Type of file       | Package   | Function   
+------------------ | --------- | -----------------
+Delimited          | `readr`   | `read_csv()`, `read_tsv()`, `read_table()`, `read_delim()`
+Excel (.xls,.xlsx) | `readxl`  | `read_excel()`
+SAS (.sas7bdat)    | `haven`   | `read_sas()`
+SPSS (.sav)        | `haven`   | `read_spss()`
+
+<br> 
+
+## Resources for Other Data Sources  
+
+**JSON** - JavaScript Object Notation  
+
+- Used widely across the internet and databases  
+
+- Can represent usual 2D data or heirarchical data
+
+
+
+## Resources for Other Data Sources  
+
+**JSON** - JavaScript Object Notation  
+
+- Uses key-value pairs  
+
+```{r, eval = FALSE}
+{  
+  {  
+    "name": "Barry Sanders"  
+    "games" : 153  
+    "position": "RB"  
+  },  
+  {  
+    "name": "Joe Montana"  
+    "games": 192  
+    "position": "QB"  
+  }  
+} 
+```
+
+
+## Resources for Other Data Sources  
+
+**JSON** - JavaScript Object Notation  
+
+Three major R packages 
+
+1. `rjson`  
+
+2. `RJSONIO`  
+
+3. `jsonlite`  
+
+    + many nice features 
+    
+    + a little slower implementation  
+
+
+
+## Resources for Other Data Sources  
+
+**JSON** - JavaScript Object Notation  
+
+[`jsonlite`](https://www.rdocumentation.org/packages/jsonlite/versions/1.6) basic functions:
+
+Function    | Description
+----------- | --------------------------------------------------
+`fromJSON`  | Reads JSON data from file path or character string. Converts and simplfies to R object  
+`toJSON`    | Writes R object to JSON object  
+`stream_in` | Accepts a *file connection* - can read streaming JSON data
+
+
+## Resources for Other Data Sources  
+
+**APIs** - Application Programming Interfaces
+
+A defined method for asking for information from a computer  
+
+- Useful for getting data  
+
+- Useful for allowing others to run your model without a GUI (like Shiny)  
+
+> - Many open APIs, just need key  
+
+> - Often just need to construct proper URL
+
+
+## Resources for Other Data Sources  
+
+**APIs** - Quick Example
+
+- Query Harry Potter database https://www.potterapi.com/
+
+- Get key in top right (sign up for account)
+
+```{r, fig.align = 'center', echo = FALSE, out.width="800px"}
+knitr::include_graphics("../img/HPAPI.png")
+```
+
+
+## Resources for Other Data Sources  
+
+**APIs** - Quick Example
+
+- Query Harry Potter database https://www.potterapi.com/
+
+- Documentation:  
+
+    + All routes need to be prefixed with https://www.potterapi.com/v1/  
+    
+    + GET request: /spells returns all spells 
+    
+    + Key goes on the end  
+
+```{r}
+baseURL <- "https://www.potterapi.com/v1/"
+value <- "spells?"
+key <- "key=$2a$10$UMvDCH.93fa2KOjKbJYkOOPMNzdzQpJ0gMnVEtcHzW5Ic04HUmcsa"
+URL <- paste0(baseURL, value, key)
+spellData <- RCurl::getURL(URL)
+```
+
+
+
+## Resources for Other Data Sources  
+
+**APIs** - Quick Example
+
+- Query Harry Potter database https://www.potterapi.com/
+
+- Default response format is JSON 
+
+```{r, eval = FALSE}
+spellData
+```
+```{r, echo = FALSE}
+substr(spellData, 1, 100) 
+```
+
+
+
+## Resources for Other Data Sources  
+
+**APIs** - Quick Example
+
+- Query Harry Potter database https://www.potterapi.com/
+
+- Default response format is JSON 
+
+```{r, warning = FALSE, message = FALSE}
+spellDataDF <- jsonlite::fromJSON(spellData)
+as_tibble(spellDataDF)
+```
+
+
+
+
+## Resources for Other Data Sources  
+
+**APIs** - Application Programming Interfaces
+
+Access in R  
+
+ - Article [here](https://www.programmableweb.com/news/how-to-access-any-restful-api-using-r-language/how-to/2017/07/21) discusses accessing APIs generically with R  
+
+ - Same website gives a [list of APIs](https://www.programmableweb.com/category/all/apis)
+
+
+
+
+## Resources for Other Data Sources  
+
+**XML** - eXtensible Markup Language
+
+- Used widely across the internet and databases  
+
+- Can represent usual 2D data or heirarchical data
+
+
+
+## Resources for Other Data Sources  
+
+**XML** - eXtensible Markup Language
+
+- Uses tags < > (similar to HTML)
+
+
+```{r eval=F}
+<roster>
+  <player>
+    <name>Barry Sanders</name>
+    <games>153</games>
+    <position>RB</position>
+  </player>
+  <player>
+    <name>Joe Montana</name>
+    <games>192</games>
+    <position>QB</position>
+  </player>
+</roster>
+```
+
+
+## Resources for Other Data Sources  
+
+**XML** - eXtensible Markup Language
+
+```{r, fig.align = 'center', echo = FALSE, out.width = "600px", fig.cap="Source: mysamplecode.com"}
+knitr::include_graphics("../img/xmlDiagram.jpg")
+```
+
+
+## Resources for Other Data Sources  
+
+**XML** - eXtensible Markup Language
+
+Two major R packages 
+
+1. `XML`  
+
+    + pretty well developed  
+
+2. `xml2`
+
+    + basic functionality to get data into R  
+    
+> - Reading XML data generally tough since structure of tags varies by data source!
+
+
+
+## Resources for Other Data Sources  
+
+[`XML`](https://cran.r-project.org/web/packages/XML/index.html) package basic functions:
+
+Function       | Description
+-------------- | ---------------------------------------------
+`xmlParseDoc`  | Parse an XML document
+`xmlChildren`  | Returns a list of child XMLNode objects 
+`xmlParent`    | Returns a reference to a parent node
+`xmlAttrs`     | Returns a named character vector giving the name-value pairs of attributes of an XMLNodeobject  
+`xmlName`      | Returns the name associated with an XMLNode object  
+`xmlToList`    | Converts XML node/document to a more R-like list
+
+
+## Quick XML Example (Can be tricky!)
+```{r, echo = FALSE, eval = TRUE, message = FALSE, warning = FALSE}
+library(XML)
+returned <- ZillowR::GetDeepSearchResults(address = '14707 W SUNNY DR', citystatezip = "Los Angeles, CA", zws_id = "X1-ZWz1grwsm079qj_3fm17")
+```
+
+
+```{r, eval = FALSE}
+returned <- ZillowR::GetDeepSearchResults(address = "14707 W SUNNY DR",  
+                              citystatezip = "Los Angeles, CA", zws_id = "...")
+```
+```{r, eval = TRUE, echo = TRUE}
+returned
+```
+
+
+## Quick XML Example (Can be tricky!)
+```{r, eval = TRUE, echo = TRUE}
+returned$response
+```
+
+## Quick XML Example (Can be tricky!)
+
+```{r}
+#parse it via xml functions
+rawDataValues <- xmlChildren(xmlChildren(xmlChildren(returned$response)$results)$result)
+
+rawDataValues
+```
+
+
+## Quick XML Example (Can be tricky!)
+
+```{r}
+#simplify the remaining xml structure to a vector
+rawDataVector <- unlist(sapply(xmlToList, X = rawDataValues))
+
+#grab data of interest if it is there by using names
+dataVector <- rawDataVector[c("address.street", "address.zipcode", "address.city", 
+			                   "useCode", "taxAssessmentYear")]
+dataVector
+```
+
+## Resources for Other Data Sources  
+
+**Databases** 
+
+- Collection of data, usually a bunch of (related) 2D tables  
+
+
+## Resources for Other Data Sources  
+
+Example database structure
+
+```{r, out.width = "550px", echo = FALSE, fig.align='center', fig.cap= "Source: oreilly.com"}
+knitr::include_graphics("../img/lahman.jpg")
+```
+
+
+## Resources for Other Data Sources  
+
+**Databases** 
+
+- Collection of data, usually a bunch of (related) 2D tables  
+
+- Relational Database Management System (RDBMS) controls how users interact  
+
+> - Structured Query Language (SQL) - language used by RDBMS 
+
+
+## Resources for Other Data Sources  
+
+**Databases** 
+
+- Collection of data, usually a bunch of 2D tables  
+
+- Relational Database Management System (RDBMS) controls how users interact  
+
+- Structured Query Language (SQL) - language used by RDBMS 
+
+<ul>
+<ul>
+  <li> Used to obtain data from tables  </li>
+  
+  <li>  Used to combine data from separate tables ('keys' relate tables)</li>
+     
+  <li>  Used to manipulate and create variables, structure and edit databases, etc.</li>
+</ul>
+</ul>
+
+
+
+## Resources for Other Data Sources  
+
+**Databases** 
+
+Many popular RDBMS, some free some proprietary (often referred to as databases...)
+ 
+ - Oracle - most popular (cross platform)  
+ 
+ - SQL Server - Microsoft product  
+ 
+ - DB2 - IBM product  
+ 
+ - MySQL (open source) - Not as many features but popular  
+ 
+ - PostgreSQL (open source)  
+ 
+[Basic SQL language](http://www.sqltutorial.org/sql-cheat-sheet/) constant across all - features differ  
+
+
+
+## Resources for Other Data Sources  
+
+**Databases** - Common flow in R  
+
+1. Connect to the database with `DBI::dbConnect()`  
+  - Need appropriate R package for database backend  
+     + `RSQLite::SQLite()` for RSQLite  
+     + `RMySQL::MySQL()` for RMySQL  
+     + `RPostgreSQL::PostgreSQL()` for RPostgreSQL  
+     + `odbc::odbc()` for Open Database Connectivity   
+     + `bigrquery::bigquery()` for google's bigQuery
+
+
+```{r, eval = FALSE}
+con <- DBI::dbConnect(RMySQL::MySQL(), 
+  host = "hostname.website",
+  user = "username",
+  password = rstudioapi::askForPassword("DB password")
+)
+```
+
+
+
+## Resources for Other Data Sources  
+
+**Databases** - Common flow in R  
+
+1. Connect to the database with `DBI::dbConnect()`  
+  - Need appropriate R package for database backend  
+  
+<ol start="2">
+<li> Use `tbl()` to reference a table in the database  </li>
+</ol>
+
+```{r, eval = FALSE}
+tbl(con, "name_of_table")
+```
+
+
+## Resources for Other Data Sources  
+
+**Databases** - Common flow in R  
+
+1. Connect to the database with `DBI::dbConnect()`  
+  - Need appropriate R package for database backend  
+  
+<ol start="2">
+<li> Use `tbl()` to reference a table in the database  </li>  
+<li> Query the database with `SQL` or `dplyr/dbplyr` (we'll learn `dplyr` soon!) </li>  
+</ol>
+
+
+## Resources for Other Data Sources  
+
+**Databases** - Common flow in R  
+
+1. Connect to the database with `DBI::dbConnect()`  
+  - Need appropriate R package for database backend  
+  
+<ol start="2">
+<li> Use `tbl()` to reference a table in the database  </li>  
+<li> Query the database with `SQL` or `dplyr/dbplyr` (we'll learn `dplyr` soon!) </li>  
+<li> Disconnect from database with `dbDisconnect()`  </li>  
+</ol>
+
+
+
+
+## Resources for Other Data Sources  
+
+**Databases** - Quick Example  
+
+- Connect to Google's BigQuery database  
+
+
+```{r, eval = FALSE}
+#devtools::install_github("r-dbi/bigrquery")
+library(DBI)
+con <- dbConnect(
+  bigrquery::bigquery(),
+  project = "publicdata",
+  dataset = "samples",
+  billing = "your-project-id-here"
+  )
+```
+
+
+
+## Resources for Other Data Sources  
+
+**Databases** - Quick Example  
+
+- Connect to Google's BigQuery database  
+
+```{r, eval = FALSE}
+dbListTables(con)
+natality <- tbl(con, "natality")
+
+natality %>%
+  select(starts_with("mother"), year, cigarette_use, weight_pounds) %>% 
+  collect()
+
+dbDisconnect(con)
+```
+
+- More about [R Studio and Databases](https://db.rstudio.com/)
+
+
+## Recap 
+
+- Read data from other sources
+
+Type of file       | Package   | Function   
+------------------ | --------- | -----------------
+Delimited          | `readr`   | `read_csv()`, `read_tsv()`,`read_table()`, `read_delim()`
+Excel (.xls,.xlsx) | `readxl`  | `read_excel()`
+SAS (.sas7bdat)    | `haven`   | `read_sas()`
+SPSS (.sav)        | `haven`   | `read_spss()`
+
+<br> 
+
+- Resources for JSON, XML, databases, and APIs
+
