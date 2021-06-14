@@ -3,7 +3,7 @@ title: "RShiny: Basics and User Interface"
 author: "Justin Post"
 output:       
       ioslides_presentation:
-         css: style.css
+         css: ../css/style.css
          widescreen: yes
 transition: faster
 logo: logo.png
@@ -24,27 +24,11 @@ opts_chunk$set(echo = FALSE)
 ```
 
 
-## Big picture
-
-- Know how to read data in, combine and manipulate it, summarize, and visualize   
-
-    + `tidyverse` great!
-
-- Know how to do some predictive modeling  
-
-    + `caret` is awesome  
-    
-- Know how to collaborate and communicate code/results  
-
-    + via github and `rmarkdown`  
-
-- Ready to create interactive web applets or dashboards!  
-
-    + Great way to present your data and results for others    
-
-
-
 ## What is R Shiny?  
+
+```{r}
+getwd()
+```
 
 - [R Shiny Package](http://shiny.rstudio.com/)  
 

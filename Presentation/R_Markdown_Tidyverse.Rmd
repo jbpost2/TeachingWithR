@@ -36,7 +36,7 @@ knitr::opts_chunk$set(echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE
 
 - `RStudio` IDE (Integrated Development Environment)  
 
-- Vectors and Dataframes/Tibbles
+- Vectors and Data frames/Tibbles
 
 - Importing CSV files with `readr` and excel files with `readxl`    
 
@@ -141,6 +141,7 @@ ls()
 ```{r rm, echo = TRUE}
 rm(avg)
 ls()
+#rm(list = ls()) cleans up environment
 ```
 
 
@@ -186,7 +187,7 @@ Four main 'areas'
 
 
 
-## R Objects and Classes  
+## R Objects and Structure  
 
 - Create an R object via `<-` (recommended) or `=`  
 
@@ -197,7 +198,7 @@ vec <- c(1, 4, 10)
 vec
 ```
 
-## R Objects and Classes  
+## R Objects and Structure  
 
 - Create an R object via `<-` (recommended) or `=`  
 
@@ -232,6 +233,11 @@ str(cars)
      5. ~~List (1d)~~  
 
 
+Dimension | Homogeneous   | Heterogeneous
+--------- | ------------- | -------------
+1d        | Atomic Vector | List
+2d        | Matrix        | Data Frame
+
 ## Vector   
 
 1. Atomic Vector (1D group of elements with an ordering)   
@@ -262,64 +268,10 @@ y
 
 - Many functions output a numeric vector
 
-- Ex: `seq()` 
-
-    + Inputs = from, to, by (among others)  
-
-    + Output = a sequence of numbers
-
-```{r functionVis2, echo = FALSE, out.width = "800px", fig.align= 'center'}
-knitr::include_graphics("../img/funVisual2F.png")
-```
-
-
-## Vector   
-
-- From the help file:
-
-`seq(from = 1, to = 1, by = ((to - from)/(length.out - 1)),`
-`    length.out = NULL, along.with = NULL, ...)`
-
 ```{r seq1}
-v <- seq(from = 1, to = 5, by = 1)
+v <- seq(from = 1, to = 10, by = 2)
 v
-```
-
-
-## Vector   
-
-`seq(from = 1, to = 1, by = ((to - from)/(length.out - 1)),`
-`    length.out = NULL, along.with = NULL, ...)`
-
-```{r seq2}
-v <- seq(from = 1, to = 5, by = 1)
-v
-str(v)
-```
-
-- `num` says it is numeric 
-
-- `[1:5]` implies one dimensional with elements 1, 2, 3, 4, 5
-
-
-## Vector    
-
-Shorthand `seq()` with `:`  
-
-```{r seq3}
-1:20 
-```
-
-
-## Vector    
-
-Shorthand `seq()` with `:`  
-
-- R generally does elementwise math
-
-```{r seq5}
-1:20/20
-1:20 + 1
+1:10
 ```
 
 
@@ -400,138 +352,6 @@ see ?make.names for more details-->
 - `Tibbles` are special data frames used in the `tidyverse`  
 
 
-
-## Basic Data Manipulation  
-- **How do we access different parts of our object?  **
-
-- For data may want    
-    + One element  
-    + Certain columns  
-    + Certain rows  
-
- 
-## Basic Data Manipulation  
-**Atomic Vectors** (1D)  
-
-- Return elements using square brackets `[]`   
-
-```{r indexVec}
-letters #built-in vector
-```
-<div style="float: left; width: 45%;">
-```{r}
-letters[1] #R starts counting at 1!
-```
-</div>
-<div style = "float:left; width = 5%">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</div>
-<div style = "float:left; width = 45%">
-```{r}
-letters[26]
-```
-</div>
-
-## Basic Data Manipulation  
-**Atomic Vectors** (1D)  
-
-- Can 'feed' in a vector of indices to return  
-
-```{r indexVec2}
-letters[1:4]
-letters[c(5, 10, 15, 20, 25)]
-x <- c(1, 2, 5); letters[x]
-```
-
-
-## Basic Data Manipulation  
-**Atomic Vectors** (1D)  
-
-- Return elements using square brackets `[]`  
-
-- Can 'feed' in a vector of indices to return  
-
-- Use negative indices to return without  
-
-```{r indexVec3}
-letters[-(1:4)]
-x <- c(1, 2, 5); letters[-x]
-```
-
-<!-- note we aren't overwriting anything!-->
-
-## Basic Data Manipulation  
-**Data Frames** (2D)  
-
-- Consider 'built-in' `iris` data frame
-
-```{r irisstr}
-str(iris)
-```
-
-
-## Basic Data Manipulation  
-**Data Frames** (2D)  
-
-- Use square brackets with a comma `[ , ]` [row, column]
-
-```{r dfindex}
-iris[1:4, 2:4]
-```
-
-
-## Basic Data Manipulation  
-**Data Frames** (2D)  
-
-- Use square brackets with a comma `[ , ]` [row, column]
-
-```{r dfindex1b}
-iris[1, ]
-```
-
-
-## Basic Data Manipulation  
-**Data Frames** (2D)  
-
-- Can use columns names to subset  
-
-```{r dfindex2}
-iris[ , c("Sepal.Length", "Species")]
-```
-
-
-## Basic Data Manipulation  
-**Data Frames** (2D)  
-
-- Dollar sign allows easy access to a single column!  
-
-```{r dfindex3}
-iris$Sepal.Length
-```
-
-
-## Basic Data Manipulation  
-**Data Frames** (2D)  
-
-- Dollar sign allows easy access to a single column!  
-
-- RStudio fills in options.  
-    + Type `iris$`  
-    + If no choices - hit tab
-    + Hit tab again to choose  
-
-
-## Basic Data Manipulation  
-**Data Frames** (2D)  
-
-- Use square brackets with a comma `[ , ]`
-
-- Can use columns names to subset  
-
-- Dollar sign allows easy access to a single column!  
-
-
-
 ## Example
 
 ddddd
@@ -542,7 +362,7 @@ ddddd
 
 - `RStudio` IDE (Integrated Development Environment)  
 
-- Vectors and Dataframes/Tibbles
+- Vectors and Data Frames/Tibbles
 
 - Importing CSV files with `readr` and excel files with `readxl`    
 
@@ -607,7 +427,7 @@ knitr::include_graphics("../img/generalDelim.png")
 </div>
 
 
-## Importing Delimited Data: Standard R Methods
+## Importing Delimited Data
 
  - When you open R a few `packages` are loaded
  
@@ -620,7 +440,7 @@ knitr::include_graphics("../img/generalDelim.png")
     </ul>
 
 
-## Importing Delimited Data: Standard R Methods
+## Importing Delimited Data
 
  - When you open R a few `packages` are loaded
  
@@ -662,25 +482,15 @@ include_graphics("../img/loadR.png")
 > - "[TidyVerse](http://tidyverse.org/)" - collection of R packages that share common philosophies and are designed to work together!  
 <!--Many packages do the same thing.  Some just do it better than others.  Often hard to pick the best one.-->    
 
-
-## Aside: R Packages
-
-- First time using a package  
-    + Must install package (download files)  
-    + Can use code or menus 
-    
-```{r install1, eval=FALSE}
-install.packages("readr")
-#can do multiple packages at once
-install.packages(c("readr", "readxl", "haven", "DBI", "httr"))
-```
-
-
 ## Aside: R Packages
 
 - First time using a package  
     + Must install package (download files)  
     + Can use code or menus
+
+```{r, eval = FALSE}
+install.packages("readr")
+```
 
 ```{r install2, out.width = "800px",echo=FALSE, fig.align='center'}
 knitr::include_graphics("../img/packages.png")
@@ -757,132 +567,21 @@ White Space                 | `read.table(sep = "")`  | `read_table()` `read_tab
 
 - Let's read in the '[neuralgia.csv](https://www4.stat.ncsu.edu/~online/datasets/neuralgia.csv)' file  
 
-- How does R locate the file?  
+- By default, R looks in the `working directory` for the file
 
-
-## Path to File   
-
-- Let's read in the '[neuralgia.csv](https://www4.stat.ncsu.edu/~online/datasets/neuralgia.csv)' file  
-
-- How does R locate the file?  
-
-    + Can give *full path name*  
-    
-        * ex: C:/Users/jbpost2/repos/TeachingWithR/datasets/neuralgia.csv  
-        * ex: C:\\\\Users\\\\jbpost2\\\\repos\\\\TeachingWithR\\\\datasets\\\\neuralgia.csv  
-
-```{r pathVis, fig.align = 'center', out.width = "450px", echo = FALSE}
-knitr::include_graphics("../img/pathVis.png")
-```
-
-
-
-## Reading a .csv File  
-
-- Let's read in the '[neuralgia.csv](https://www4.stat.ncsu.edu/~online/datasets/neuralgia.csv)' file  
-
-- Use full local path  
-
-```{r readCSVhidden, echo = FALSE, eval = TRUE}
-neuralgiaData <- read_csv("https://www4.stat.ncsu.edu/~online/datasets/neuralgia.csv")
-```
-
-```{r readCSV, echo = TRUE, eval = FALSE}
-neuralgiaData <- read_csv("C:/Users/jbpost2/repos/TeachingWithR/datasets/neuralgia.csv")
-```
-
-```{r printCSV}
-head(neuralgiaData)
-```
-
-
-## Working Directory  
-
-- Let's read in the '[neuralgia.csv](https://www4.stat.ncsu.edu/~online/datasets/neuralgia.csv)' file  
-
-- Using full local path not recommended!  
-
-    + Can't share code without changing path...
-    
-    
-
-## Working Directory  
-
-- Let's read in the '[neuralgia.csv](https://www4.stat.ncsu.edu/~online/datasets/neuralgia.csv)' file  
-
-- Using full local path not recommended!  
-
-    + Can't share code without changing path...
-    
-- Can change *working directory*  
-<ul>
-    <li> Folder where R 'looks' for files</li>
-    <li> Supply **relative** path </li>
-</ul>
-
-
-
-## Working Directory  
-
-- Let's read in the '[neuralgia.csv](https://www4.stat.ncsu.edu/~online/datasets/neuralgia.csv)' file  
-
-- Using full local path not recommended!  
-
-    + Can't share code without changing path...
-    
-- Can change *working directory*  
-<ul>
-    <li> Folder where R 'looks' for files</li>
-    <li> Supply **relative** path </li>
-</ul>
-
-```{r getwd}
+```{r}
 getwd()
-```
-
-
-## Working Directory  
-
-- Can change *working directory*  
-
-    + Via code
-
-```{r setwd1,eval=FALSE}
-setwd("C:/Users/jbpost2/repos/TeachingWithR/datasets")
-#or
-setwd("C:\\Users\\jbpost2\\repos\\TeachignWithR\\datasets")
-```
-<!--Double slash needed because \ is an escape character in R so \\ is really read as \-->
-
-
-## Working Directory  
-
-- Can change *working directory*  
-
-    + Via code
- 
-    + Via menus
-
-```{r setwd2, out.width = "800px",echo=FALSE}
-knitr::include_graphics("../img/setwd.png")
+#change with setwd()
+#better to use R projects!
 ```
 
 
 ## Reading a .csv File  
-
-
-- Use relative path (`../` drops down a folder)
 
 ```{r readCSVrel, eval = FALSE}
-neuralgiaData <- read_csv("../datasets/neuralgia.csv")
+neuralgiaData <- read_csv("neuralgia.csv")
+neuralgiaData
 ```
-
-- Working directory: ".../Presentation/"
-
-- File location: ".../datasets/neuralgia.csv
-
-> - As long others have the same folder structure, can share code with no path change needed!
-
 
 
 
@@ -894,7 +593,7 @@ neuralgiaData <- read_csv("../datasets/neuralgia.csv")
 
 ```{r readCSV2, eval = TRUE}
 neuralgiaData <- read_csv("https://www4.stat.ncsu.edu/~online/datasets/neuralgia.csv")
-head(neuralgiaData)
+neuralgiaData
 ```
 
 
@@ -902,60 +601,11 @@ head(neuralgiaData)
 
 `read_csv()` function 
 
-Tell R where the file lives via:  
-
-<ul>
-  <li> a full local path (not recommended)  </li>
-  <li> a relative path  </li>
-  <ul>
-    <li> can set the working directory with `setwd()`  </li>
-  </ul>
-  <li> pulling from URL</li>
-  <li>Other useful inputs:</li>  
-  <ul>
-    <li> `skip = 0`</li>
-    <li> `col_names = TRUE`</li>
-    <li> `na = c("", "NA")` </li>
-  </ul>
-</ul>
-
-
-## Aside: RStudio Project
-
-- Often have many files associated with an analysis  
-
-- With multiple analyses things get cluttered...  
-
-
-## Aside: RStudio Project
-
-- Often have many files associated with an analysis  
-
-- With multiple analyses things get cluttered...  
-
-- Want to associate different  
-<ul>
-   <li> environments </li>
-   <li> histories </li>
-   <li> working directories </li>
-   <li> source documents </li>
-</ul> 
-with each analysis
-
-> - Can use "Project" feature in R Studio  
-
-
-## Aside: RStudio - Project
-
-- Easy to create!  Use an existing folder or create one:
-
-```{r project.png, out.width = "600px",echo=FALSE, fig.align = 'center'}
-knitr::include_graphics("../img/project.png")
-```
-
-- Swap between projects using menu in top right
-
-- Easily switch between analyses!  Works well with github!
+- Other useful inputs:
+    
+    + `skip = 0`  
+    + `col_names = TRUE`  
+    + `na = c("", "NA")`  
 
 
 ## Reading Delimited Data  
@@ -973,23 +623,12 @@ str(neuralgiaData)
 
 ## `tibbles`  
 
-- Behavior slightly different than a standard `dataframe`.  No simplification!  
+- Behavior slightly different than a standard `data frame`  
 
-```{r simplify}
-neuralgiaData2 <- read.csv("https://www4.stat.ncsu.edu/~online/datasets/neuralgia.csv")
-neuralgiaData2[,1]
-neuralgiaData[,1]
-```
-
-
-## `tibbles`  
-
-- Behavior slightly different than a standard `dataframe`.  No simplification!  
-
-- Use either `pull()` or `$`
+- Use either `pull()` or `$` to return a column as a vector
 
 ```{r pull}
-pull(neuralgiaData, 1) #or pull(neuralgiaData2, Treatment)
+pull(neuralgiaData, 1) #or pull(neuralgiaData, Treatment)
 neuralgiaData$Treatment 
 ```
 
@@ -1020,8 +659,9 @@ neuralgiaData$Treatment
 ```{r, warning = FALSE}
 #install package if necessary
 library(readxl)
+#censusEd.xlsx in working directory
 #reads first sheet by default
-edData <- read_excel("../datasets/censusEd.xlsx")
+edData <- read_excel("censusEd.xlsx")
 edData
 ```
 
@@ -1037,24 +677,11 @@ edData
     + Can look at sheets available
 
 ```{r}
-excel_sheets("../datasets/censusEd.xlsx")
+excel_sheets("censusEd.xlsx")
 ```
 
 ```{r, eval = FALSE}
-read_excel("../datasets/censusEd.xlsx", sheet = "EDU01D")
-```
-
-
-## Excel Data
-
-- Use `read_excel()` from `readxl` package!    
-
-    + Specify cells with contiguous range with `range =`  
-    
-```{r}
-edData <- read_excel("../datasets/censusEd.xlsx", sheet = "EDU01A", 
-                   range = cell_cols("A:D"))
-edData
+read_excel("censusEd.xlsx", sheet = "EDU01D")
 ```
 
 
@@ -1068,7 +695,7 @@ ddddd
 
 - `RStudio` IDE (Integrated Development Environment)  
 
-- Vectors and Dataframes/Tibbles
+- Vectors and Data Frames/Tibbles
 
 - Importing CSV files with `readr` and excel files with `readxl`    
 
@@ -1603,8 +1230,6 @@ Now we can document everything: let's manipulate some data!
 
 - Reason to prefer `dplyr` and packages from the `tidyverse` 
 
-> - Fast!
-
 > - Good defaults
 
 > - All packages have similar syntax!  All work on `tibbles` (data frames)
@@ -1627,7 +1252,7 @@ Now we can document everything: let's manipulate some data!
     + `summarise()` - apply basic function to data  
 
 
-## `as_tibble()` - tidy dataframe 
+## `as_tibble()` - tidy data frame 
 
 `as_tibble()` - convert data frame to one with better printing and no simplification
 
@@ -1637,7 +1262,7 @@ library(Lahman)
 head(Batting, n = 4) #look at just first 4 observations
 ```
 
-## `as_tibble()` - tidy dataframe 
+## `as_tibble()` - tidy data frame 
 
 - Just 'wrap' a standard R data frame
 
@@ -1715,17 +1340,6 @@ myBatting$G > 20 #vector indicating Games > 20
 ```
 
 
-## Logical statements 
-
-- Concept:
-    + Feed index a vector of `TRUE`/`FALSE`   
-    + R returns elements where `TRUE` 
-
-```{r}
-myBatting[myBatting$G > 20, ]
-```
-
-
 ## `filter()` - subset rows or columns  
 
 - **logical statement** - useful for indexing an R object
@@ -1762,9 +1376,6 @@ Operator | A,B true       | A true, B false   | A,B false
 
 - Pull out those that played more than 20 games and played in 2015
 
-```{r, eval = FALSE}
-myBatting[(myBatting$G > 20) & (myBatting$yearID == 2015), ] 
-```
 ```{r}
 filter(myBatting, (G > 20) & (yearID == 2015))
 ```
@@ -1810,7 +1421,7 @@ knitr::include_graphics("../img/selectVisualF.png")
 
 ## `select()` - subset **columns**
 
-- May only want certain variables (saw `$` and `[ , ]`)
+- May only want certain variables  
 - `select()` function has same syntax as other `dplyr` functions!
 
 ```{r}
@@ -1821,7 +1432,7 @@ select(myBatting, X2B)
 
 ## `select()` - subset **columns**
 
-- Often only want select variables (saw `$` and `[ , ]`)
+- Often only want select variables  
 - `select()` function has same syntax as other `dplyr` functions!
 
 ```{r}
@@ -1946,42 +1557,8 @@ myBatting %>%
 knitr::include_graphics("../img/createVarVisualF.png")
 ```
 
- 
-## Creating New Variables  
-
-Given a data frame and an appropriate length vector (a new variable), you can use `cbind` (column bind) to add the variable to the dataframe 
-
-```{r}
-temp <- cbind(iris, extra = rep("a", 150))
-str(temp)
-```
-
-
- 
-## Creating New Variables  
-
-Or simply add as a named (list) element!  
-
-```{r}
-iris$extra <- rep("a", 150)
-str(iris)
-```
-
-
 
 ## Creating New Variables  
-
-Better method: use `dplyr`!
-
-- `mutate()` - add newly created **column(s)** to current data frame (doesn't overwrite the data frame)  
-
-- `transmute()` - create new data frame with created variable(s) only  
-
-
-
-## Creating New Variables  
-
-Better method: use `dplyr`!
 
 - `mutate()` - add newly created **column(s)** to current data frame (doesn't overwrite the data frame)  
 
@@ -2034,18 +1611,6 @@ fandango %>%
 
 ## Creating New Variables  
 
-`mutate()` and `transmute()` can also use 'window' functions  
-
- - Functions that take a vector of values and return another vector of values (see [Cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf))
- 
-```{r}
-fandango %>% select(rottentomatoes) %>% mutate(cumulativeSum = cumsum(rottentomatoes))
-```
-
-
-
-## Creating New Variables  
-
 `mutate()` and `transmute()` can also use some statistical functions
  
 ```{r}
@@ -2057,13 +1622,22 @@ fandango %>% select(rottentomatoes) %>%
 
 `mutate()` and `transmute()` can also use some statistical functions
  
-- `group_by` to create summaries for groups (more on this later)
+- `group_by` to create summaries for groups  
  
 ```{r}
 fandango %>% select(year, rottentomatoes) %>% 
   group_by(year) %>% mutate(avg = mean(rottentomatoes), sd = sd(rottentomatoes))
 ```
 
+
+## Other notes: Summarizing with `dplyr`  
+
+- `summarize()` is often used with `group-by()` to obtain summaries without combining to the dataset  
+
+```{r}
+fandango %>% select(year, rottentomatoes) %>% 
+  group_by(year) %>% summarize(avg = mean(rottentomatoes), sd = sd(rottentomatoes))
+```
 
 
 ## `if_else()` - conditional execution 
@@ -2134,25 +1708,13 @@ myAirquality
 
 ## Creating New Variables Recap!
 
-- Add new column with `$`  
-
 - `mutate()` - add newly created **column(s)** to current data frame 
 
 - `transmute()` - create new data frame with created variable(s)  
 
-    + Can use with window functions
-
     + Use `if_else()` to do conditional creation
     
     + Note: `cut()` can be used to categorize a numeric variable!
-
-
-## Other notes: Summarizing with `dplyr`  
-
-- `group-by()` and `summarize()` are useful for creating basic summaries by groups 
-```{r}
-myAirquality %>% group_by(Status) %>% summarize(meanWind = mean(Wind), sdWind = sd(Wind))
-```
 
 
 ## Other notes: Reshaping Data  
@@ -2183,7 +1745,7 @@ Easily allows for two very important actions
 
 - `RStudio` IDE (Integrated Development Environment)  
 
-- Vectors and Dataframes/Tibbles
+- Vectors and Data Frames/Tibbles
 
 - Importing CSV files with `readr` and excel files with `readxl`    
 
@@ -2196,36 +1758,11 @@ Easily allows for two very important actions
 - Shiny basics
 
 
-
-## Understanding Data
-
-Common goal: Describe the **distribution** of the variable  
-
-- Distribution = pattern and frequency with which you observe a variable  
-
-- Categorical variable - describe relative frequency (or count) in each category
-
-- Numeric variable - describe the shape, center, and spread
-
-
 ## Graphical Summaries
 
 Three major systems for plotting:
 
 - Base R (built-in functions)  
-
-    + Use `plot`, `barplot`, `hist`, etc. to start a plot  
-    + Annotate the plot using functions like `text`, `lines`, `points`, etc.
-
-
-## Graphical Summaries
-
-Three major systems for plotting:
-
-- Base R (built-in functions)  
-
-    + Use `plot`, `barplot`, `hist`, etc. to start a plot  
-    + Annotate the plot using functions like `text`, `lines`, `points`, etc.
 
 - Lattice 
 
