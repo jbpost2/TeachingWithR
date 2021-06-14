@@ -1817,7 +1817,7 @@ ggplot2 basics ([Cheat Sheet](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&so
 - Consider data on titanic passengers in `titanic.csv`
 
 ```{r,echo=TRUE}
-titanicData <- read_csv("../datasets/titanic.csv")
+titanicData <- read_csv("titanic.csv")
 #convert survival status to a factor
 titanicData$survived <- as.factor(titanicData$survived)
 levels(titanicData$survived) #R knows it isn't numeric now
@@ -1829,43 +1829,13 @@ levels(titanicData$survived) #R knows it isn't numeric now
 titanicData$survived[1] <- "5"
 ```
 
-## `factor` levels
-
-```{r factorLevel}
-#overwrite with another possible level
-levels(titanicData$survived) <- c(levels(titanicData$survived), "5")
-levels(titanicData$survived)
-
-#no error
-titanicData$survived[1] <- "5" 
-```
-
 
 ## `factor` levels
 
-- Useful if you want to create better labels  
+- Useful if you want to create better labels (or change the ordering)  
 
 ```{r reread,echo = TRUE}
-levels(titanicData$survived) <- c("Died", "Survived", "Other")
-levels(titanicData$survived)
-```
-
-
-## `factor` levels
-
-- Useful if you want to create better labels  
-
-```{r reread2,echo = TRUE}
-levels(titanicData$survived) <- c("Died", "Survived", "Other")
-levels(titanicData$survived)
-```
-
-- Useful if you want to change order of values (say for plotting!)
-
-```{r factorOrder,echo=TRUE, eval = TRUE}
-#or use ordered()
-titanicData$survived <- factor(titanicData$survived,
-                                  levels(titanicData$survived)[c(3, 2, 1)])
+levels(titanicData$survived) <- c("Died", "Survived")
 levels(titanicData$survived)
 ```
 
@@ -1874,23 +1844,17 @@ levels(titanicData$survived)
 
 Categorical variable - entries are a label or attribute   
 
-Goal: describe relative frequency (or count) in each category
-
-- Generally, use a barplot!
-
-
-## `ggplot2` barplots  
+Generally, describe distriubtion using a barplot!
 
 - Barplots via `ggplot + geom_bar`  
 
-- Consider data on titanic passengers in `titanic.csv`
-
 ```{r,echo=TRUE}
-titanicData <- read_csv("../datasets/titanic.csv")
+titanicData <- read_csv("titanic.csv")
 titanicData$mySurvived <- as.factor(titanicData$survived)
 levels(titanicData$mySurvived) <- c("Died", "Survived")
 titanicData$myEmbarked <- as.factor(titanicData$embarked)
 levels(titanicData$myEmbarked) <- c("Cherbourg", "Queenstown", "Southampton")
+titanicData <- titanicData %>% drop_na(mySurvived, sex, myEmbarked)
 ```
 
 
@@ -2007,19 +1971,6 @@ ggplot() + geom_bar(data = titanicData, aes(x = mySurvived))
 
 - To set an attribute that doesn't depend on the data (i.e. `color = 'blue'`), generally place these outside of the `aes`  
 
-
-## `ggplot2` barplots  
- 
-- Improve plot by removing `NA` category  
-
-```{r,eval = TRUE, out.width = "450px", fig.align='center'}
-titanicData <- titanicData %>% drop_na(mySurvived, sex, myEmbarked)
-g <- ggplot(data = titanicData, aes(x = mySurvived))
-g + geom_bar()
-```
-
-
-
 ## `ggplot2` barplots
 
 - Add better labels and a title (new layers, see cheat sheet!)  
@@ -2093,37 +2044,6 @@ ggplot(data = titanicData, aes(x = mySurvived, fill = sex)) + geom_bar() +
   scale_fill_discrete(name = "Sex", labels = c("Female", "Male")) + 
   coord_flip()
 ```
-
-
-
-## `ggplot2` stat vs geom layers  
-
-Note: Most geoms have a corresponding stat that can be used  
-
-`geom_bar(mapping = NULL, data = NULL, stat = "count",
-  position = "stack", ..., width = NULL, binwidth = NULL, na.rm = FALSE,
-  show.legend = NA, inherit.aes = TRUE)`
-  
-- Equivalent plots via:
-
-```{r,eval=FALSE,echo=TRUE}
-ggplot(data = titanicData, aes(x = mySurvived, fill = sex)) + geom_bar()
-ggplot(data = titanicData, aes(x = mySurvived, fill = sex)) + stat_count() 
-```
-
-
-## `ggplot2` stat vs geom layers  
-
-Note: Most geoms have a corresponding stat that can be used  
-
-- Can modify the stat: if you have summary data, use `identity`  
-  
-```{r,eval = TRUE, out.width = "450px", fig.align='center'}
-sumData <- titanicData %>% group_by(mySurvived, sex) %>% summarize(count = n())
-ggplot(sumData, aes(x = mySurvived, y = count, fill = sex)) + 
-  geom_bar(stat = "identity")
-```
-
 
 
 ## `ggplot2` side-by-side barplots
@@ -2202,37 +2122,6 @@ ggplot(data = titanicData, aes(x = mySurvived)) +
 ```
 
 
-## `ggplot2` faceting  
-
-How to create same plot for each `pclass` and `embarked` combination?  
-
-- `facet_grid(var1 ~ var2)` - creats a plot for each combination of `var1` and `var2` 
-
-```{r,eval = TRUE, out.width = "450px", fig.align='center'}
-ggplot(data = titanicData, aes(x = mySurvived)) + 
-  geom_bar(aes(fill =sex), position = "dodge") +
-  facet_grid(pclass ~ myEmbarked)
-```
-
-
-
-## `ggplot2` Plotting: Categorical variables  
-
-Recap!  
-
-Categorical variable - entries are a label or attribute   
-
-- Most common plot is barplot: `ggplot + geom_bar(aes(x = ...))`  
-    
-- With summary data, use `geom_bar(stat = identity)`  
-
-- Stacked barplot via `aes(fill = )`
-
-- Side-by-side barplot via `position = dodge`  
-
-- Filled barplot via `position = fill`  
-
-
 ## `ggplot2` Plotting Recap
 
 General `ggplot` things:
@@ -2240,8 +2129,6 @@ General `ggplot` things:
 - Can set local or global `aes`
 
 - Modify titles/labels by adding more layers
-
-- Use either stat or geom layer
 
 - Faceting (multiple plots) via `facet_grid` or `facet_wrap`
 
@@ -2254,11 +2141,7 @@ General `ggplot` things:
 
 ## `ggplot2` Plotting: Numeric Variables    
 
-Numeric variable - entries are a numerical value where math can be performed
-
-Goal: describe the shape, center, and spread
-
-- Generally, via a histogram or boxplot!  
+Numeric variables - generally, describe distribution via a histogram or boxplot!  
 
 Same process:
     
@@ -2298,17 +2181,6 @@ g + geom_histogram()
 
 ```{r,eval = TRUE, out.width = "450px", fig.align='center'}
 g + geom_histogram(color = "blue", fill = "red", size = 2, binwidth = 3)
-```
-
-
-## `ggplot2` smoothed histogram    
-
-- **Kernel Smoother** - Smoothed version of a histogram  
-
-- 'Kernel' determines weight given to nearby points    
-
-```{r, echo = FALSE, out.width = "500px", fig.align='center'}
-knitr::include_graphics("../img/kernel.png")
 ```
 
 
@@ -2358,52 +2230,6 @@ g + geom_density(adjust = 0.5, alpha = 0.5, position = "stack", aes(fill = mySur
 ```
 
 
-## `ggplot2` overlaying plots  
-
-- **Histogram + Kernel Smoother**
-
-- Just add both layers!  (Works for any compatible layers)  
-
-- Use `y = ..density..` to put histogram on same scale  
-
-
-## `ggplot2` overlaying plots  
-
-- **Histogram + Kernel Smoother**
-
-```{r, echo = TRUE, out.width = "500px", fig.align='center'}
-ggplot(titanicData) + 
-  geom_histogram(aes(y = ..density.., x = age, fill = mySurvived)) +
-  geom_density(adjust = 0.25, alpha = 0.5, position = "stack", 
-               aes(x = age, fill = mySurvived)) 
-```
-
-
-## `ggplot2` overlaying plots  
-
-- **Histogram + Kernel Smoother**
-
-- Better to set global `aes()` options here!  
-
-- Can easily change `fill` variable for all layers
-
-```{r,eval=FALSE,echo=TRUE,message=FALSE}
-ggplot(titanicData, aes(x = age, fill = myEmbarked)) + 
-  geom_histogram(aes(y = ..density..)) +
-  geom_density(adjust = 0.25, alpha = 0.5, position = "stack")
-```
-
-
-## `ggplot2` boxplots
-
-- **Boxplot** - Provides the five number summary in a graph
-
-    - Often used with one numerical and one categorical variable
-    - Min, Q1, Median, Q3, Max  
-    - Often show possible outliers as well  
-
-
-
 ## `ggplot2` boxplots
 
 - **Boxplot** - Provides the five number summary in a graph
@@ -2419,8 +2245,6 @@ ggplot(titanicData, aes(x = age, fill = myEmbarked)) +
 
 ## `ggplot2` boxplots
 
-- **Boxplot** - Provides the five number summary in a graph
-
 ```{r, echo = TRUE, out.width = "500px", fig.align='center'}
 g <- ggplot(titanicData, aes(x = mySurvived, y = age))
 g + geom_boxplot(fill = "grey")
@@ -2430,9 +2254,7 @@ g + geom_boxplot(fill = "grey")
 
 ## `ggplot2` boxplots with points
 
-- **Boxplot** - Provides the five number summary in a graph
-
-- Can add data points (jittered) to see shape of data better
+- Can add data points (jittered) to see shape of data better (or use violin plot)
 
 ```{r, echo = TRUE, out.width = "500px", fig.align='center'}
 g + 
@@ -2442,8 +2264,6 @@ g +
 
 
 ## `ggplot2` boxplots with points
-
-- **Boxplot** - Provides the five number summary in a graph
 
 - Order of layers important!
 
@@ -2456,13 +2276,10 @@ g +
 
 ## `ggplot2` faceting
 
-- **Boxplot** - Provides the five number summary in a graph
-
 - Can `facet` easily!
 
 ```{r, echo = TRUE, out.width = "500px", fig.align='center'}
-g + 
-  geom_boxplot(fill = "grey") +
+g + geom_boxplot(fill = "grey") +
   geom_jitter(width = 0.1, alpha = 0.3) + 
   facet_wrap(~ myEmbarked)
 ```
@@ -2478,7 +2295,7 @@ Most common plots:
 
 - Histogram (`geom_hist`), Density (`geom_density`)  
 
-- Boxplot (`geom_boxplot`)
+- Boxplot (`geom_boxplot`), Violin plot (`geom_violin`)
 
 - Scatter plot (`geom_point`), Smoothers (`geom_smooth`)
 
@@ -2501,21 +2318,6 @@ General `ggplot` things:
 
 - Only need `aes` if setting a mapping value that is dependent on the data (or you want to create a custom legend!)  
 
-
-## Recap!
-
-`ggplot(data = <DATA>) +`  
-&nbsp;&nbsp;`<GEOM_FUNCTION>(mapping = aes(<MAPPINGS>), stat = <STAT>, position = <POSITION>) +`  
-&nbsp;&nbsp;`<COORDINATE_FUNCTION> +`  
-&nbsp;&nbsp;`<FACET_FUNCTION> +`  
-&nbsp;&nbsp;`<LABEL_FUNCTION>`   
-`)`
-
-- Lots of extensions to ggplot!  
-    + `gganimate`  
-    + `ggthemes`  
-    + `ggmap`  
-    + `ggrepel`
 
 ## Example
 
