@@ -1,6 +1,6 @@
 ---
 title: "R Basics, RMarkdown, & the Tidyverse"
-author: "Justin Post"
+author: "Justin Post & Matt Beckman"
 output: 
       ioslides_presentation:
          css: ../css/style.css
