@@ -65,14 +65,15 @@ renderPlot({
 ## Available Apps  
 
 - Many available resources.  Many have their source code available on github!  
-  
-- [Shiny Gallery/Showcase](https://shiny.rstudio.com/gallery/)
-  
+
+- [Book of Apps for Statistics Teaching (BOAST)](https://sites.psu.edu/shinyapps/)  
 - [Stat Concepts](https://github.com/gastonstat/shiny-introstats/)  
 
 - [More Stat Concepts](https://www.researchgate.net/publication/298786680_Web_Application_Teaching_Tools_for_Statistics_Using_R_and_Shiny)  
 
 - [Even more!](http://www.statistics.calpoly.edu/shiny)
+
+- [Shiny Gallery/Showcase](https://shiny.rstudio.com/gallery/)
 
 
 ## Our plan

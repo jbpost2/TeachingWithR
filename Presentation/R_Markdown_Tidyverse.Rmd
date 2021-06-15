@@ -38,7 +38,7 @@ knitr::opts_chunk$set(echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE
 
 - Vectors and Data frames/Tibbles
 
-- Importing CSV files with `readr` and excel files with `readxl`    
+- Importing CSV files with `readr`     
 
 - Markdown basics  
 
@@ -364,7 +364,7 @@ ddddd
 
 - Vectors and Data Frames/Tibbles
 
-- Importing CSV files with `readr` and excel files with `readxl`    
+- Importing CSV files with `readr`    
 
 - Markdown basics  
 
@@ -584,7 +584,6 @@ neuralgiaData
 ```
 
 
-
 ## Reading a .csv File  
 
 - Let's read in the '[neuralgia.csv](https://www4.stat.ncsu.edu/~online/datasets/neuralgia.csv)' file  
@@ -632,59 +631,6 @@ pull(neuralgiaData, 1) #or pull(neuralgiaData, Treatment)
 neuralgiaData$Treatment 
 ```
 
-
-## Excel Data
-
-- Read in [censusEd.xlsx](https://www4.stat.ncsu.edu/~online/datasets/censusEd.xlsx)  
-
-- Use `read_excel()` from `readxl` package!  
-
-
-
-## Excel Data
-
-- Read in [censusEd.xlsx](https://www4.stat.ncsu.edu/~online/datasets/censusEd.xlsx)  
-
-- Use `read_excel()` from `readxl` package!  
-
-    + Reads both xls and xlsx files  
-
-    + Detects format from extension given  
-
-    + Can't pull from web though!  
-
-
-## Excel Data
-
-```{r, warning = FALSE}
-#install package if necessary
-library(readxl)
-#censusEd.xlsx in working directory
-#reads first sheet by default
-edData <- read_excel("censusEd.xlsx")
-edData
-```
-
-
-## Excel Data
-
-- Read in [censusEd.xlsx](https://www4.stat.ncsu.edu/~online/datasets/censusEd.xlsx)  
-
-- Use `read_excel()` from `readxl` package!    
-
-    + Specify sheet with name or integers (or `NULL` for 1st) using `sheet =`  
-
-    + Can look at sheets available
-
-```{r}
-excel_sheets("censusEd.xlsx")
-```
-
-```{r, eval = FALSE}
-read_excel("censusEd.xlsx", sheet = "EDU01D")
-```
-
-
 ## Example
 
 ddddd
@@ -697,7 +643,7 @@ ddddd
 
 - Vectors and Data Frames/Tibbles
 
-- Importing CSV files with `readr` and excel files with `readxl`    
+- Importing CSV files with `readr`  
 
 - Markdown basics  
 
@@ -754,7 +700,7 @@ We may want to subset our full data set or create new data
 
 > - May have heard of [JUPYTER](http://jupyter.org/) notebooks  
 
-> - R Markdown - built in notebook for R studio  
+> - R Markdown - built in notebook for RStudio  
 
 
 
@@ -799,7 +745,9 @@ We may want to subset our full data set or create new data
     + Easier syntax  
     + Not as powerful  
     
-- Any plain text file can be used (.Rmd extension associates it with R Studio)
+> - White space is important!  (May want to show white space characters.)  
+
+> - Any plain text file can be used (.Rmd extension associates it with RStudio)
 
 
 ## Documenting with Markdown  
@@ -816,7 +764,7 @@ R Markdown file contains three important types of content:
 ## Documenting with Markdown  
 **Creating an R Markdown Document**
 
-- R Studio makes it easy!  
+- RStudio makes it easy!  
 
 ```{r startMD.png, out.width = "700px",echo=FALSE, fig.align='center'}
 knitr::include_graphics("../img/startMD.png")
@@ -945,8 +893,6 @@ Briefly investigate:
 - ```[Cheat Sheet link](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)``` becomes [Cheat Sheet link](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)  
 
 
-
-
 ## Documenting with Markdown  
 
 **Markdown syntax**  
@@ -1034,13 +980,15 @@ Briefly investigate:
 
 **Code chunks and their options**  
 
-- Many options depending on chunk purpose!    
-
 - Can hide/show code with `echo = FALSE/TRUE`  
 
 - Can choose if code is evaluated with `eval = TRUE/FALSE`   
 
 - `message = TRUE/FALSE` and `warning = TRUE/FALSE` can turn on/off displaying messages/warnings   
+
+```{r, fig.align='center', message = FALSE, out.width=275, echo = FALSE}
+knitr::include_graphics("../img/codeChunkGear.PNG")
+```
 
 
 
@@ -1546,9 +1494,6 @@ myBatting %>%
 - Many `joins` to combine tibbles too! (Similar to SQL)
 
 
-## Example
-
-
 ## Data manipulation idea  
 
 - Create new variables
@@ -1584,7 +1529,8 @@ fandango
 
 ```{r}
 ##Create an average rottentomatoes score variable
-fandango %>% mutate(avgRotten = (rottentomatoes + rottentomatoes_user)/2)
+fandango %>% 
+  mutate(avgRotten = (rottentomatoes + rottentomatoes_user)/2)
 ```
 
 
@@ -1592,7 +1538,8 @@ fandango %>% mutate(avgRotten = (rottentomatoes + rottentomatoes_user)/2)
 
 ```{r}
 #can't see it!
-fandango %>% mutate(avgRotten = (rottentomatoes + rottentomatoes_user)/2) %>% 
+fandango %>% 
+  mutate(avgRotten = (rottentomatoes + rottentomatoes_user)/2) %>% 
   select(film, year, avgRotten, everything())
 ```
 
@@ -1614,7 +1561,8 @@ fandango %>%
 `mutate()` and `transmute()` can also use some statistical functions
  
 ```{r}
-fandango %>% select(rottentomatoes) %>% 
+fandango %>% 
+  select(rottentomatoes) %>% 
   mutate(avg = mean(rottentomatoes), sd = sd(rottentomatoes))
 ```
 
@@ -1625,17 +1573,19 @@ fandango %>% select(rottentomatoes) %>%
 - `group_by` to create summaries for groups  
  
 ```{r}
-fandango %>% select(year, rottentomatoes) %>% 
+fandango %>% 
+  select(year, rottentomatoes) %>% 
   group_by(year) %>% mutate(avg = mean(rottentomatoes), sd = sd(rottentomatoes))
 ```
 
 
 ## Other notes: Summarizing with `dplyr`  
 
-- `summarize()` is often used with `group-by()` to obtain summaries without combining to the dataset  
+- `summarize()` is often used with `group_by()` to obtain summaries without combining to the dataset  
 
 ```{r}
-fandango %>% select(year, rottentomatoes) %>% 
+fandango %>% 
+  select(year, rottentomatoes) %>% 
   group_by(year) %>% summarize(avg = mean(rottentomatoes), sd = sd(rottentomatoes))
 ```
 
@@ -1660,40 +1610,11 @@ fandango %>% select(year, rottentomatoes) %>%
     + daily air quality measurements in New York  
     
     + from May (Day 1) to September (Day 153) in 1973  
-    
-
-## Creating New Variables  
-**Conditional Execution with If then, If then else**
-
-- Consider built-in data set `airquality`  
 
 ```{r}
 myAirquality <- as_tibble(airquality)
 myAirquality
 ```
-
-
-
-## `if_else()` - conditional execution 
-
-Want to code a wind category variable    
-
- + high wind days (wind $\geq$ 15mph)  
- + windy days     (10mph $\leq$ wind < 15mph)  
- + lightwind days (6mph $\leq$ wind < 10mph)  
- + calm days      (wind $\leq$ 6mph)
-
-
-
-## `if_else()` - conditional execution 
-
-```{r}
-if_else(myAirquality$Wind >= 15, "HighWind",
-          if_else(myAirquality$Wind >= 10, "Windy",
-                 if_else(myAirquality$Wind >= 6, "LightWind", "Calm")))
-```
-
-
 
 ## `if_else()` with `mutate()`
 
@@ -1747,7 +1668,7 @@ Easily allows for two very important actions
 
 - Vectors and Data Frames/Tibbles
 
-- Importing CSV files with `readr` and excel files with `readxl`    
+- Importing CSV files with `readr`    
 
 - Markdown basics  
 
@@ -2135,10 +2056,6 @@ General `ggplot` things:
 - Only need `aes` if setting a mapping value that is dependent on the data (or you want to create a custom legend!)  
 
 
-## Example
-
-
-
 ## `ggplot2` Plotting: Numeric Variables    
 
 Numeric variables - generally, describe distribution via a histogram or boxplot!  
@@ -2148,40 +2065,6 @@ Same process:
 - Create base object  
 - Add geoms  
 - Use aes to specify aspects of the plot  
-
-
-## `ggplot2` histograms    
-
-- **Histogram** - Bins data to show distribution of observations
-
-- Common `aes` values (from cheat sheet):
-
-&nbsp; &nbsp; &nbsp; &nbsp; `c + geom_histogram(binwidth = 5)`
-
-&nbsp; &nbsp; &nbsp; &nbsp; `x, y, alpha, color, fill, linetype, size, weight`
-
-> - only `x` is really needed
-
-
-## `ggplot2` histograms    
-
-- **Histogram** - Bins data to show distribution of observations
-
-```{r,eval = TRUE, out.width = "450px", fig.align='center'}
-g <- ggplot(titanicData, aes(x = age))
-g + geom_histogram()
-```
-
-
-## `ggplot2` histograms    
-
-- **Histogram** - Bins data to show distribution of observations
-
-- Attributes of the plot not dependent on data generally set outside of `aes`  
-
-```{r,eval = TRUE, out.width = "450px", fig.align='center'}
-g + geom_histogram(color = "blue", fill = "red", size = 2, binwidth = 3)
-```
 
 
 ## `ggplot2` smoothed histogram    
@@ -2202,6 +2085,7 @@ g + geom_histogram(color = "blue", fill = "red", size = 2, binwidth = 3)
 - **Kernel Smoother** - Smoothed version of a histogram  
 
 ```{r, echo = TRUE, out.width = "500px", fig.align='center'}
+g <- ggplot(titanicData, aes(x = age))
 g + geom_density()
 ```
 
@@ -2318,6 +2202,7 @@ General `ggplot` things:
 
 - Only need `aes` if setting a mapping value that is dependent on the data (or you want to create a custom legend!)  
 
+> - `esquisse` is a [great package for exploring ggplot2](https://cran.r-project.org/web/packages/esquisse/vignettes/get-started.html)!
 
 ## Example
 
