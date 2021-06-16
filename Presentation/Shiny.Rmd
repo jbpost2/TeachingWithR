@@ -14,10 +14,9 @@ runtime: shiny
 
 ```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
 library(shiny)
-library(dplyr)
+library(tidyverse)
 options(dplyr.print_min = 5)
 library(knitr)
-library(readr)
 library(plotly)
 library(DT)
 opts_chunk$set(echo = FALSE)
@@ -232,6 +231,60 @@ renderPlot({
   g <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) 
   if(input$addColor){g + geom_point(aes(color = Species))} else {g + geom_point()}
 })
+```
+
+
+## Quick Sampling Distribution Example
+
+Code to create some samples  
+
+- rows 1:n represents a sample of size n
+- each column represents a data set
+
+```{r}
+simData <- replicate(1000, rexp(n = 50, rate = 1)) %>% as_tibble()
+```
+
+
+## Distribution of $\overline{Y}$ from a RS of Exp(1)  
+
+```{r, echo = TRUE, eval = FALSE}
+inputPanel(
+  numericInput("sampleSize", label = "Sample Size", 
+               min = 2, max = 50, value = 10, step = 1),
+  sliderInput("numSamples", label = "Number of Simulations", 
+              min = 1, max = 1000, value = 1, step = 1, 
+              animate = animationOptions(interval = 325))
+)
+
+renderPlot({
+      ggplot(simData %>% 
+               slice_head(n = input$sampleSize) %>% 
+               select(1:input$numSamples) %>% 
+               colMeans() %>% 
+               as_tibble(), 
+             aes(x = value)) + 
+        geom_histogram(color = "Blue", size = 2)  
+    })
+```
+
+## Distribution of $\overline{Y}$ from a RS of Exp(1)  
+
+```{r, echo = FALSE, out.width=4}
+inputPanel(
+  numericInput("sampleSize", label = "Sample Size", min = 2, max = 50, value = 10, step = 1),
+  sliderInput("numSamples", label = "Number of Simulations", min = 1, max = 1000, value = 1, step = 1, animate = animationOptions(interval = 325))
+)
+
+renderPlot({
+      ggplot(simData %>% 
+               slice_head(n = input$sampleSize) %>% 
+               select(1:input$numSamples) %>% 
+               colMeans() %>% 
+               as_tibble(), 
+             aes(x = value)) + 
+        geom_histogram(color = "Blue", size = 2)  
+    })
 ```
 
 ## Much more to learn!
