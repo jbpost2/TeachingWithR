@@ -32,50 +32,100 @@ output: html_document
 
 # Part 2. Import Data
 
-- call the `dcData` library   
-    - sorry it's hosted on GitHub and not CRAN!  
+
+## 2.1 Libraries
+
+- **Task 1:** call the `dcData` and `tidyverse` libraries   
+    - `dcData` is hosted on GitHub and not CRAN!  
     - `devtools::install_github("mdbeckman/dcData")`
     - may take a while (30+ sec?) depending on Internet speed
 
-- read `BabyNames` data from `dcData` into R
-    - locate the `BabyNames` object in the Environment pane
-    - double click the object name to open a spreadsheet View
-    - spreadsheet view has basic sort capability
-    - Q: how many rows of data are there?
-    - Q: what does a row represent?
-    - Q: what does the largest `count` in the data represent?
-    - Q: what are the max & min available `year` in the data?
-
-- CSV of BabyNameSupp with more recent data
-- BabyNamesSupp <- read_csv("https://www4.stat.ncsu.edu/~online/datasets/BabyNamesSupp.csv")
-- `BabyNamesSupp <- read_csv("~/Desktop/dcData Updates/BabyNames/BabyNamesSupp.csv")`
-    - Q: this comes with a warning message... can you tell what went wrong?
-    - Q: open the spreadsheet view... (Hint: sort by `count` to inspect popular results)
-    - Help >> read_csv... 
-    - Q: why did we have this problem, and which argument might fix it?
-
-- Search Help to learn about the data...
-    - help for BabyNames from `dcData` 
-    - help for BabyNamesSupp (nothing in R!)
-
-- XC: get 2020 data and read it into R (hint: start with the help documentation)
 
 
 
+## 2.2 Data Intake: `BabyNames`
+
+Read `BabyNames` data from `dcData` into R
+
+- Locate the `BabyNames` object in the Environment pane
+- Double click the object name to open a spreadsheet View
+- Spreadsheet view includes basic sorting capability
+- **Task 1:** how many total rows of data are there?  (& where can you find this?)
+- **Task 2:** describe what each row in the data *actually* represents
+- **Task 3:** find the largest `count` in the `BabyNames` data.  How would you interpret this result?
+- **Task 4:** what are the max & min available `year` in the data?
+
+
+## 2.3 Data Intake: `BabyNamesSupp` 
+
+BabyNameSupp.CSV includes a few years of recent data.  
+
+- Run the starter code below
+- **Task 1:** the starter code produces a warning message; what went wrong?
+- **Task 2:** open the spreadsheet view to investigate `BabyNamesSupp` further... 
+- **Task 3:** why did we have this problem, and which argument might fix it?
+    - Hint: "RStudio >> Help >> read_csv" 
+    - don't worry about *actually* fixing it yet, just try to identify root cause.
+
+````
+# starter code for BabyNamesSupp 
+BabyNamesSupp <- read_csv("https://www4.stat.ncsu.edu/~online/datasets/BabyNamesSupp.csv")
+````
+
+## 2.4 Help Documentation
+
+- Search "RStudio >> Help" to learn about the data...
+    - help for `BabyNames` from `dcData` 
+    - **Task 1:** what can you learn about the `BabyNames` data from the Help?
+    - help for BabyNamesSupp
+    - **Task 2:** what have you learn about the `BabyNamesSupp` data from the Help?  What happened?
+    
+## 2.5 Challenge
+
+**Task 1:** Find 2020 name data and read it into R (hint: start with the `BabyNames` help documentation).
+
+
+## Partial Solutions 
+
+At this point, we haven't attempted to process the `BabyNamesSupp` or the 2020 data.  We're just reading them into the R environment and making observations about that process.  
+
+We'll be using this data again later in the exercises, so we will make the necessary corrections at that point.
+
+### Libraries
+Task 2.1.1: see code chunk that follows
+
+Task 2.2.1: about 1.8 million rows.  We can see this from environment tab, spreadsheet view (footer), among other places
+Task 2.2.2: The frequency of a given name, within a year, associated with a `sex`
+Task 2.2.3: According to US Social Security records, 1947 was a banner year to name a female Linda!
+Task 2.2.4: `BabyNames` data spans 1880 through 2013
+
+Task 2.3.1: The warning indicates a "parsing failure" and shows that R was expecting logical elements (e.g., TRUE/FALSE) and found "M" in many cases
+Task 2.3.2: Yup, R interpreted "F" (meaning female, here) to mean FALSE and failed to process "M" appropriately as a result.
+Task 2.3.3: `read_csv( )` guesses variable class based on the first 1000 records.  The data source had apparently sorted results such that the first 1000 (or more) rows were all "F" so `read_csv( )` concluded these to be logical (T/F) results.  Quite a reasonable default under most circumstances, but illustrates why we should always carefully inspect our data intake! 
+
+Task 2.4.1: Lots! The package author has described the data, explained the variables, provided a source, etc.
+Task 2.4.2: Nothing!  The data were read from an external file, so R doesn't have any information at all to share with us.
+
+Task 5.5.1 (Challenge): visit "RStudio >> Help >> BabyNames >> Source" and then download the zip file to find the 2020 data inside.  This can be read into R using `read_csv( )` even though the file extension is `.txt` since the data are comma delimited.  You may note that the structure of the data differs slightly from our two other sources, so we will need some new tools to process it for use.
 
 ```{r}
-# # from instructions before workshop
-# library(devtools)
-# install_github("mdbeckman/dcData")
+## from instructions before workshop, if needed
+# devtools::install_github("mdbeckman/dcData")
 
-
-# participants will run these in the console for now
+# Task 2.2.1 libraries
 library(tidyverse)
 library(dcData)
 
+## data intake
 data("BabyNames", package = "dcData")
+BabyNamesSupp <- read_csv("../datasets/BabyNamesSupp.csv")  # `sex` produces warning
 
-BabyNamesSupp <- read_csv("datasets/BabyNamesSupp.csv")
+
+## challenge
+# locate zip file including all years of data, identify 2020 and read into R:
+yob2020 <- read_csv("../datasets/yob2020.txt", col_names = FALSE)
+
+
 ```
 
 
@@ -138,7 +188,7 @@ output: html_document
 # Part 4. Data wrangling
 
 
-- Q: `bind_rows()` to combine `BabyNames` & `BabyNamesSupp` 
+- **Task:** `bind_rows()` to combine `BabyNames` & `BabyNamesSupp` 
 
 - filter, arrange, rename, mutate, select, group_by, summarise, etc
 - two different filter takes--hard coded, vs %in% vector
@@ -154,7 +204,21 @@ XC:
 
 
 ```{r}
-BabyNamesFull <- bind_rows(BabyNames, BabyNamesSupp)
+## data intake
+data("BabyNames", package = "dcData")
+BabyNamesSupp <- read_csv("../datasets/BabyNamesSupp.csv",  
+                          col_types = cols(sex = col_character()))  # fixes `sex`
+    
+
+# processing 2020 data intake to align with other years of data
+yob2020 <- 
+    read_csv("../datasets/yob2020.txt", col_names = FALSE, 
+             col_types = cols(X2 = col_character())) %>%
+    rename(name = X1, sex = X2, count = X3) %>%
+    mutate(year = 2020)
+
+
+BabyNamesFull <- bind_rows(BabyNames, BabyNamesSupp, yob2020)
 
 
 ```
