@@ -1,0 +1,179 @@
+---
+title: "Exercise: What's in a Name??"
+subtitle: "2021 USCOTS Workshop: TeachingWithR"
+author: "Matthew Beckman & Justin Post"
+date: "June 25, 2021"
+output: html_document
+---
+
+
+# Introduction
+
+
+
+# Part 1. RStudio IDE Scavenger Hunt
+
+- RStudio GUI 
+    - Restart your R Session
+    - Create a new "R Markdown" file (keep the default text for now)
+    - Install `lubridate` packages (with dependencies if needed)
+    - search the Help for [something important]
+    - open a New Terminal
+    - What types of data sources can be imported using the RStudio GUI
+    
+- Locate the following configuration preferences (Tools >> Global Options)
+    - Pane Layout
+    - "Rainbow parenthesis"
+    - "Show margin" (set to 80)
+    - "Highlight selected line"
+    - "Provide R style diagnostics (e.g., whitespace)"
+    - "Show whitespace characters" 
+
+
+# Part 2. Import Data
+
+- call the `dcData` library   
+    - sorry it's hosted on GitHub and not CRAN!  
+    - `devtools::install_github("mdbeckman/dcData")`
+    - may take a while (30+ sec?) depending on Internet speed
+
+- read `BabyNames` data from `dcData` into R
+    - locate the `BabyNames` object in the Environment pane
+    - double click the object name to open a spreadsheet View
+    - spreadsheet view has basic sort capability
+    - Q: how many rows of data are there?
+    - Q: what does a row represent?
+    - Q: what does the largest `count` in the data represent?
+    - Q: what are the max & min available `year` in the data?
+
+- CSV of BabyNameSupp with more recent data
+- BabyNamesSupp <- read_csv("https://www4.stat.ncsu.edu/~online/datasets/BabyNamesSupp.csv")
+- `BabyNamesSupp <- read_csv("~/Desktop/dcData Updates/BabyNames/BabyNamesSupp.csv")`
+    - Q: this comes with a warning message... can you tell what went wrong?
+    - Q: open the spreadsheet view... (Hint: sort by `count` to inspect popular results)
+    - Help >> read_csv... 
+    - Q: why did we have this problem, and which argument might fix it?
+
+- Search Help to learn about the data...
+    - help for BabyNames from `dcData` 
+    - help for BabyNamesSupp (nothing in R!)
+
+- XC: get 2020 data and read it into R (hint: start with the help documentation)
+
+
+
+
+```{r}
+# # from instructions before workshop
+# library(devtools)
+# install_github("mdbeckman/dcData")
+
+
+# participants will run these in the console for now
+library(tidyverse)
+library(dcData)
+
+data("BabyNames", package = "dcData")
+
+BabyNamesSupp <- read_csv("datasets/BabyNamesSupp.csv")
+```
+
+
+
+
+# Part 3. R Markdown 
+
+Note: you might hang onto the RStudio boilerplate for a moment... it's packed with tiny examples that will come in handy!
+
+- we'll be investigating the popularity of names in the US each year
+- Choose a few names to investigate to you (friends, family, TV character, colleagues in the workshop!)
+
+- "Knit" the document to render the initial HTML document
+- Task 1: update yaml header for your investigation
+    - "Knit" 
+
+
+````
+---
+title: "..."
+author: "..."
+date: "..."
+output: html_document
+---
+````
+
+
+- Task 2: Write a bit of narrative to introduce the project (no R code) 
+    - make a few remarks about 
+    - write a few sentences to introduce the project
+        - Given intro about what you're doing & your data source (US Social Security)
+        - Which names have you chosen to investigate?   
+        - "Knit" 
+        - Add a bullet list of "famous" persons that share the name
+        - "Knit"
+
+- create an R code chunk to set up for the investigation
+    - call the `tidyverse` and `dcData` libraries
+    - data intake that makes earlier work reproducible
+        - `BabyNames` from `dcData` package
+        - `BabyNamesSupp.csv`
+
+- At the end of the document, add a note with a time/date stamp of when the analysis was last modified.  Call the R function `now()` directly from lubridate package INLINE for the time stamp.
+    - "Knit" (notice the time stamp)
+    - "Knit" again (notice the time stamp)
+
+
+- Rendering the document in a few different forms
+    - slides (e.g., `output: slidy_presentation`)
+    - R Notebook (e.g., `html_notebook`)
+    - knit MS Word (if you have it)
+
+- XC: 
+    - can you spot any differences b/w R Notebook & R Markdown doc? 
+    - simultaneously knit a slidy presentation & an R Notebook doc (two lines of output in yaml)
+    - PDF (`tinytex::install_tinytex()` if needed)
+    - add some LaTeX to your document (e.g, a simple display equation) & knit the document
+
+
+# Part 4. Data wrangling
+
+
+- Q: `bind_rows()` to combine `BabyNames` & `BabyNamesSupp` 
+
+- filter, arrange, rename, mutate, select, group_by, summarise, etc
+- two different filter takes--hard coded, vs %in% vector
+- group_by, summarise, arrange for overall popularity of each name
+- filter to just investigate popularity in the year you joined your current institution 
+(or year you were born, or any single year you like) and repeat
+
+XC: 
+
+- `pivot_wider()` & mutate to calculate balance b/w sexes for each name?
+- join for the totals?
+- arrange to review
+
+
+```{r}
+BabyNamesFull <- bind_rows(BabyNames, BabyNamesSupp)
+
+
+```
+
+
+# Part 5. Graph it
+
+- sketch (by hand) the chart you plan to make
+    - trend of popularity over time
+    - overlay?
+    - facet?
+- try it with `ggplot2`
+
+
+- `esquisse::esquisser()` for draft plotting while getting the hang of `ggplot2` 
+    - copy the code, paste into Rmd chunk
+    - modifiy it to customize the rest of the way
+    - ideally, you'll soon skip the esquisse step as you get the hang of the ggplot2 framework
+
+XC: 
+- bar chart overall popularity use sexes to fill/stack?
+
