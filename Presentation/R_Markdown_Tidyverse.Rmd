@@ -354,7 +354,7 @@ see ?make.names for more details-->
 
 ## Example
 
-ddddd
+[MDB--TBD]
 
 
 
@@ -633,7 +633,8 @@ neuralgiaData$Treatment
 
 ## Example
 
-ddddd
+[MDB--TBD]
+
 
 
 
@@ -1158,6 +1159,8 @@ output: ioslidespresentation
 
 ## Example
 
+[MDB--TBD] 
+
 
 ## `tidyverse` for data manipulations
 
@@ -1660,6 +1663,7 @@ Easily allows for two very important actions
 
 ## Example  
 
+[MDB--TBD]
 
 
 ## Schedule 
@@ -2205,4 +2209,7 @@ General `ggplot` things:
 > - `esquisse` is a [great package for exploring ggplot2](https://cran.r-project.org/web/packages/esquisse/vignettes/get-started.html)!
 
 ## Example
+
+[MDB--TBD]
+
 
