@@ -202,26 +202,39 @@ summary {
 </div>
 <div id="part-1.-rstudio-ide-scavenger-hunt" class="section level1">
 <h1>Part 1. RStudio IDE Scavenger Hunt</h1>
-<ul>
-<li>RStudio GUI
-<ul>
+<div id="rstudio-gui" class="section level2">
+<h2>1.1 RStudio GUI</h2>
+<p>Search the menus in your RStudio application to locate where each of the following can be accomplished:</p>
+<ol style="list-style-type: decimal">
 <li>Restart your R Session</li>
 <li>Create a new “R Markdown” file (keep the default text for now)</li>
 <li>Install <code>lubridate</code> packages (with dependencies if needed)</li>
-<li>search the Help for [something important]</li>
-<li>open a New Terminal</li>
+<li>search the Help for “head”</li>
 <li>What types of data sources can be imported using the RStudio GUI</li>
-</ul></li>
-<li>Locate the following configuration preferences (Tools &gt;&gt; Global Options)
-<ul>
+</ol>
+<div id="partial-solution" class="section level3">
+<h3>Partial Solution</h3>
+<ol style="list-style-type: decimal">
+<li>RStudio &gt;&gt; Session</li>
+<li>RStudio &gt;&gt; File &gt;&gt; New File &gt;&gt; R Markdown</li>
+<li>RStudio &gt;&gt; Packages &gt;&gt; Install &gt;&gt; [type the package name in the search bar]</li>
+<li>RStudio &gt;&gt; Help &gt;&gt; [type help topic in search bar]</li>
+<li>RStudio &gt;&gt; File &gt;&gt; Import Dataset</li>
+</ol>
+</div>
+</div>
+<div id="handy-configuration-ideas-for-teaching" class="section level2">
+<h2>1.2 Handy Configuration Ideas for Teaching</h2>
+<p>Visit “RStudio &gt;&gt; Tools &gt;&gt; Global Options” and locate the following:</p>
+<ol style="list-style-type: decimal">
 <li>Pane Layout</li>
 <li>“Rainbow parenthesis”</li>
 <li>“Show margin” (set to 80)</li>
 <li>“Highlight selected line”</li>
 <li>“Provide R style diagnostics (e.g., whitespace)”</li>
 <li>“Show whitespace characters”</li>
-</ul></li>
-</ul>
+</ol>
+</div>
 </div>
 <div id="part-2.-import-data" class="section level1">
 <h1>Part 2. Import Data</h1>
@@ -236,6 +249,22 @@ summary {
 <li>may take a while (30+ sec?) depending on Internet speed</li>
 </ul></li>
 </ul>
+<div id="solution" class="section level3">
+<h3>Solution</h3>
+<pre class="r"><code>## from instructions before workshop, if needed
+# devtools::install_github(&quot;mdbeckman/dcData&quot;)
+
+library(tidyverse)  # this actually loads a group of packages all at once</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
+## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
+## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+## ✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(dcData)     # this may take a while depending on connection speed</code></pre>
+</div>
 </div>
 <div id="data-intake-babynames" class="section level2">
 <h2>2.2 Data Intake: <code>BabyNames</code></h2>
@@ -249,13 +278,21 @@ summary {
 <li><strong>Task 3:</strong> find the largest <code>count</code> in the <code>BabyNames</code> data. How would you interpret this result?</li>
 <li><strong>Task 4:</strong> what are the max &amp; min available <code>year</code> in the data?</li>
 </ul>
+<div id="solution-1" class="section level3">
+<h3>Solution</h3>
+<p>Task 2.2.1: about 1.8 million rows. We can see this from environment tab, spreadsheet view (footer), among other places</p>
+<p>Task 2.2.2: The frequency of a given name, within a year, associated with a <code>sex</code></p>
+<p>Task 2.2.3: According to US Social Security records, 1947 was a banner year to name a female Linda!</p>
+<p>Task 2.2.4: <code>BabyNames</code> data spans 1880 through 2013</p>
+</div>
 </div>
 <div id="data-intake-babynamessupp" class="section level2">
 <h2>2.3 Data Intake: <code>BabyNamesSupp</code></h2>
-<p>BabyNameSupp.CSV includes a few years of recent data.</p>
+<p>BabyNameSupp.CSV includes a few years of recent data. Execute the starter code to complete the tasks.</p>
+<pre><code># starter code for BabyNamesSupp 
+BabyNamesSupp &lt;- read_csv(&quot;https://www4.stat.ncsu.edu/~online/datasets/BabyNamesSupp.csv&quot;)</code></pre>
 <ul>
-<li>Run the starter code below</li>
-<li><strong>Task 1:</strong> the starter code produces a warning message; what went wrong?</li>
+<li><strong>Task 1:</strong> The starter code produces a warning message; what went wrong?</li>
 <li><strong>Task 2:</strong> open the spreadsheet view to investigate <code>BabyNamesSupp</code> further…</li>
 <li><strong>Task 3:</strong> why did we have this problem, and which argument might fix it?
 <ul>
@@ -263,52 +300,36 @@ summary {
 <li>don’t worry about <em>actually</em> fixing it yet, just try to identify root cause.</li>
 </ul></li>
 </ul>
-<pre><code># starter code for BabyNamesSupp 
-BabyNamesSupp &lt;- read_csv(&quot;https://www4.stat.ncsu.edu/~online/datasets/BabyNamesSupp.csv&quot;)</code></pre>
+<p>At this point, we aren’t attempting to process the <code>BabyNamesSupp</code> data. We’re just reading it into the R environment and making observations about that process. We’ll be using this data again later in the exercises, so we will make the necessary corrections at that point.</p>
+<div id="solution-2" class="section level3">
+<h3>Solution</h3>
+<p>Task 2.3.1: The warning indicates a “parsing failure” and shows that R was expecting logical elements (e.g., TRUE/FALSE) and found “M” in many cases</p>
+<p>Task 2.3.2: Yup, R interpreted “F” (meaning female, here) to mean FALSE and failed to process “M” appropriately as a result.</p>
+<p>Task 2.3.3: <code>read_csv( )</code> guesses variable class based on the first 1000 records. The data source had apparently sorted results such that the first 1000 (or more) rows were all “F” so <code>read_csv( )</code> concluded these to be logical (T/F) results. Quite a reasonable default under most circumstances, but illustrates why we should always carefully inspect our data intake!</p>
+</div>
 </div>
 <div id="help-documentation" class="section level2">
 <h2>2.4 Help Documentation</h2>
+<p>Search “RStudio &gt;&gt; Help” to learn about the data…</p>
 <ul>
-<li>Search “RStudio &gt;&gt; Help” to learn about the data…
-<ul>
-<li>help for <code>BabyNames</code> from <code>dcData</code></li>
 <li><strong>Task 1:</strong> what can you learn about the <code>BabyNames</code> data from the Help?</li>
-<li>help for BabyNamesSupp</li>
-<li><strong>Task 2:</strong> what have you learn about the <code>BabyNamesSupp</code> data from the Help? What happened?</li>
-</ul></li>
+<li><strong>Task 2:</strong> what can you learn about the <code>BabyNamesSupp</code> data from the Help? What happened?</li>
 </ul>
+<div id="solution-3" class="section level3">
+<h3>Solution</h3>
+<p>Task 2.4.1: Lots! The package author has described the data, explained the variables, provided a source, etc.</p>
+<p>Task 2.4.2: Nothing! The data were read from an external file, so R doesn’t have any information at all to share with us.</p>
+</div>
 </div>
 <div id="challenge" class="section level2">
 <h2>2.5 Challenge</h2>
-<p><strong>Task 1:</strong> Find 2020 name data and read it into R (hint: start with the <code>BabyNames</code> help documentation).</p>
+<p><strong>Task 1:</strong> Find 2020 name data, read it into R, and review the data intake (hint: start with the <code>BabyNames</code> help documentation).</p>
+<p>Again, we aren’t attempting to process the 2020 data yet. We’re just reading it into the R environment and making observations about that process. We’ll be using this data again later in the exercises, so we will make the necessary corrections at that point.</p>
 </div>
-<div id="partial-solutions" class="section level2">
-<h2>Partial Solutions</h2>
-<p>At this point, we haven’t attempted to process the <code>BabyNamesSupp</code> or the 2020 data. We’re just reading them into the R environment and making observations about that process.</p>
-<p>We’ll be using this data again later in the exercises, so we will make the necessary corrections at that point.</p>
-<div id="libraries-1" class="section level3">
-<h3>Libraries</h3>
-<p>Task 2.1.1: see code chunk that follows</p>
-<p>Task 2.2.1: about 1.8 million rows. We can see this from environment tab, spreadsheet view (footer), among other places Task 2.2.2: The frequency of a given name, within a year, associated with a <code>sex</code> Task 2.2.3: According to US Social Security records, 1947 was a banner year to name a female Linda! Task 2.2.4: <code>BabyNames</code> data spans 1880 through 2013</p>
-<p>Task 2.3.1: The warning indicates a “parsing failure” and shows that R was expecting logical elements (e.g., TRUE/FALSE) and found “M” in many cases Task 2.3.2: Yup, R interpreted “F” (meaning female, here) to mean FALSE and failed to process “M” appropriately as a result. Task 2.3.3: <code>read_csv( )</code> guesses variable class based on the first 1000 records. The data source had apparently sorted results such that the first 1000 (or more) rows were all “F” so <code>read_csv( )</code> concluded these to be logical (T/F) results. Quite a reasonable default under most circumstances, but illustrates why we should always carefully inspect our data intake!</p>
-<p>Task 2.4.1: Lots! The package author has described the data, explained the variables, provided a source, etc. Task 2.4.2: Nothing! The data were read from an external file, so R doesn’t have any information at all to share with us.</p>
-<p>Task 5.5.1 (Challenge): visit “RStudio &gt;&gt; Help &gt;&gt; BabyNames &gt;&gt; Source” and then download the zip file to find the 2020 data inside. This can be read into R using <code>read_csv( )</code> even though the file extension is <code>.txt</code> since the data are comma delimited. You may note that the structure of the data differs slightly from our two other sources, so we will need some new tools to process it for use.</p>
-<pre class="r"><code>## from instructions before workshop, if needed
-# devtools::install_github(&quot;mdbeckman/dcData&quot;)
-
-# Task 2.2.1 libraries
-library(tidyverse)</code></pre>
-<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
-<pre><code>## ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
-## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
-## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
-## ✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
-<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()</code></pre>
-<pre class="r"><code>library(dcData)
-
-## data intake
+<div id="solution-4" class="section level2">
+<h2>Solution</h2>
+<p>Task 2.5.1 (Challenge): visit “RStudio &gt;&gt; Help &gt;&gt; BabyNames &gt;&gt; Source” and then download the zip file to find the 2020 data inside. This can be read into R using <code>read_csv( )</code> even though the file extension is <code>.txt</code> since the data are comma delimited. You may note that the structure of the data differs slightly from our two other sources, so we will need some new tools to process it for use.</p>
+<pre class="r"><code>## data intake
 data(&quot;BabyNames&quot;, package = &quot;dcData&quot;)
 BabyNamesSupp &lt;- read_csv(&quot;../datasets/BabyNamesSupp.csv&quot;)  # `sex` produces warning</code></pre>
 <pre><code>## Parsed with column specification:
@@ -347,23 +368,29 @@ yob2020 &lt;- read_csv(&quot;../datasets/yob2020.txt&quot;, col_names = FALSE)</
 ## See problems(...) for more details.</code></pre>
 </div>
 </div>
-</div>
 <div id="part-3.-r-markdown" class="section level1">
 <h1>Part 3. R Markdown</h1>
 <p>Note: you might hang onto the RStudio boilerplate for a moment… it’s packed with tiny examples that will come in handy!</p>
+<div id="goal" class="section level2">
+<h2>3.1 Goal</h2>
 <ul>
-<li><p>we’ll be investigating the popularity of names in the US each year</p></li>
-<li><p>Choose a few names to investigate to you (friends, family, TV character, colleagues in the workshop!)</p></li>
-<li><p>“Knit” the document to render the initial HTML document</p></li>
-<li><p>Task 1: update yaml header for your investigation</p>
+<li>we’ll be investigating the popularity of names in the US each year</li>
+<li>Choose a few names to investigate to you (friends, family, TV character, colleagues in the workshop!)</li>
+</ul>
+</div>
+<div id="update-yaml-header" class="section level2">
+<h2>3.2 Update yaml Header</h2>
+<ul>
+<li>Task 1: “Knit” the document to render the initial HTML document</li>
+<li>Task 2: update yaml header for your investigation
 <ul>
 <li>“Knit”</li>
 </ul></li>
 </ul>
 <pre><code>---
-title: &quot;...&quot;
-author: &quot;...&quot;
-date: &quot;...&quot;
+title: &quot;Add a title&quot;
+author: &quot;Add your name&quot;
+date: &quot;Pick a date&quot;
 output: html_document
 ---</code></pre>
 <ul>
@@ -400,7 +427,7 @@ output: html_document
 <li>R Notebook (e.g., <code>html_notebook</code>)</li>
 <li>knit MS Word (if you have it)</li>
 </ul></li>
-<li>XC:
+<li>Challenge:
 <ul>
 <li>can you spot any differences b/w R Notebook &amp; R Markdown doc?</li>
 <li>simultaneously knit a slidy presentation &amp; an R Notebook doc (two lines of output in yaml)</li>
@@ -408,6 +435,7 @@ output: html_document
 <li>add some LaTeX to your document (e.g, a simple display equation) &amp; knit the document</li>
 </ul></li>
 </ul>
+</div>
 </div>
 <div id="part-4.-data-wrangling" class="section level1">
 <h1>Part 4. Data wrangling</h1>
@@ -418,7 +446,7 @@ output: html_document
 <li><p>group_by, summarise, arrange for overall popularity of each name</p></li>
 <li><p>filter to just investigate popularity in the year you joined your current institution (or year you were born, or any single year you like) and repeat</p></li>
 </ul>
-<p>XC:</p>
+<p>Challenge:</p>
 <ul>
 <li><code>pivot_wider()</code> &amp; mutate to calculate balance b/w sexes for each name?</li>
 <li>join for the totals?</li>
@@ -438,7 +466,79 @@ yob2020 &lt;-
     mutate(year = 2020)
 
 
-BabyNamesFull &lt;- bind_rows(BabyNames, BabyNamesSupp, yob2020)</code></pre>
+BabyNamesFull &lt;- bind_rows(BabyNames, BabyNamesSupp, yob2020)
+
+
+# vector of names
+beckmans &lt;- c(&quot;Matthew&quot;, &quot;Sarah&quot;, &quot;Eden&quot;, &quot;Jack&quot;, &quot;Hazel&quot;)
+
+BabyNamesFull %&gt;%
+    filter(name %in% beckmans) %&gt;%
+    group_by(name) %&gt;%
+    summarise(total = sum(count, na.rm = TRUE)) %&gt;% 
+    arrange(desc(total))</code></pre>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 5 x 2
+##   name      total
+##   &lt;chr&gt;     &lt;dbl&gt;
+## 1 Matthew 1622951
+## 2 Sarah   1086935
+## 3 Jack     714762
+## 4 Hazel    273991
+## 5 Eden      45777</code></pre>
+<pre class="r"><code>BabyNamesFull %&gt;%
+    filter(name %in% beckmans) %&gt;%
+    group_by(name, sex) %&gt;%
+    summarise(total = sum(count, na.rm = TRUE)) %&gt;% 
+    arrange(name)</code></pre>
+<pre><code>## `summarise()` regrouping output by &#39;name&#39; (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 10 x 3
+## # Groups:   name [5]
+##    name    sex     total
+##    &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt;
+##  1 Eden    F       38138
+##  2 Eden    M        7639
+##  3 Hazel   F      271254
+##  4 Hazel   M        2737
+##  5 Jack    F        2682
+##  6 Jack    M      712080
+##  7 Matthew F        5539
+##  8 Matthew M     1617412
+##  9 Sarah   F     1083601
+## 10 Sarah   M        3334</code></pre>
+<pre class="r"><code># hard coded names
+BabyNamesFull %&gt;%
+    filter(name == &quot;Matthew&quot; | name == &quot;Sarah&quot; |
+           name == &quot;Eden&quot; | name == &quot;Jack&quot; | name == &quot;Hazel&quot;) %&gt;%
+    group_by(name) %&gt;%
+    summarise(total = sum(count, na.rm = TRUE)) %&gt;% 
+    arrange(desc(total))</code></pre>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 5 x 2
+##   name      total
+##   &lt;chr&gt;     &lt;dbl&gt;
+## 1 Matthew 1622951
+## 2 Sarah   1086935
+## 3 Jack     714762
+## 4 Hazel    273991
+## 5 Eden      45777</code></pre>
+<pre class="r"><code># Matt joined Penn State in 2015
+BabyNamesFull %&gt;%
+    filter(name %in% beckmans) %&gt;%
+    filter(year == 2015) %&gt;%
+    group_by(name) %&gt;%
+    summarise(total = sum(count, na.rm = TRUE)) %&gt;% 
+    arrange(desc(total))</code></pre>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 5 x 2
+##   name    total
+##   &lt;chr&gt;   &lt;dbl&gt;
+## 1 Matthew 12775
+## 2 Jack     8511
+## 3 Sarah    4536
+## 4 Hazel    4311
+## 5 Eden     2638</code></pre>
+<pre class="r"><code># Challenge: balance of names across sexes</code></pre>
 </div>
 <div id="part-5.-graph-it" class="section level1">
 <h1>Part 5. Graph it</h1>

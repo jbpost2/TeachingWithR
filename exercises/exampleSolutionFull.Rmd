@@ -13,21 +13,38 @@ output: html_document
 
 # Part 1. RStudio IDE Scavenger Hunt
 
-- RStudio GUI 
-    - Restart your R Session
-    - Create a new "R Markdown" file (keep the default text for now)
-    - Install `lubridate` packages (with dependencies if needed)
-    - search the Help for [something important]
-    - open a New Terminal
-    - What types of data sources can be imported using the RStudio GUI
-    
-- Locate the following configuration preferences (Tools >> Global Options)
-    - Pane Layout
-    - "Rainbow parenthesis"
-    - "Show margin" (set to 80)
-    - "Highlight selected line"
-    - "Provide R style diagnostics (e.g., whitespace)"
-    - "Show whitespace characters" 
+## 1.1 RStudio GUI 
+
+Search the menus in your RStudio application to locate where each of the following can be accomplished: 
+
+1. Restart your R Session
+#. Create a new "R Markdown" file (keep the default text for now)
+#. Install `lubridate` packages (with dependencies if needed)
+#. search the Help for "head"
+#. What types of data sources can be imported using the RStudio GUI
+
+### Partial Solution
+
+1. RStudio >> Session 
+#. RStudio >> File >> New File >> R Markdown
+#. RStudio >> Packages >> Install >> [type the package name in the search bar]
+#. RStudio >> Help >> [type help topic in search bar]
+#. RStudio >> File >> Import Dataset 
+
+
+## 1.2 Handy Configuration Ideas for Teaching
+
+Visit "RStudio >> Tools >> Global Options" and locate the following: 
+
+1. Pane Layout
+#. "Rainbow parenthesis"
+#. "Show margin" (set to 80)
+#. "Highlight selected line"
+#. "Provide R style diagnostics (e.g., whitespace)"
+#. "Show whitespace characters" 
+
+
+
 
 
 # Part 2. Import Data
@@ -40,7 +57,15 @@ output: html_document
     - `devtools::install_github("mdbeckman/dcData")`
     - may take a while (30+ sec?) depending on Internet speed
 
+### Solution
 
+```{r}
+## from instructions before workshop, if needed
+# devtools::install_github("mdbeckman/dcData")
+
+library(tidyverse)  # this actually loads a group of packages all at once
+library(dcData)     # this may take a while depending on connection speed
+```
 
 
 ## 2.2 Data Intake: `BabyNames`
@@ -56,65 +81,71 @@ Read `BabyNames` data from `dcData` into R
 - **Task 4:** what are the max & min available `year` in the data?
 
 
+### Solution 
+
+Task 2.2.1: about 1.8 million rows.  We can see this from environment tab, spreadsheet view (footer), among other places
+
+Task 2.2.2: The frequency of a given name, within a year, associated with a `sex`
+
+Task 2.2.3: According to US Social Security records, 1947 was a banner year to name a female Linda!
+
+Task 2.2.4: `BabyNames` data spans 1880 through 2013
+
+
 ## 2.3 Data Intake: `BabyNamesSupp` 
 
-BabyNameSupp.CSV includes a few years of recent data.  
-
-- Run the starter code below
-- **Task 1:** the starter code produces a warning message; what went wrong?
-- **Task 2:** open the spreadsheet view to investigate `BabyNamesSupp` further... 
-- **Task 3:** why did we have this problem, and which argument might fix it?
-    - Hint: "RStudio >> Help >> read_csv" 
-    - don't worry about *actually* fixing it yet, just try to identify root cause.
+BabyNameSupp.CSV includes a few years of recent data. Execute the starter code to complete the tasks.
 
 ````
 # starter code for BabyNamesSupp 
 BabyNamesSupp <- read_csv("https://www4.stat.ncsu.edu/~online/datasets/BabyNamesSupp.csv")
 ````
 
+- **Task 1:** The starter code produces a warning message; what went wrong?
+- **Task 2:** open the spreadsheet view to investigate `BabyNamesSupp` further... 
+- **Task 3:** why did we have this problem, and which argument might fix it?
+    - Hint: "RStudio >> Help >> read_csv" 
+    - don't worry about *actually* fixing it yet, just try to identify root cause.
+
+At this point, we aren't attempting to process the `BabyNamesSupp` data.  We're just reading it into the R environment and making observations about that process.  We'll be using this data again later in the exercises, so we will make the necessary corrections at that point.
+
+
+### Solution
+
+Task 2.3.1: The warning indicates a "parsing failure" and shows that R was expecting logical elements (e.g., TRUE/FALSE) and found "M" in many cases
+
+Task 2.3.2: Yup, R interpreted "F" (meaning female, here) to mean FALSE and failed to process "M" appropriately as a result.
+
+Task 2.3.3: `read_csv( )` guesses variable class based on the first 1000 records.  The data source had apparently sorted results such that the first 1000 (or more) rows were all "F" so `read_csv( )` concluded these to be logical (T/F) results.  Quite a reasonable default under most circumstances, but illustrates why we should always carefully inspect our data intake! 
+
+
 ## 2.4 Help Documentation
 
-- Search "RStudio >> Help" to learn about the data...
-    - help for `BabyNames` from `dcData` 
-    - **Task 1:** what can you learn about the `BabyNames` data from the Help?
-    - help for BabyNamesSupp
-    - **Task 2:** what have you learn about the `BabyNamesSupp` data from the Help?  What happened?
+Search "RStudio >> Help" to learn about the data...
+
+- **Task 1:** what can you learn about the `BabyNames` data from the Help?
+- **Task 2:** what can you learn about the `BabyNamesSupp` data from the Help?  What happened?
+
+### Solution 
+
+Task 2.4.1: Lots! The package author has described the data, explained the variables, provided a source, etc.
+
+Task 2.4.2: Nothing!  The data were read from an external file, so R doesn't have any information at all to share with us.
+
     
 ## 2.5 Challenge
 
-**Task 1:** Find 2020 name data and read it into R (hint: start with the `BabyNames` help documentation).
+**Task 1:** Find 2020 name data, read it into R, and review the data intake (hint: start with the `BabyNames` help documentation).
+
+Again, we aren't attempting to process the 2020 data yet.  We're just reading it into the R environment and making observations about that process.  We'll be using this data again later in the exercises, so we will make the necessary corrections at that point.
 
 
-## Partial Solutions 
 
-At this point, we haven't attempted to process the `BabyNamesSupp` or the 2020 data.  We're just reading them into the R environment and making observations about that process.  
+## Solution
 
-We'll be using this data again later in the exercises, so we will make the necessary corrections at that point.
-
-### Libraries
-Task 2.1.1: see code chunk that follows
-
-Task 2.2.1: about 1.8 million rows.  We can see this from environment tab, spreadsheet view (footer), among other places
-Task 2.2.2: The frequency of a given name, within a year, associated with a `sex`
-Task 2.2.3: According to US Social Security records, 1947 was a banner year to name a female Linda!
-Task 2.2.4: `BabyNames` data spans 1880 through 2013
-
-Task 2.3.1: The warning indicates a "parsing failure" and shows that R was expecting logical elements (e.g., TRUE/FALSE) and found "M" in many cases
-Task 2.3.2: Yup, R interpreted "F" (meaning female, here) to mean FALSE and failed to process "M" appropriately as a result.
-Task 2.3.3: `read_csv( )` guesses variable class based on the first 1000 records.  The data source had apparently sorted results such that the first 1000 (or more) rows were all "F" so `read_csv( )` concluded these to be logical (T/F) results.  Quite a reasonable default under most circumstances, but illustrates why we should always carefully inspect our data intake! 
-
-Task 2.4.1: Lots! The package author has described the data, explained the variables, provided a source, etc.
-Task 2.4.2: Nothing!  The data were read from an external file, so R doesn't have any information at all to share with us.
-
-Task 5.5.1 (Challenge): visit "RStudio >> Help >> BabyNames >> Source" and then download the zip file to find the 2020 data inside.  This can be read into R using `read_csv( )` even though the file extension is `.txt` since the data are comma delimited.  You may note that the structure of the data differs slightly from our two other sources, so we will need some new tools to process it for use.
+Task 2.5.1 (Challenge): visit "RStudio >> Help >> BabyNames >> Source" and then download the zip file to find the 2020 data inside.  This can be read into R using `read_csv( )` even though the file extension is `.txt` since the data are comma delimited.  You may note that the structure of the data differs slightly from our two other sources, so we will need some new tools to process it for use.
 
 ```{r}
-## from instructions before workshop, if needed
-# devtools::install_github("mdbeckman/dcData")
-
-# Task 2.2.1 libraries
-library(tidyverse)
-library(dcData)
 
 ## data intake
 data("BabyNames", package = "dcData")
@@ -135,19 +166,24 @@ yob2020 <- read_csv("../datasets/yob2020.txt", col_names = FALSE)
 
 Note: you might hang onto the RStudio boilerplate for a moment... it's packed with tiny examples that will come in handy!
 
+
+## 3.1 Goal
+
 - we'll be investigating the popularity of names in the US each year
 - Choose a few names to investigate to you (friends, family, TV character, colleagues in the workshop!)
 
-- "Knit" the document to render the initial HTML document
-- Task 1: update yaml header for your investigation
+## 3.2 Update yaml Header
+
+- Task 1: "Knit" the document to render the initial HTML document
+- Task 2: update yaml header for your investigation
     - "Knit" 
 
 
 ````
 ---
-title: "..."
-author: "..."
-date: "..."
+title: "Add a title"
+author: "Add your name"
+date: "Pick a date"
 output: html_document
 ---
 ````
@@ -178,7 +214,7 @@ output: html_document
     - R Notebook (e.g., `html_notebook`)
     - knit MS Word (if you have it)
 
-- XC: 
+- Challenge: 
     - can you spot any differences b/w R Notebook & R Markdown doc? 
     - simultaneously knit a slidy presentation & an R Notebook doc (two lines of output in yaml)
     - PDF (`tinytex::install_tinytex()` if needed)
@@ -196,7 +232,8 @@ output: html_document
 - filter to just investigate popularity in the year you joined your current institution 
 (or year you were born, or any single year you like) and repeat
 
-XC: 
+
+Challenge: 
 
 - `pivot_wider()` & mutate to calculate balance b/w sexes for each name?
 - join for the totals?
@@ -220,6 +257,41 @@ yob2020 <-
 
 BabyNamesFull <- bind_rows(BabyNames, BabyNamesSupp, yob2020)
 
+
+# vector of names
+beckmans <- c("Matthew", "Sarah", "Eden", "Jack", "Hazel")
+
+BabyNamesFull %>%
+    filter(name %in% beckmans) %>%
+    group_by(name) %>%
+    summarise(total = sum(count, na.rm = TRUE)) %>% 
+    arrange(desc(total))
+
+BabyNamesFull %>%
+    filter(name %in% beckmans) %>%
+    group_by(name, sex) %>%
+    summarise(total = sum(count, na.rm = TRUE)) %>% 
+    arrange(name)
+
+# hard coded names
+BabyNamesFull %>%
+    filter(name == "Matthew" | name == "Sarah" |
+           name == "Eden" | name == "Jack" | name == "Hazel") %>%
+    group_by(name) %>%
+    summarise(total = sum(count, na.rm = TRUE)) %>% 
+    arrange(desc(total))
+
+
+# Matt joined Penn State in 2015
+BabyNamesFull %>%
+    filter(name %in% beckmans) %>%
+    filter(year == 2015) %>%
+    group_by(name) %>%
+    summarise(total = sum(count, na.rm = TRUE)) %>% 
+    arrange(desc(total))
+
+
+# Challenge: balance of names across sexes
 
 ```
 
