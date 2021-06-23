@@ -25,7 +25,7 @@ https://www4.stat.ncsu.edu/~online/datasets/
 
 ## 1.1 RStudio GUI 
 
-Search the menus in your RStudio application to locate where each of the following can be accomplished: 
+**Task:** Search the menus in your RStudio application to locate where each of the following can be accomplished: 
 
 1. Restart your R Session
 #. Create a new "R Markdown" file (keep the default text for now)
@@ -42,9 +42,9 @@ Search the menus in your RStudio application to locate where each of the followi
 #. RStudio >> File >> Import Dataset 
 
 
-## 1.2 Handy Configuration Ideas for Teaching
+## 1.2 Configuration Details Handy for Teaching
 
-Visit "RStudio >> Tools >> Global Options" and locate the following: 
+**Task:** Visit "RStudio >> Tools >> Global Options" and locate the following: 
 
 1. Pane Layout
 #. "Rainbow parenthesis"
@@ -336,6 +336,8 @@ BabyNamesFull <- bind_rows(BabyNames, BabyNamesSupp, BabyNames2020)
 
 ## 4.2 Data Wrangling and Summaries
 
+
+
 - **Task 1:** filter the data to include only the names you wish to investigate
 - **Task 2:** for each name, compute the total frequency across all years of available data (1880 through 2020) and then arrange the results in descending order by total.
 - **Task 3:** for each combination of name AND sex, compute the total frequency across all years of available data (1880 through 2020) and then arrange the results by name.
@@ -373,55 +375,65 @@ BabyNamesFull %>%
 
 # Part 5. Graph it
 
-- sketch (by hand) the plot you plan to make
-    - trend of popularity over time
-    - overlay?
-    - facet?
-- identify the variables that map to features of the plot
-- 
-- sketch (by hand) what 
-- try it with `ggplot2`
+We want to create a graph that highlights the change in popularity among the names you have chosen over the years.
 
+- **Task 1:** sketch (by hand) the plot you plan to make
+    - note which variables are aligned to various aesthetics of your plot 
+    - does your plot include multiple layers?  
 
-- `esquisse::esquisser()` for draft plotting while getting the hang of `ggplot2` 
-    - copy the code, paste into Rmd chunk
-    - modifiy it to customize the rest of the way
-    - ideally, you'll soon skip the esquisse step as you get the hang of the ggplot2 framework
+- **Task 2:** is your data set aligned to the intended features of this plot?  
+    - do you need to summarise or mutate the data before creating the plot you have in mind?
+    - do you need to filter the data to show a desired subset, or will all rows of the data be included? 
+    - when data are aligned to the needs of your plot, we sometimes call this a "glyph-ready" data set
 
-Challenge: 
-- add a layer to somehow display overall birth trend for context
-- show trend for each name as a relative frequency, rather than raw counts
+- **Task 3:** run `esquisse::esquisser(GlyphReadyDataSet)` to draft a plot
+    - `esquisser( )` allows you to prototype various plot features, and then view the corresponding `ggplot2` code for your plot
+    - When you are satisfied, copy the R code and paste into Rmd code chunk 
+    - run the R code chunk to reproduce your plot in R Markdown
+    - modifiy the plot code as needed to better align with the plot you intend (i.e., the one you sketched by hand).
+    - ideally, you'll soon skip the `esquisser( )` step as you get moer comfortable with the `ggplot2` framework
+
+- **Task 4:** clean up axis labels, add a title, etc if you have not already done so.
+
+- **Task 5** (Challenge): add a layer to somehow display overall birth trend for context
+
+- **Task 6** (Challenge): plot the trend for each name as a relative frequency, rather than raw counts
+
+### Solution
 
 ```{r}
 library(esquisse)
 
-### Line chart of name popularity over time drafted with `esquisser( )`
-
-# line chart
+# Task 5.1 My sketch was a line chart of name popularity over time 
 # variable mapping:
 #    x-position: year
 #    y-position: frequency
 #    line color: name
+
+# Task 5.2
 BeckmanNamesLine <- 
     BabyNamesFull %>%
     filter(name %in% beckmans) %>%
     group_by(name, year) %>%
     summarise(total = sum(count))
 
+# Task 5.3 
 # esquisse::esquisser(BeckmanNamesLine)
 ggplot(BeckmanNamesLine) +
  aes(x = year, y = total, colour = name) +
  geom_line(size = 1L) +
  scale_color_hue() +
- theme_minimal()
+ theme_minimal() 
 
 
-### Add layer representing total "births" each year (i.e., social security registrations)
+# Task 5.4
 TotalBabies <- 
     BabyNamesFull %>%
     group_by(year) %>%
     summarise(totalBorn = sum(count, na.rm = TRUE))
 
+
+# Task 5.5 (Challenge)
 # add context propotional to total births each year to the plot
 ggplot(BeckmanNamesLine) +
     geom_line(aes(x = year, y = total, colour = name)) +
@@ -433,7 +445,7 @@ ggplot(BeckmanNamesLine) +
     xlab("Year")
 
 
-# relative frequency of names
+# Task 5.6 (Challenge) 
 BeckmanNamesRF <- 
     BabyNamesFull %>%
     group_by(year) %>%
