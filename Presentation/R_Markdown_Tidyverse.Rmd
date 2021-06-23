@@ -693,11 +693,9 @@ knitr::include_graphics("../img/createVarVisualF.png")
 
 We may want to subset our full data set or create new data   
 
-> - Vital to make your work reproducible!  
+> - Communication and reproducibility vital!  
 
 > - Traditional documentation through comments (`#` in R) in script
-
-> - Communication and reproducibility vital!  
 
 > - May have heard of [JUPYTER](http://jupyter.org/) notebooks  
 
