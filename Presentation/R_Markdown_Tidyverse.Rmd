@@ -1406,7 +1406,10 @@ arrange(select(filter(myBatting, teamID == "PIT"), playerID, G, X2B), desc(X2B))
 - Piping or Chaining with `%>%` operator helps
 
 ```{r}
-myBatting %>% filter(teamID == "PIT") %>% select(playerID, G, X2B) %>% arrange(desc(X2B)) 
+myBatting %>% 
+  filter(teamID == "PIT") %>% 
+  select(playerID, G, X2B) %>% 
+  arrange(desc(X2B)) 
 ```
 
 
@@ -1576,18 +1579,20 @@ fandango %>%
 ```{r}
 fandango %>% 
   select(year, rottentomatoes) %>% 
-  group_by(year) %>% mutate(avg = mean(rottentomatoes), sd = sd(rottentomatoes))
+  group_by(year) %>% 
+  mutate(avg = mean(rottentomatoes), sd = sd(rottentomatoes))
 ```
 
 
 ## Other notes: Summarizing with `dplyr`  
 
-- `summarize()` is often used with `group_by()` to obtain summaries without combining to the dataset  
+- `summarize()` is often used with `group_by()` to obtain summaries without adding to the dataset  
 
 ```{r}
 fandango %>% 
   select(year, rottentomatoes) %>% 
-  group_by(year) %>% summarize(avg = mean(rottentomatoes), sd = sd(rottentomatoes))
+  group_by(year) %>% 
+  summarize(avg = mean(rottentomatoes), sd = sd(rottentomatoes))
 ```
 
 
