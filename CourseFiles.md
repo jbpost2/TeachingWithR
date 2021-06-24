@@ -242,7 +242,7 @@ we often use R code to bring in images and things like that).
         <span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x text-primary"></i>
                 <a href="https://github.com/jbpost2/TeachingWithR/raw/main/cheatsheets/data-visualization-2.1.pdf" target="_blank">
-              <i class="fa fa-hand-lizard-o fa-stack-1x fa-inverse"></i></a>
+              <i class="fa fa-gears fa-stack-1x fa-inverse"></i></a>
         </span>
         <h4 class="service-heading">
                 Data Visualization
