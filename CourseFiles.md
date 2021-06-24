@@ -5,6 +5,9 @@ Course Files
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
+<a href = "https://jbpost2.github.io/TeachingWithR/"><button type="button">Workshop
+Home</button></a>
+
 Below you’ll find the presentation files for the course and the
 exercises we’ll do during the hands on sessions.
 
