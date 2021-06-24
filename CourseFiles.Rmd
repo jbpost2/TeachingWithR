@@ -1,5 +1,5 @@
 ---
-title: "TeachingWithR Course Files"
+title: "Course Files"
 output: github_document
 ---
 
@@ -28,6 +28,7 @@ We've also included links to materials to go further learning R at the bottom of
     
 <div class ="row">
   <div style = "width: 50%;float: left;"> 
+    <center>
     <span class="fa-stack fa-4x">
         <i class="fa fa-circle fa-stack-2x text-primary"></i>
         <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1">
@@ -37,12 +38,13 @@ We've also included links to materials to go further learning R at the bottom of
       <h4 class="service-heading">Slides Part I </h4>
     </a>
     <p class="text-muted">
-      <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1">
+      <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1" style = "color: black;">
         R Basics, RMarkdown, & the tidyverse
       </a>
       <br>
 		  <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/R_Markdown_Tidyverse.pdf">PDF version</a>
 		</p>
+		</center>
   </div>
   <div style = "width: 50%;float: right;"> 
     <span class="fa-stack fa-4x">

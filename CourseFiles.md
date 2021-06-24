@@ -1,4 +1,4 @@
-TeachingWithR Course Files
+Course Files
 ================
 
 <head>
@@ -40,6 +40,7 @@ bottom of the page\!
 
 <div style="width: 50%;float: left;">
 
+    <center>
     <span class="fa-stack fa-4x">
         <i class="fa fa-circle fa-stack-2x text-primary"></i>
         <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1">
@@ -49,12 +50,13 @@ bottom of the page\!
       <h4 class="service-heading">Slides Part I </h4>
     </a>
     <p class="text-muted">
-      <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1">
+      <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1" style = "color: black;">
         R Basics, RMarkdown, & the tidyverse
       </a>
       <br>
           <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/R_Markdown_Tidyverse.pdf">PDF version</a>
         </p>
+        </center>
 
 </div>
 
