@@ -27,22 +27,20 @@ Below you’ll find the files for the course…
 
 <div class="row">
 
-<div class="column">
+<span> <span class="fa-stack fa-4x">
+<i class="fa fa-circle fa-stack-2x text-primary"></i>
+<a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1">
+<i class="fa fa-list fa-stack-1x fa-inverse"></i></a> </span>
 
-    <span class="fa-stack fa-4x">
-        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-        <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1">
-        <i class="fa fa-list fa-stack-1x fa-inverse"></i></a>
-    </span>
-    <h4 class="service-heading">Slides Part I </h4>
+<h4 class="service-heading">
+
+Slides Part I
+
+</h4>
+
     <p class="text-muted">R Basics, RMarkdown, & the tidyverse<br>
           <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/R_Markdown_Tidyverse.pdf">PDF version</a>
         </p>
-
-</div>
-
-<div class="column">
-
     <span class="fa-stack fa-4x">
         <i class="fa fa-circle fa-stack-2x text-primary"></i>
         <a href="https://shiny.stat.ncsu.edu/jbpost2/TeachingWithR/#1">
@@ -53,6 +51,6 @@ Below you’ll find the files for the course…
       <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/Shiny.pdf">PDF version</a> 
     </p>
 
-</div>
+</span>
 
 </div>
