@@ -7,7 +7,13 @@ TeachingWithR Course Files
 
 </head>
 
-Below you’ll find the files for the course…
+Below you’ll find the presentation files for the course and the
+exercises we’ll do during the hands on sessions.
+
+Note: You also have access to the source material at the [github
+repo](https://github.com/jbpost2/TeachingWithR).
+
+We’ve also included links to materials to go further learning R\!
 
 <hr style="    border: 0;
     height: 2px;
@@ -16,7 +22,11 @@ Below you’ll find the files for the course…
 
 <h2 class="intro-text text-center">
 
+<center>
+
 <strong>Presentation Files</strong>
+
+</center>
 
 </h2>
 
@@ -27,20 +37,22 @@ Below you’ll find the files for the course…
 
 <div class="row">
 
-<span> <span class="fa-stack fa-4x">
-<i class="fa fa-circle fa-stack-2x text-primary"></i>
-<a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1">
-<i class="fa fa-list fa-stack-1x fa-inverse"></i></a> </span>
+<div style="width: 50%;float: left;">
 
-<h4 class="service-heading">
-
-Slides Part I
-
-</h4>
-
+    <span class="fa-stack fa-4x">
+        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+        <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1">
+        <i class="fa fa-list fa-stack-1x fa-inverse"></i></a>
+    </span>
+    <h4 class="service-heading">Slides Part I </h4>
     <p class="text-muted">R Basics, RMarkdown, & the tidyverse<br>
           <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/R_Markdown_Tidyverse.pdf">PDF version</a>
         </p>
+
+</div>
+
+<div style="width: 50%;float: right;">
+
     <span class="fa-stack fa-4x">
         <i class="fa fa-circle fa-stack-2x text-primary"></i>
         <a href="https://shiny.stat.ncsu.edu/jbpost2/TeachingWithR/#1">
@@ -51,6 +63,46 @@ Slides Part I
       <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/Shiny.pdf">PDF version</a> 
     </p>
 
-</span>
+</div>
 
 </div>
+
+<hr style="    border: 0;
+    height: 2px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);">
+
+<h2 class="intro-text text-center">
+
+<center>
+
+<strong>Exercises</strong>
+
+</center>
+
+</h2>
+
+<hr style="    border: 0;
+    height: 2px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);">
+
+<hr style="    border: 0;
+    height: 2px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);">
+
+<h2 class="intro-text text-center">
+
+<center>
+
+<strong>Learning Resources</strong>
+
+</center>
+
+</h2>
+
+<hr style="    border: 0;
+    height: 2px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);">
