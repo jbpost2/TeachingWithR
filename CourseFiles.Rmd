@@ -98,20 +98,19 @@ It may help to have just the R code from the slides so you can easily run the co
     background: #333;
     background-image: linear-gradient(to right, #ccc, #333, #ccc);">
 
-Justin teaches the following three courses for [Data Matters](https://datamatters.org/), a week-long series of one and two-day courses aimed at students and professionals in business, research, and government.  The material is open to anyone.  
+Justin teaches the following three courses for [Data Matters](https://datamatters.org/), a week-long series of one and two-day courses aimed at students and professionals in business, research, and government.  The material is open to anyone.  Feel free to use these materials for any educational purpose!
     
 <hr>
 <h4> <a href = "https://jbpost2.github.io/Basics-of-R-for-Data-Science-and-Statistics/" target = "_blank">Basics of R for Data Science and Statistics</a></h4>
 
-This course covers the material in the first set of notes (R Basics, RMarkdown, & the tidyverse) in quite a bit more detail.  All of the source materials are available on the corresponding github site as well.  Feel free to use these materials for any educational purpose!
+This course covers the material in the first set of notes (R Basics, RMarkdown, & the tidyverse) in quite a bit more detail.  All of the source materials are available on the corresponding github site as well.  
 
 <hr>
   
 <h4> <a href = "https://jbpost2.github.io/Improving-R-Programs/" target = "_blank">Improving R Programs</a></h4>
 
-This course introduces common programming techniques that can improve the efficiency of your R programs. These techniques include the use of loops and vectorized functions to avoid repeated sections of code. To really take R programs to the next level, we see how to write custom functions that will help to streamline code.  Feel free to use these materials for any educational purpose!
+This course introduces common programming techniques that can improve the efficiency of your R programs. These techniques include the use of loops and vectorized functions to avoid repeated sections of code. To really take R programs to the next level, we see how to write custom functions that will help to streamline code.  
   
-
 <hr>
   
 <h4> <a href = "https://jbpost2.github.io/R-for-Automating-Workflow-Sharing-Work/" target = "_blank">R for Automating Workflow & Sharing Work</a></h4>

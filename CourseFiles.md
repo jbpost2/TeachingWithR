@@ -136,7 +136,8 @@ we often use R code to bring in images and things like that).
 Justin teaches the following three courses for [Data
 Matters](https://datamatters.org/), a week-long series of one and
 two-day courses aimed at students and professionals in business,
-research, and government. The material is open to anyone.
+research, and government. The material is open to anyone. Feel free to
+use these materials for any educational purpose\!
 
 <hr>
 
@@ -150,7 +151,6 @@ of R for Data Science and Statistics</a>
 This course covers the material in the first set of notes (R Basics,
 RMarkdown, & the tidyverse) in quite a bit more detail. All of the
 source materials are available on the corresponding github site as well.
-Feel free to use these materials for any educational purpose\!
 
 <hr>
 
@@ -165,8 +165,7 @@ This course introduces common programming techniques that can improve
 the efficiency of your R programs. These techniques include the use of
 loops and vectorized functions to avoid repeated sections of code. To
 really take R programs to the next level, we see how to write custom
-functions that will help to streamline code. Feel free to use these
-materials for any educational purpose\!
+functions that will help to streamline code.
 
 <hr>
 
