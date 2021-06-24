@@ -427,13 +427,10 @@ yob2020 &lt;-
 </div>
 <div id="part-3.-r-markdown" class="section level1">
 <h1>Part 3. R Markdown</h1>
-<p>Note: you might hang onto the RStudio boilerplate for a moment… it’s packed with tiny examples that will come in handy!</p>
+<p>Note: you might hang onto the RStudio default text provided in the new R Markdown file for the moment… it’s packed with tiny examples that will come in handy!</p>
 <div id="goal" class="section level2">
 <h2>3.1 Goal</h2>
-<ul>
-<li>we’ll be investigating the popularity of names in the US each year</li>
-<li>Choose a few names to investigate to you (friends, family, TV character, colleagues in the workshop!)</li>
-</ul>
+<p>We’ll be investigating the popularity of names in the US each year. Choose a few (4-5) names to investigate to you–friends, family, TV character, colleagues in the workshop!</p>
 <div id="solution-for-example" class="section level3">
 <h3>Solution (for example)</h3>
 <p>Matt has chosen the names of his family members: Matthew, Sarah, Eden, Jack, &amp; Hazel.</p>
@@ -442,10 +439,11 @@ yob2020 &lt;-
 <div id="update-yaml-header" class="section level2">
 <h2>3.2 Update yaml Header</h2>
 <ul>
-<li>Task 1: “Knit” the document to render the initial HTML document</li>
-<li>Task 2: update yaml header as necessary to include an informative title, author name, &amp; relevant date.
+<li><p><strong>Task 1:</strong> “Knit” the document to render the initial HTML document</p></li>
+<li><p><strong>Task 2:</strong> update yaml header as necessary to include an informative title, author name, &amp; relevant date.</p>
 <ul>
 <li>“Knit” to verify update</li>
+<li>in general, Knit very often as you get the hang of the new tools</li>
 </ul></li>
 </ul>
 <pre><code>---
@@ -454,11 +452,11 @@ author: &quot;Add your name&quot;
 date: &quot;Pick a date&quot;
 output: html_document
 ---</code></pre>
-<div id="solution-7" class="section level3">
-<h3>Solution</h3>
+<div id="solution-for-example-1" class="section level3">
+<h3>Solution (for example)</h3>
 <p>Task 3.2.2: Your yaml header should appear at the beginning of the Rmd document, but here is some example text</p>
 <pre><code>---
-title: &quot;Exercise: What&#39;s in a Name??&quot;
+title: &quot;What&#39;s in a Name??&quot;
 author: &quot;Matt Beckman &amp; Justin Post&quot;
 date: &quot;June 25, 2021&quot;
 output: html_document
@@ -468,30 +466,41 @@ output: html_document
 <div id="add-narrative-code-chunk" class="section level2">
 <h2>3.3 Add Narrative &amp; Code Chunk</h2>
 <ul>
-<li>Task 1: Write a bit of narrative to introduce the project (no R code)
+<li><strong>Task 1:</strong> Write a bit of narrative to introduce the project (no R code)
 <ul>
 <li>Which names have you chosen to investigate and why?<br />
 </li>
-<li>“Knit”</li>
-<li>Add a bullet list of “famous” persons that share the name</li>
-<li>“Knit”</li>
+<li>“Knit”<br />
+</li>
+<li>Add a bullet list of “famous” persons that share the name<br />
+</li>
+<li>“Knit”<br />
+</li>
+<li>Note: it really isn’t important <em>what</em> you write, we’re just practicing a few elements of R Markdown syntax.</li>
 </ul></li>
-<li>Task 2: create an R code chunk to set up for the investigation–you may have done this work previously, but it should now appear in a code chunk within the R Markdown document.
+<li><strong>Task 2:</strong> create an R code chunk to set up for the investigation:
 <ul>
-<li>call the <code>tidyverse</code> and <code>dcData</code> libraries</li>
-<li>data intake that makes earlier work reproducible
+<li>call the <code>tidyverse</code> and <code>dcData</code> packages<br />
+</li>
+<li>data intake:
 <ul>
-<li><code>BabyNames</code> from <code>dcData</code> package</li>
-<li><code>BabyNamesSupp.csv</code></li>
+<li><code>BabyNames</code> from <code>dcData</code> package<br />
+</li>
+<li><code>BabyNamesSupp.csv</code> using <code>read_csv( )</code><br />
+</li>
 </ul></li>
+<li>Although we had done much of this work previously, writing it into a code chunk within your R Markdown document more closely connects the analysis to your narrative, and takes a big step toward reproducibility.</li>
 </ul></li>
-<li>Task 3: At the end of the document, add a note with a time/date stamp of when the analysis was last modified. Call the R function <code>now()</code> directly from lubridate package INLINE for the time stamp.
+<li><strong>Task 3:</strong> Just for fun, add a note at the end of your document with a time/date stamp reflecting when the analysis was last modified. Call the R function <code>now()</code> directly from <code>lubridate</code> package INLINE for the time stamp.
 <ul>
-<li>“Knit” (notice the time stamp)</li>
+<li>For example, “These notes were last modified 2021-06-23 16:59:15”<br />
+</li>
+<li>“Knit” (notice the time stamp)<br />
+</li>
 <li>“Knit” again (notice the time stamp)</li>
 </ul></li>
 </ul>
-<div id="solution-8" class="section level3">
+<div id="solution-7" class="section level3">
 <h3>Solution</h3>
 <p>Task 3.3.1:</p>
 <p>Some sample narrative text follows; note that it is simply one long line of soft-wrapped text, and no formatting of any kind is imposed:</p>
@@ -514,22 +523,35 @@ data(&quot;BabyNames&quot;, package = &quot;dcData&quot;)
 BabyNamesSupp &lt;- read_csv(&quot;https://jbpost2.github.io/TeachingWithR/datasets/BabyNamesSupp.csv&quot;,  
                           col_types = cols(sex = col_character()))  # fixes `sex`</code></pre>
 <p>Task 3.3.3</p>
-<p>This document was last modified 2021-06-23 10:59:52.</p>
+<p>Here’s the code I used:</p>
+<pre><code>This document was last modified 2021-06-23 16:59:16.</code></pre>
 </div>
 </div>
 <div id="render-various-output-formats" class="section level2">
 <h2>3.4 Render Various Output Formats</h2>
-<pre><code>- slides (e.g., `output: slidy_presentation` in the yaml header)
-- R Notebook (e.g., `output: html_notebook`)
-- knit MS Word (if you have it)</code></pre>
+<p>R Markdown is a flexible syntax that can render the same .Rmd (text) file in different formats. If you know the syntax, you can update the <code>output:</code> directly in the yaml header. RStudio provides a shortcut as a (tiny) menu arrow next to the “Knit (yarn)” icon revealing a few common choices.</p>
 <ul>
-<li>Challenge:
+<li><strong>Task 1:</strong> MS Word
 <ul>
-<li>can you spot any differences b/w R Notebook &amp; R Markdown doc?</li>
-<li>simultaneously knit a slidy presentation &amp; an R Notebook doc (two lines of output in yaml)</li>
-<li>PDF (<code>tinytex::install_tinytex()</code> if needed)</li>
-<li>add some LaTeX to your document (e.g, a simple display equation) &amp; knit the document</li>
+<li>only if you have Microsoft Word installed on your computer already</li>
+<li>use choice drop-down next to the “Knit (yarn)” shortcut</li>
+<li>alternatively, update yaml with “<code>output: word_document</code>”</li>
 </ul></li>
+<li><strong>Task 2:</strong> PDF
+<ul>
+<li>you may need this R command first: <code>tinytex::install_tinytex()</code><br />
+</li>
+<li>use choice drop-down next to the “Knit (yarn)” shortcut</li>
+<li><code>output: pdf_document</code></li>
+</ul></li>
+<li><strong>Task 3:</strong> R Notebook
+<ul>
+<li>use choice drop-down next to the “Knit (yarn)” shortcut</li>
+<li><code>output: html_notebook</code></li>
+<li>note: the “Knit” button now says “Preview”–you will get the “Knit (yarn)” back when you revert to <code>output: html_document</code></li>
+<li>can you spot any differences b/w R Notebook &amp; R Markdown doc?</li>
+</ul></li>
+<li><strong>Task 4 (challenge):</strong> add some LaTeX to include mathematics your document (e.g, formula for the area of a circle) &amp; “knit”</li>
 </ul>
 </div>
 </div>
@@ -543,11 +565,11 @@ BabyNamesSupp &lt;- read_csv(&quot;https://jbpost2.github.io/TeachingWithR/datas
 <pre class="r"><code>yob2020 &lt;- read_csv(&quot;https://jbpost2.github.io/TeachingWithR/datasets/yob2020.txt&quot;, 
                     col_names = FALSE, col_types = cols(X2 = col_character()))</code></pre>
 <ul>
-<li><p><strong>Task 2:</strong> use the starter code from Task 4.1.1 includes a hint to correct the issue discovered when reading the <code>BabyNamesSupp</code> CSV data source.</p></li>
-<li><p><strong>Task 3:</strong> before we combine these three data sources, let’s align them such that all three data sources are organized to include the same variables/columns, with the same names, in the same order. Namely, the variables in the 2020 data should be renamed, and it needs a new variable to reflect the year (2020) for all rows.</p></li>
+<li><p><strong>Task 2:</strong> the starter code from Task 4.1.1 includes a hint to correct the issue discovered when reading the <code>BabyNamesSupp</code> csv data file. Can you fix the issue with the <code>sex</code> column type?</p></li>
+<li><p><strong>Task 3:</strong> before we combine our three data sources, let’s align them such that all three data sources are organized to include the same variables/columns, with the same names. Namely, the variables in the 2020 data should be renamed, and it needs a new variable to reflect the year (2020) for all rows. Note: the order of the columns are not important, as long as they have identical names in each data set to be combined.</p></li>
 <li><p><strong>Task 4:</strong> use <code>bind_rows()</code> to combine <code>BabyNames</code> &amp; <code>BabyNamesSupp</code> &amp; the 2020 data</p></li>
 </ul>
-<div id="solution-9" class="section level3">
+<div id="solution-8" class="section level3">
 <h3>Solution</h3>
 <pre class="r"><code>data(&quot;BabyNames&quot;, package = &quot;dcData&quot;)
 
@@ -569,10 +591,10 @@ BabyNamesFull &lt;- bind_rows(BabyNames, BabyNamesSupp, BabyNames2020)</code></p
 <div id="data-wrangling-and-summaries" class="section level2">
 <h2>4.2 Data Wrangling and Summaries</h2>
 <ul>
-<li><strong>Task 1:</strong> filter the data to include only the names you wish to investigate</li>
-<li><strong>Task 2:</strong> for each name, compute the total frequency across all years of available data (1880 through 2020) and then arrange the results in descending order by total.</li>
-<li><strong>Task 3:</strong> for each combination of name AND sex, compute the total frequency across all years of available data (1880 through 2020) and then arrange the results by name.</li>
-<li><strong>Task 4:</strong> filter the year you joined your current institution (or any specific, meaningful year you like) and repeat</li>
+<li><p><strong>Task 1:</strong> filter the data to include only the names you wish to investigate</p></li>
+<li><p><strong>Task 2:</strong> for each name, compute the total frequency across all years of available data (1880 through 2020) and then arrange the results in descending order by total.</p></li>
+<li><p><strong>Task 3:</strong> for each combination of name AND sex, compute the total frequency across all years of available data (1880 through 2020) and then arrange the results by name.</p></li>
+<li><p><strong>Task 4:</strong> filter the year you joined your current institution (or any specific, meaningful year you like) and repeat tasks 2 and 3.</p></li>
 </ul>
 <pre class="r"><code># vector of names
 beckmans &lt;- c(&quot;Matthew&quot;, &quot;Sarah&quot;, &quot;Eden&quot;, &quot;Jack&quot;, &quot;Hazel&quot;)
@@ -599,7 +621,7 @@ BabyNamesFull %&gt;%
 {"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["sex"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Eden","2":"F","3":"38138"},{"1":"Eden","2":"M","3":"7639"},{"1":"Hazel","2":"F","3":"271254"},{"1":"Hazel","2":"M","3":"2737"},{"1":"Jack","2":"F","3":"2682"},{"1":"Jack","2":"M","3":"712080"},{"1":"Matthew","2":"F","3":"5539"},{"1":"Matthew","2":"M","3":"1617412"},{"1":"Sarah","2":"F","3":"1083601"},{"1":"Sarah","2":"M","3":"3334"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<pre class="r"><code># Matt joined Penn State in 2015
+<pre class="r"><code># Task 4.2.4--Matt joined Penn State in 2015
 BabyNamesFull %&gt;%
     filter(name %in% beckmans, year == 2015) %&gt;%
     group_by(name) %&gt;%
@@ -609,6 +631,17 @@ BabyNamesFull %&gt;%
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["total"],"name":[2],"type":["dbl"],"align":["right"]}],"data":[{"1":"Matthew","2":"12775"},{"1":"Jack","2":"8511"},{"1":"Sarah","2":"4536"},{"1":"Hazel","2":"4311"},{"1":"Eden","2":"2638"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<pre class="r"><code>BabyNamesFull %&gt;%
+    filter(name %in% beckmans, year == 2015) %&gt;%
+    group_by(name, sex) %&gt;%
+    summarise(total = sum(count, na.rm = TRUE)) %&gt;% 
+    arrange(name)</code></pre>
+<pre><code>## `summarise()` regrouping output by &#39;name&#39; (override with `.groups` argument)</code></pre>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["sex"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"Eden","2":"F","3":"2065"},{"1":"Eden","2":"M","3":"573"},{"1":"Hazel","2":"F","3":"4299"},{"1":"Hazel","2":"M","3":"12"},{"1":"Jack","2":"F","3":"6"},{"1":"Jack","2":"M","3":"8505"},{"1":"Matthew","2":"F","3":"15"},{"1":"Matthew","2":"M","3":"12760"},{"1":"Sarah","2":"F","3":"4526"},{"1":"Sarah","2":"M","3":"10"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 </div>
@@ -640,7 +673,7 @@ BabyNamesFull %&gt;%
 <li><p><strong>Task 5</strong> (Challenge): add a layer to somehow display overall birth trend for context</p></li>
 <li><p><strong>Task 6</strong> (Challenge): plot the trend for each name as a relative frequency, rather than raw counts</p></li>
 </ul>
-<div id="solution-10" class="section level3">
+<div id="solution-9" class="section level3">
 <h3>Solution</h3>
 <pre class="r"><code>library(esquisse)
 
