@@ -172,7 +172,7 @@ we often use R code to bring in images and things like that).
             <span class="fa-stack fa-4x">
                 <i class="fa fa-circle fa-stack-2x text-primary"></i>
                     <a href="https://github.com/jbpost2/TeachingWithR/raw/main/cheatsheets/rstudio-ide.pdf" target="_blank">
-                      <i class="fa fa-hand-spock-o fa-stack-1x fa-inverse"></i></a>
+                      <i class="fa fa-building fa-stack-1x fa-inverse"></i></a>
             </span>
             <h4 class="service-heading">
                     RStudio IDE
@@ -187,7 +187,7 @@ we often use R code to bring in images and things like that).
         <span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x text-primary"></i>
                 <a href="https://github.com/jbpost2/TeachingWithR/raw/main/cheatsheets/data-import.pdf" target="_blank">
-              <i class="fa fa-hand-pointer-o fa-stack-1x fa-inverse"></i></a>
+              <i class="fa fa-book fa-stack-1x fa-inverse"></i></a>
         </span>
         <h4 class="service-heading">
                 Data Import
@@ -202,7 +202,7 @@ we often use R code to bring in images and things like that).
         <span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x text-primary"></i>
                 <a href="https://github.com/jbpost2/TeachingWithR/raw/main/cheatsheets/rmarkdown-reference.pdf" target="_blank">
-              <i class="fa fa-hand-scissors-o fa-stack-1x fa-inverse"></i></a>
+              <i class="fa fa-bell fa-stack-1x fa-inverse"></i></a>
         </span>
         <h4 class="service-heading">
                 RMarkdown
@@ -227,7 +227,7 @@ we often use R code to bring in images and things like that).
             <span class="fa-stack fa-4x">
                 <i class="fa fa-circle fa-stack-2x text-primary"></i>
                     <a href="https://github.com/jbpost2/TeachingWithR/raw/main/cheatsheets/data-transformation.pdf" target="_blank">
-                      <i class="fa fa-hand-peace-o fa-stack-1x fa-inverse"></i></a>
+                      <i class="fa fa-atlas fa-stack-1x fa-inverse"></i></a>
             </span>
             <h4 class="service-heading">
                     Data Transformation
@@ -242,7 +242,7 @@ we often use R code to bring in images and things like that).
         <span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x text-primary"></i>
                 <a href="https://github.com/jbpost2/TeachingWithR/raw/main/cheatsheets/data-visualization-2.1.pdf" target="_blank">
-              <i class="fa fa-gears fa-stack-1x fa-inverse"></i></a>
+              <i class="fa fa-anchor fa-stack-1x fa-inverse"></i></a>
         </span>
         <h4 class="service-heading">
                 Data Visualization
