@@ -352,10 +352,9 @@ see ?make.names for more details-->
 - `Tibbles` are special data frames used in the `tidyverse`  
 
 
-## Example
+## Exercises
 
-[MDB--TBD]
-
+<https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_1-2_Exercises.html>
 
 
 ## Schedule 
@@ -631,9 +630,13 @@ pull(neuralgiaData, 1) #or pull(neuralgiaData, Treatment)
 neuralgiaData$Treatment 
 ```
 
-## Example
+## Exercises
 
-[MDB--TBD]
+<https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_1-2_Exercises.html>
+
+#### Partial Solution
+
+<https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_1-2_Solutions.html>
 
 
 
@@ -1155,9 +1158,14 @@ output: ioslidespresentation
 ```
 
 
-## Example
+## Exercises
 
-[MDB--TBD] 
+<https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_3_Exercises.html>
+
+#### Partial Solution
+
+<https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_3_Solutions.html>
+
 
 
 ## `tidyverse` for data manipulations
@@ -1664,9 +1672,15 @@ Easily allows for two very important actions
 > - `pivot_wider()` - widens data by increasing the number of columns and decreasing the number of rows  
 
 
-## Example  
+## Exercises  
 
-[MDB--TBD]
+
+<https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_4_Exercises.html>
+
+#### Partial Solution
+
+<https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_4_Solutions.html>
+
 
 
 ## Schedule 
@@ -2211,8 +2225,14 @@ General `ggplot` things:
 
 > - `esquisse` is a [great package for exploring ggplot2](https://cran.r-project.org/web/packages/esquisse/vignettes/get-started.html)!
 
-## Example
+## Exercises
 
-[MDB--TBD]
+
+<https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_5_Exercises.html>
+
+#### Partial Solution
+
+<https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_5_Solutions.html>
+
 
 
