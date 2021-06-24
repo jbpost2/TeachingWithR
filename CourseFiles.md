@@ -51,7 +51,7 @@ bottom of the page\!
         <h4 class="service-heading">R Basics, RMarkdown, & <br>the tidyverse</h4>
       </a>
       <p class="text-muted">
-          <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/R_Markdown_Tidyverse.pdf" target = "download">PDF version</a>
+          <a href="https://github.com/jbpost2/TeachingWithR/raw/main/slides/R_Markdown_Tidyverse.pdf" target = "download">PDF version</a>
         </p>
         </center>
 
@@ -69,7 +69,7 @@ bottom of the page\!
         <h4 class="service-heading">Basics of RShiny </h4>
       </a>
       <p class="text-muted">
-          <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/Shiny.pdf" target = "download">PDF version</a> 
+          <a href="https://github.com/jbpost2/TeachingWithR/raw/main/slides/Shiny.pdf" target = "download">PDF version</a> 
         </p>
     </center>
 
@@ -88,9 +88,9 @@ run the code without typing it out. Below you’ll find .R scripts with
 just the R code from the notes (notice that there is some extra stuff as
 we often use R code to bring in images and things like that).
 
-  - <a href = "https://github.com/jbpost2/TeachingWithR/blob/main/slides/R_Markdown_Tidyverse_JustR.R" target = "download">
+  - <a href = "https://raw.githubusercontent.com/jbpost2/TeachingWithR/main/slides/R_Markdown_Tidyverse_JustR.R" target = "download">
     R Basics, RMarkdown, & the tidyverse R code</a>  
-  - <a href = "https://github.com/jbpost2/TeachingWithR/blob/main/slides/Shiny_JustR.R" target = "download">
+  - <a href = "https://raw.githubusercontent.com/jbpost2/TeachingWithR/main/slides/Shiny_JustR.R" target = "download">
     Basics of RShiny R code</a>
 
 <hr style="    border: 0;
