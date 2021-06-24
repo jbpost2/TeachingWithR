@@ -7,7 +7,12 @@ TeachingWithR Course Files
 
 </head>
 
-<hr>
+Below you’ll find the files for the course…
+
+<hr style="    border: 0;
+    height: 2px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);">
 
 <h2 class="intro-text text-center">
 
@@ -15,86 +20,39 @@ TeachingWithR Course Files
 
 </h2>
 
-<hr>
+<hr style="    border: 0;
+    height: 2px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);">
 
-<div class="col-sm-3 text-center">
+<div class="row">
+
+<div class="column">
 
     <span class="fa-stack fa-4x">
         <i class="fa fa-circle fa-stack-2x text-primary"></i>
-        <a href="https://www4.stat.ncsu.edu/~jbpost2/DataScienceR/IntroductionRI.html#1">
+        <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1">
         <i class="fa fa-list fa-stack-1x fa-inverse"></i></a>
     </span>
     <h4 class="service-heading">Slides Part I </h4>
-    <p class="text-muted">About R, Common Classes/Data Structures, and Object Structure.<br>
-          <a href="https://github.com/jbpost2/DataScienceR/raw/master/files/IntroductionRI.pdf">PDF</a>
+    <p class="text-muted">R Basics, RMarkdown, & the tidyverse<br>
+          <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/R_Markdown_Tidyverse.pdf">PDF version</a>
         </p>
 
 </div>
 
-<div class="col-sm-3 text-center">
+<div class="column">
 
-<span class="fa-stack fa-4x">
-<i class="fa fa-circle fa-stack-2x text-primary"></i>
-<a href="https://www4.stat.ncsu.edu/~jbpost2/DataScienceR/IntroductionRII.html#1">
-<i class="fa fa-list fa-stack-1x fa-inverse"></i></a> </span>
-
-<h4 class="service-heading">
-
-Slides Part II
-
-</h4>
-
-<p class="text-muted">
-
-Reading and Writing Data.<br>
-<a href="https://github.com/jbpost2/DataScienceR/raw/master/files/IntroductionRII.pdf">PDF</a>
-
-</p>
+    <span class="fa-stack fa-4x">
+        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+        <a href="https://shiny.stat.ncsu.edu/jbpost2/TeachingWithR/#1">
+        <i class="fa fa-list fa-stack-1x fa-inverse"></i></a>
+    </span>
+    <h4 class="service-heading">Slides Part II </h4> 
+    <p class="text-muted">Basics of RShiny<br>
+      <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/Shiny.pdf">PDF version</a> 
+    </p>
 
 </div>
 
-<div class="col-sm-3 text-center">
-
-<span class="fa-stack fa-4x">
-<i class="fa fa-circle fa-stack-2x text-primary"></i>
-<a href="https://www4.stat.ncsu.edu/~jbpost2/DataScienceR/IntroductionRIII.html#1">
-<i class="fa fa-list fa-stack-1x fa-inverse"></i></a> </span>
-
-<h4 class="service-heading">
-
-Slides Part III
-
-</h4>
-
-<p class="text-muted">
-
-Logical Statements and Data Manipulation.<br>
-<a href="https://github.com/jbpost2/DataScienceR/raw/master/files/IntroductionRIII.pdf">PDF</a>
-
-</p>
-
 </div>
-
-<div class="col-sm-3 text-center">
-
-<span class="fa-stack fa-4x">
-<i class="fa fa-circle fa-stack-2x text-primary"></i>
-<a href="https://www4.stat.ncsu.edu/~jbpost2/DataScienceR/IntroductionRIV.html#1">
-<i class="fa fa-list fa-stack-1x fa-inverse"></i></a> </span>
-
-<h4 class="service-heading">
-
-Slides Part IV
-
-</h4>
-
-<p class="text-muted">
-
-Numerical Summaries, ggplot2 for Plotting, and Basic Analyses.<br>
-<a href="https://github.com/jbpost2/DataScienceR/raw/master/files/IntroductionRIV.pdf">PDF</a>
-
-</p>
-
-</div>
-
-Other stuff

@@ -11,11 +11,17 @@ output: github_document
 Below you'll find the files for the course...
 
 
-<hr>
+<hr style="    border: 0;
+    height: 2px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);">
 <h2 class="intro-text text-center">
       <strong>Presentation Files</strong>
 </h2>
-<hr>
+<hr style="    border: 0;
+    height: 2px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);">
 <div class ="row">
   <div class = "column"> 
     <span class="fa-stack fa-4x">
