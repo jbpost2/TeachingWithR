@@ -128,6 +128,8 @@ Matters](https://datamatters.org/), a week-long series of one and
 two-day courses aimed at students and professionals in business,
 research, and government. The material is open to anyone.
 
+<hr>
+
 <h4>
 
 <a href = "https://jbpost2.github.io/Basics-of-R-for-Data-Science-and-Statistics/" target = "_blank">Basics
@@ -139,6 +141,8 @@ This course covers the material in the first set of notes (R Basics,
 RMarkdown, & the tidyverse) in quite a bit more detail. All of the
 source materials are available on the corresponding github site as well.
 Feel free to use these materials for any educational purpose\!
+
+<hr>
 
 <h4>
 
@@ -153,6 +157,8 @@ loops and vectorized functions to avoid repeated sections of code. To
 really take R programs to the next level, we see how to write custom
 functions that will help to streamline code. Feel free to use these
 materials for any educational purpose\!
+
+<hr>
 
 <h4>
 
@@ -169,3 +175,5 @@ of interactive dashboards and web applets.
 
 I am in the process of updating this material. It will be ready by the
 first week of August (since that is when I have to teach it :).
+
+<hr>
