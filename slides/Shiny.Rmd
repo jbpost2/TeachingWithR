@@ -14,11 +14,8 @@ runtime: shiny
 
 ```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
 library(shiny)
-library(tidyverse)
-options(dplyr.print_min = 5)
+library(dplyr)
 library(knitr)
-library(plotly)
-library(DT)
 opts_chunk$set(echo = FALSE)
 ```
 
@@ -96,7 +93,7 @@ renderPlot({
 - Really, we just need to add `runtime: shiny` to the YAML header for an HTML doc!  
 
 ```{r, echo = FALSE, fig.align='center', out.width="40%"}
-knitr::include_graphics("shinyDoc.png")
+knitr::include_graphics("shinyDoc.PNG")
 ```
 
 ## Adding Widgets  
