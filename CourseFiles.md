@@ -102,7 +102,7 @@ we often use R code to bring in images and things like that).
     background: #333;
     background-image: linear-gradient(to right, #ccc, #333, #ccc);">
 
-### Exercise Sets
+#### Exercise Sets
 
 -   <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_1-2_Exercises.html" target = "download">
     Part 1 (RStudio IDE) and Part 2 (Data intake)</a>  
@@ -113,7 +113,7 @@ we often use R code to bring in images and things like that).
 -   <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_5_Exercises.html" target = "download">
     Part 5 (Data visualization)</a>
 
-### Partial Solutions
+#### Partial Solutions
 
 -   <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_1-2_Solutions.html" target = "download">
     Part 1 (RStudio IDE) and Part 2 (Data intake)</a>  
