@@ -113,6 +113,103 @@ It may help to have just the R code from the slides so you can easily run the co
     background: #333;
     background-image: linear-gradient(to right, #ccc, #333, #ccc);">
 
+
+### Cheat Sheets
+
+<div class ="row">
+  <div style = "width: 33%;float: left;"> 
+    <center>
+			<span class="fa-stack fa-4x">
+				<i class="fa fa-circle fa-stack-2x text-primary"></i>
+					<a href="https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf" target="_blank">
+					  <i class="fa fa-hand-spock-o fa-stack-1x fa-inverse"></i></a>
+			</span>
+			<h4 class="service-heading">
+					RStudio IDE
+			</h4>
+		</center>
+  </div>
+  <div style = "width: 33%;float: left;"> 
+    <center>
+  		<span class="fa-stack fa-4x">
+  			<i class="fa fa-circle fa-stack-2x text-primary"></i>
+  				<a href="https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf" target="_blank">
+  			  <i class="fa fa-hand-pointer-o fa-stack-1x fa-inverse"></i></a>
+  		</span>
+  		<h4 class="service-heading">
+  				Data Import
+  		</h4>
+  	</center>
+  </div>
+  <div style = "width: 33%;float: left;"> 
+    <center>
+  		<span class="fa-stack fa-4x">
+  			<i class="fa fa-circle fa-stack-2x text-primary"></i>
+  				<a href="https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf" target="_blank">
+  			  <i class="fa fa-hand-scissors-o fa-stack-1x fa-inverse"></i></a>
+  		</span>
+  		<h4 class="service-heading">
+  				RMarkdown
+  		</h4>
+  	</center>
+  </div>
+</div>
+  		
+
+<div style = 'content: "";
+  clear: both;
+  display: table;'>
+</div>  		
+
+<div class ="row">
+  <div style = "width: 33%;float: left;"> 
+    <center>
+			<span class="fa-stack fa-4x">
+				<i class="fa fa-circle fa-stack-2x text-primary"></i>
+					<a href="https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf" target="_blank">
+					  <i class="fa fa-hand-peace-o fa-stack-1x fa-inverse"></i></a>
+			</span>
+			<h4 class="service-heading">
+					Data Transformation
+			</h4>
+		</center>
+  </div>
+  <div style = "width: 33%;float: left;"> 
+    <center>
+  		<span class="fa-stack fa-4x">
+  			<i class="fa fa-circle fa-stack-2x text-primary"></i>
+  				<a href="https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf" target="_blank">
+  			  <i class="fa fa-hand-lizard-o fa-stack-1x fa-inverse"></i></a>
+  		</span>
+  		<h4 class="service-heading">
+  				Data Visualization
+  		</h4>
+  	</center>
+  </div>
+  <div style = "width: 33%;float: left;"> 
+    <center>
+  		<span class="fa-stack fa-4x">
+  			<i class="fa fa-circle fa-stack-2x text-primary"></i>
+  				<a href="https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf" target="_blank">
+  			  <i class="fa fa-gears fa-stack-1x fa-inverse"></i></a>
+  		</span>
+  		<h4 class="service-heading">
+  				Shiny
+  		</h4>
+  	</center>
+  </div>
+</div>
+  		
+
+<div style = 'content: "";
+  clear: both;
+  display: table;'>
+</div>  
+
+<hr>
+
+### Other Courses
+
 Justin teaches the following three courses for [Data Matters](https://datamatters.org/), a week-long series of one and two-day courses aimed at students and professionals in business, research, and government.  The material is open to anyone.  Feel free to use these materials for any educational purpose!
     
 <hr>
