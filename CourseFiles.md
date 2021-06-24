@@ -171,7 +171,7 @@ we often use R code to bring in images and things like that).
     <center>
             <span class="fa-stack fa-4x">
                 <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                    <a href="https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf" target="_blank">
+                    <a href="https://github.com/jbpost2/TeachingWithR/raw/main/cheatsheets/rstudio-ide.pdf" target="_blank">
                       <i class="fa fa-hand-spock-o fa-stack-1x fa-inverse"></i></a>
             </span>
             <h4 class="service-heading">
@@ -186,7 +186,7 @@ we often use R code to bring in images and things like that).
     <center>
         <span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                <a href="https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf" target="_blank">
+                <a href="https://github.com/jbpost2/TeachingWithR/raw/main/cheatsheets/data-import.pdf" target="_blank">
               <i class="fa fa-hand-pointer-o fa-stack-1x fa-inverse"></i></a>
         </span>
         <h4 class="service-heading">
@@ -201,7 +201,7 @@ we often use R code to bring in images and things like that).
     <center>
         <span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                <a href="https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf" target="_blank">
+                <a href="https://github.com/jbpost2/TeachingWithR/raw/main/cheatsheets/rmarkdown-reference.pdf" target="_blank">
               <i class="fa fa-hand-scissors-o fa-stack-1x fa-inverse"></i></a>
         </span>
         <h4 class="service-heading">
@@ -226,7 +226,7 @@ we often use R code to bring in images and things like that).
     <center>
             <span class="fa-stack fa-4x">
                 <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                    <a href="https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf" target="_blank">
+                    <a href="https://github.com/jbpost2/TeachingWithR/raw/main/cheatsheets/data-transformation.pdf" target="_blank">
                       <i class="fa fa-hand-peace-o fa-stack-1x fa-inverse"></i></a>
             </span>
             <h4 class="service-heading">
@@ -241,7 +241,7 @@ we often use R code to bring in images and things like that).
     <center>
         <span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                <a href="https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf" target="_blank">
+                <a href="https://github.com/jbpost2/TeachingWithR/raw/main/cheatsheets/data-visualization-2.1.pdf" target="_blank">
               <i class="fa fa-hand-lizard-o fa-stack-1x fa-inverse"></i></a>
         </span>
         <h4 class="service-heading">
@@ -256,7 +256,7 @@ we often use R code to bring in images and things like that).
     <center>
         <span class="fa-stack fa-4x">
             <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                <a href="https://www.rstudio.com/wp-content/uploads/2016/05/base-r.pdf" target="_blank">
+                <a href="https://github.com/jbpost2/TeachingWithR/raw/main/cheatsheets/shiny.pdf" target="_blank">
               <i class="fa fa-gears fa-stack-1x fa-inverse"></i></a>
         </span>
         <h4 class="service-heading">
