@@ -227,7 +227,7 @@ we often use R code to bring in images and things like that).
             <span class="fa-stack fa-4x">
                 <i class="fa fa-circle fa-stack-2x text-primary"></i>
                     <a href="https://github.com/jbpost2/TeachingWithR/raw/main/cheatsheets/data-transformation.pdf" target="_blank">
-                      <i class="fa fa-atlas fa-stack-1x fa-inverse"></i></a>
+                      <i class="fa fa-clone fa-stack-1x fa-inverse"></i></a>
             </span>
             <h4 class="service-heading">
                     Data Transformation
