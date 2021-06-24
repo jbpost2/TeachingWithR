@@ -128,12 +128,6 @@ we often use R code to bring in images and things like that).
     ([Rmd](https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_5_Solutions.Rmd);
     [html](https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_5_Solutions.html))
 
-<!-- 
-- <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_1-2_Solutions.html" target = "download"> Part 1 (RStudio IDE) and Part 2 (Data intake)</a> 
-- <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_3_Solutions.html" target = "download"> Part 3 (R Markdown)</a>
-- <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_4_Solutions.html" target = "download"> Part 4 (Data wrangling)</a>
-- <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_5_Solutions.html" target = "download"> Part 5 (Data visualization)</a>
--->
 <hr style="    border: 0;
     height: 2px;
     background: #333;
