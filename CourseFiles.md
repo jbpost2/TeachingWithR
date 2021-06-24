@@ -41,19 +41,19 @@ bottom of the page\!
 <div style="width: 50%;float: left;">
 
     <center>
-    <span class="fa-stack fa-4x">
-        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-        <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1">
-        <i class="fa fa-list fa-stack-1x fa-inverse"></i></a>
-    </span>
-    <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1">
-      <h4 class="service-heading">Slides Part I </h4>
-    </a>
-    <p class="text-muted">
-      <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1" style = "color: black;">
-        R Basics, RMarkdown, & the tidyverse
+      <span class="fa-stack fa-4x">
+          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+          <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1">
+          <i class="fa fa-list fa-stack-1x fa-inverse"></i></a>
+      </span>
+      <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1">
+        <h4 class="service-heading">Slides Part I </h4>
       </a>
-      <br>
+      <p class="text-muted">
+        <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1" style = "color: black;">
+          R Basics, RMarkdown, & the tidyverse
+        </a>
+        <br>
           <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/R_Markdown_Tidyverse.pdf">PDF version</a>
         </p>
         </center>
@@ -62,19 +62,21 @@ bottom of the page\!
 
 <div style="width: 50%;float: right;">
 
-    <span class="fa-stack fa-4x">
-        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-        <a href="https://shiny.stat.ncsu.edu/jbpost2/TeachingWithR/#1">
-        <i class="fa fa-list fa-stack-1x fa-inverse"></i></a>
-    </span>
-    <a href="https://shiny.stat.ncsu.edu/jbpost2/TeachingWithR/#1">
-      <h4 class="service-heading">Slides Part II </h4>
-    </a>
-    <p class="text-muted">
-      <a href="https://shiny.stat.ncsu.edu/jbpost2/TeachingWithR/#1"> Basics of RShiny</a>
-      <br>
-      <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/Shiny.pdf">PDF version</a> 
-    </p>
+    <center>
+      <span class="fa-stack fa-4x">
+          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+          <a href="https://shiny.stat.ncsu.edu/jbpost2/TeachingWithR/#1">
+          <i class="fa fa-list fa-stack-1x fa-inverse"></i></a>
+      </span>
+      <a href="https://shiny.stat.ncsu.edu/jbpost2/TeachingWithR/#1">
+        <h4 class="service-heading">Slides Part II </h4>
+      </a>
+      <p class="text-muted">
+        <a href="https://shiny.stat.ncsu.edu/jbpost2/TeachingWithR/#1" style = "color: black;"> Basics of RShiny</a>
+        <br>
+          <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/Shiny.pdf">PDF version</a> 
+        </p>
+    </center>
 
 </div>
 
