@@ -1,5 +1,5 @@
 ---
-title: "What's in a Name?? (Part 4 Exercises)"
+title: "What's in a Name?? (Part 4 Solutions)"
 subtitle: "TeachingWithR workshop presented at USCOTS"
 author: "Matthew Beckman & Justin Post"
 date: "June 25, 2021"
