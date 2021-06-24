@@ -11,7 +11,8 @@ Below you’ll find the presentation files for the course and the
 exercises we’ll do during the hands on sessions.
 
 Note: You also have access to the source material at the [github
-repo](https://github.com/jbpost2/TeachingWithR).
+repo](https://github.com/jbpost2/TeachingWithR). Feel free to use these
+materials for any educational purpose\!
 
 We’ve also included links to materials to go further learning R at the
 bottom of the page\!
@@ -121,3 +122,50 @@ bottom of the page\!
     height: 2px;
     background: #333;
     background-image: linear-gradient(to right, #ccc, #333, #ccc);">
+
+Justin teaches the following three courses for [Data
+Matters](https://datamatters.org/), a week-long series of one and
+two-day courses aimed at students and professionals in business,
+research, and government. The material is open to anyone.
+
+<h4>
+
+<a href = "https://jbpost2.github.io/Basics-of-R-for-Data-Science-and-Statistics/" target = "_blank">Basics
+of R for Data Science and Statistics</a>
+
+</h4>
+
+This course covers the material in the first set of notes (R Basics,
+RMarkdown, & the tidyverse) in quite a bit more detail. All of the
+source materials are available on the corresponding github site as well.
+Feel free to use these materials for any educational purpose\!
+
+<h4>
+
+<a href = "https://jbpost2.github.io/Improving-R-Programs/" target = "_blank">Improving
+R Programs</a>
+
+</h4>
+
+This course introduces common programming techniques that can improve
+the efficiency of your R programs. These techniques include the use of
+loops and vectorized functions to avoid repeated sections of code. To
+really take R programs to the next level, we see how to write custom
+functions that will help to streamline code. Feel free to use these
+materials for any educational purpose\!
+
+<h4>
+
+<a href = "https://jbpost2.github.io/R-for-Automating-Workflow-Sharing-Work/" target = "_blank">R
+for Automating Workflow & Sharing Work</a>
+
+</h4>
+
+The course provides participants an introduction to utilizing R for
+writing reproducible reports and presentations that easily embed R
+output, using online repositories and version control software for
+collaboration, creation of basic websites using R, and the development
+of interactive dashboards and web applets.
+
+I am in the process of updating this material. It will be ready by the
+first week of August (since that is when I have to teach it :).
