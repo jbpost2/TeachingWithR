@@ -84,6 +84,19 @@ It may help to have just the R code from the slides so you can easily run the co
     background-image: linear-gradient(to right, #ccc, #333, #ccc);">
     
     
+### Exercise Sets
+
+- <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_1-2_Exercises.html" target = "download"> Part 1 (RStudio IDE) and Part 2 (Data intake)</a>  
+- <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_3_Exercises.html" target = "download"> Part 3 (R Markdown)</a>  
+- <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_4_Exercises.html" target = "download"> Part 4 (Data wrangling)</a>  
+- <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_5_Exercises.html" target = "download"> Part 5 (Data visualization)</a>  
+
+### Partial Solutions
+
+- <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_1-2_Solutions.html" target = "download"> Part 1 (RStudio IDE) and Part 2 (Data intake)</a>  
+- <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_3_Solutions.html" target = "download"> Part 3 (R Markdown)</a>  
+- <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_4_Solutions.html" target = "download"> Part 4 (Data wrangling)</a>  
+- <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_5_Solutions.html" target = "download"> Part 5 (Data visualization)</a>  
 
 
 <hr style="    border: 0;
