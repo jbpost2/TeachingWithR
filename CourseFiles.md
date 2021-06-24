@@ -13,7 +13,8 @@ exercises we’ll do during the hands on sessions.
 Note: You also have access to the source material at the [github
 repo](https://github.com/jbpost2/TeachingWithR).
 
-We’ve also included links to materials to go further learning R\!
+We’ve also included links to materials to go further learning R at the
+bottom of the page\!
 
 <hr style="    border: 0;
     height: 2px;
@@ -44,8 +45,14 @@ We’ve also included links to materials to go further learning R\!
         <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1">
         <i class="fa fa-list fa-stack-1x fa-inverse"></i></a>
     </span>
-    <h4 class="service-heading">Slides Part I </h4>
-    <p class="text-muted">R Basics, RMarkdown, & the tidyverse<br>
+    <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1">
+      <h4 class="service-heading">Slides Part I </h4>
+    </a>
+    <p class="text-muted">
+      <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1">
+        R Basics, RMarkdown, & the tidyverse
+      </a>
+      <br>
           <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/R_Markdown_Tidyverse.pdf">PDF version</a>
         </p>
 
@@ -58,12 +65,20 @@ We’ve also included links to materials to go further learning R\!
         <a href="https://shiny.stat.ncsu.edu/jbpost2/TeachingWithR/#1">
         <i class="fa fa-list fa-stack-1x fa-inverse"></i></a>
     </span>
-    <h4 class="service-heading">Slides Part II </h4> 
-    <p class="text-muted">Basics of RShiny<br>
+    <a href="https://shiny.stat.ncsu.edu/jbpost2/TeachingWithR/#1">
+      <h4 class="service-heading">Slides Part II </h4>
+    </a>
+    <p class="text-muted">
+      <a href="https://shiny.stat.ncsu.edu/jbpost2/TeachingWithR/#1"> Basics of RShiny</a>
+      <br>
       <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/Shiny.pdf">PDF version</a> 
     </p>
 
 </div>
+
+</div>
+
+<div style="overflow: auto;">
 
 </div>
 
