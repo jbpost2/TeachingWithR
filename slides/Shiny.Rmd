@@ -16,6 +16,7 @@ runtime: shiny
 library(shiny)
 library(dplyr)
 library(knitr)
+library(ggplot2)
 opts_chunk$set(echo = FALSE)
 ```
 
@@ -238,8 +239,10 @@ Code to create some samples
 - rows 1:n represents a sample of size n
 - each column represents a data set
 
-```{r}
-simData <- replicate(1000, rexp(n = 50, rate = 1)) %>% as_tibble()
+```{r, echo = TRUE, message = FALSE, warning = FALSE}
+simData <- replicate(1000, rexp(n = 50, rate = 1)) %>% 
+  as_tibble()
+simData
 ```
 
 
