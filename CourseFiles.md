@@ -78,7 +78,9 @@ bottom of the page\!
 
 </div>
 
-<div style="overflow: auto;">
+<div style="content: &quot;&quot;;
+  clear: both;
+  display: table;">
 
 </div>
 

@@ -61,7 +61,9 @@ We've also included links to materials to go further learning R at the bottom of
   </div>
 </div>
 
-<div style = "overflow: auto;">
+<div style = 'content: "";
+  clear: both;
+  display: table;'>
 </div>
     
 
