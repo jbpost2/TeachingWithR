@@ -43,18 +43,14 @@ bottom of the page\!
     <center>
       <span class="fa-stack fa-4x">
           <i class="fa fa-circle fa-stack-2x text-primary"></i>
-          <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1">
+          <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1" target = "_blank">
           <i class="fa fa-list fa-stack-1x fa-inverse"></i></a>
       </span>
-      <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1">
-        <h4 class="service-heading">Slides Part I </h4>
+      <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1" target = "_blank">
+        <h4 class="service-heading">R Basics, RMarkdown, & <br>the tidyverse</h4>
       </a>
       <p class="text-muted">
-        <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1" style = "color: black;">
-          R Basics, RMarkdown, & the tidyverse
-        </a>
-        <br>
-          <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/R_Markdown_Tidyverse.pdf">PDF version</a>
+          <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/R_Markdown_Tidyverse.pdf" target = "_blank">PDF version</a>
         </p>
         </center>
 
@@ -65,16 +61,14 @@ bottom of the page\!
     <center>
       <span class="fa-stack fa-4x">
           <i class="fa fa-circle fa-stack-2x text-primary"></i>
-          <a href="https://shiny.stat.ncsu.edu/jbpost2/TeachingWithR/#1">
+          <a href="https://shiny.stat.ncsu.edu/jbpost2/TeachingWithR/#1" target = "_blank">
           <i class="fa fa-list fa-stack-1x fa-inverse"></i></a>
       </span>
-      <a href="https://shiny.stat.ncsu.edu/jbpost2/TeachingWithR/#1">
-        <h4 class="service-heading">Slides Part II </h4>
+      <a href="https://shiny.stat.ncsu.edu/jbpost2/TeachingWithR/#1" target = "_blank">
+        <h4 class="service-heading">Basics of RShiny </h4>
       </a>
       <p class="text-muted">
-        <a href="https://shiny.stat.ncsu.edu/jbpost2/TeachingWithR/#1" style = "color: black;"> Basics of RShiny</a>
-        <br>
-          <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/Shiny.pdf">PDF version</a> 
+          <a href="https://github.com/jbpost2/TeachingWithR/blob/main/slides/Shiny.pdf" target = "_blank">PDF version</a> 
         </p>
     </center>
 
