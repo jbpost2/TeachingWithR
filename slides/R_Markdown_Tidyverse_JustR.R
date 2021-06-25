@@ -4,7 +4,7 @@ library(knitr)
 knitr::opts_chunk$set(echo = TRUE, eval = TRUE, message = FALSE, warning = FALSE)
 
 
-## ----calc2, echo=TRUE---------------------
+## ----calc2, echo=TRUE----------
 #simple math operations
 # <-- is a comment - code not evaluated
 3 + 7
@@ -17,7 +17,7 @@ mean(cars$speed)
 hist(cars$speed)
 
 
-## ----save,echo=TRUE-----------------------
+## ----save,echo=TRUE------------
 #save for later
 avg <- (5 + 7 + 6) / 3
 #call avg object
@@ -27,32 +27,32 @@ words <- c("Hello there!", "How are you?")
 words
 
 
-## ----ls, echo = TRUE----------------------
+## ----ls, echo = TRUE-----------
 ls()
 
 
-## ----rm, echo = TRUE----------------------
+## ----rm, echo = TRUE-----------
 rm(avg)
 ls()
 #rm(list = ls()) cleans up environment
 
 
-## ----builtin, echo = TRUE-----------------
+## ----builtin, echo = TRUE------
 letters
 head(cars, n = 3)
 
 
-## ----create, echo = TRUE------------------
+## ----create, echo = TRUE-------
 vec <- c(1, 4, 10)
 vec
 
 
-## ----create2, echo = TRUE-----------------
+## ----create2, echo = TRUE------
 fit <- lm(dist ~ speed, data = cars)
 fit
 
 
-## ----obj1, echo = TRUE--------------------
+## ----obj1, echo = TRUE---------
 str(cars)
 
 
@@ -60,7 +60,7 @@ str(cars)
 knitr::include_graphics("../img/vectorVisualF.png")
 
 
-## ----vecs---------------------------------
+## ----vecs----------------------
 #vectors (1 dimensional) objects
 x <- c(17, 22, 1, 3, -3)
 y <- c("cat", "dog", "bird", "frog")
@@ -68,7 +68,7 @@ x
 y
 
 
-## ----seq1---------------------------------
+## ----seq1----------------------
 v <- seq(from = 1, to = 10, by = 2)
 v
 1:10
@@ -78,14 +78,14 @@ v
 knitr::include_graphics("../img/dfVisualF.png")
 
 
-## ----df1,echo=TRUE------------------------
+## ----df1,echo=TRUE-------------
 x <- c("a", "b", "c", "d", "e", "f")
 y <- c(1, 3, 4, -1, 5, 6)
 z <- 10:15
 data.frame(x, y, z)
 
 
-## ----df2,echo=TRUE,eval=TRUE--------------
+## ----df2,echo=TRUE,eval=TRUE----
 data.frame(char = x, data1 = y, data2 = z)
 
 
@@ -109,7 +109,7 @@ knitr::include_graphics("../img/generalDelim.png")
 include_graphics("../img/loadR.png")
 
 
-## ---- eval = FALSE------------------------
+## ---- eval = FALSE-------------
 ## install.packages("readr")
 
 
@@ -117,48 +117,47 @@ include_graphics("../img/loadR.png")
 knitr::include_graphics("../img/packages.png")
 
 
-## ----libreq1------------------------------
+## ----libreq1-------------------
 library("readr")
 
 
-## ----tidy, eval=FALSE---------------------
+## ----tidy, eval=FALSE----------
 ## install.packages("tidyverse")
 
 
-## ----tidy2, eval=FALSE--------------------
+## ----tidy2, eval=FALSE---------
 ## install.packages("tidyverse")
 
 
-## ----loadTidy, message = TRUE-------------
+## ----loadTidy, message = TRUE----
 library(tidyverse)
 
 
-## ----readCSVex, eval = TRUE---------------
+## ----readCSVex, eval = TRUE----
 #stats::filter(...) calls time-series function from stats package
 dplyr::filter(iris, Species == "virginica")
 
 
-## -----------------------------------------
+## ------------------------------
 getwd()
 #change with setwd()
 #better to use R projects!
 
 
-## ----readCSVrel, eval = FALSE-------------
+## ---- eval = FALSE-------------
 ## neuralgiaData <- read_csv("neuralgia.csv")
-## neuralgiaData
 
 
-## ----readCSV2, eval = TRUE----------------
+## ----readCSV2, eval = TRUE-----
 neuralgiaData <- read_csv("https://www4.stat.ncsu.edu/~online/datasets/neuralgia.csv")
 neuralgiaData
 
 
-## ----class--------------------------------
+## ----class---------------------
 str(neuralgiaData)
 
 
-## ----pull---------------------------------
+## ----pull----------------------
 pull(neuralgiaData, 1) #or pull(neuralgiaData, Treatment)
 neuralgiaData$Treatment 
 
@@ -223,13 +222,13 @@ leaflet() %>%
   addMarkers(174.764, -36.877, popup = "Maungawhau") 
 
 
-## ----eval=TRUE----------------------------
+## ----eval=TRUE-----------------
 #install.packages("Lahman")
 library(Lahman)
 head(Batting, n = 4) #look at just first 4 observations
 
 
-## ----eval=TRUE----------------------------
+## ----eval=TRUE-----------------
 myBatting <- as_tibble(Batting); myBatting
 
 
@@ -237,57 +236,57 @@ myBatting <- as_tibble(Batting); myBatting
 knitr::include_graphics("../img/filterVisualF.png")
 
 
-## -----------------------------------------
+## ------------------------------
 "hi" == " hi" #== is comparison
 "hi" == "hi"
 4 >= 1
 
 
-## -----------------------------------------
+## ------------------------------
 4 != 1
 sqrt(3)^2  == 3
 dplyr::near(sqrt(3)^2, 3)
 
 
-## -----------------------------------------
+## ------------------------------
 #use of is. functions
 is.numeric("Word")
 is.numeric(10)
 
 
-## -----------------------------------------
+## ------------------------------
 is.character("10")
 is.na(c(1:2, NA, 3))
 is.matrix(c("hello", "world"))
 
 
-## -----------------------------------------
+## ------------------------------
 myBatting$G > 20 #vector indicating Games > 20
 
 
-## -----------------------------------------
+## ------------------------------
 filter(myBatting, G > 20)
 
 
-## -----------------------------------------
+## ------------------------------
 (myBatting$G > 20) & (myBatting$yearID == 2015)
 
 
-## -----------------------------------------
+## ------------------------------
 filter(myBatting, (G > 20) & (yearID == 2015))
 
 
-## -----------------------------------------
+## ------------------------------
 #reorder by teamID
 arrange(myBatting, teamID)
 
 
-## -----------------------------------------
+## ------------------------------
 #get secondary arrangement as well
 arrange(myBatting, teamID, G)
 
 
-## -----------------------------------------
+## ------------------------------
 #descending instead
 arrange(myBatting, teamID, desc(G))
 
@@ -296,53 +295,58 @@ arrange(myBatting, teamID, desc(G))
 knitr::include_graphics("../img/selectVisualF.png")
 
 
-## -----------------------------------------
+## ------------------------------
 #Choose a single column by name
 select(myBatting, X2B)
 
 
-## -----------------------------------------
-#Choose a single column by name
+## ------------------------------
+#Choose more than one column by name
 select(myBatting, playerID, X2B)
 
 
-## -----------------------------------------
+## ------------------------------
 arrange(select(filter(myBatting, teamID == "PIT"), playerID, G, X2B), desc(X2B))
 
 
-## -----------------------------------------
+## ------------------------------
 myBatting %>% 
   filter(teamID == "PIT") %>% 
   select(playerID, G, X2B) %>% 
   arrange(desc(X2B)) 
 
 
-## -----------------------------------------
+## ------------------------------
 #all columns between
-myBatting %>% select(X2B:HR)
+myBatting %>% 
+  select(X2B:HR)
 
 
-## -----------------------------------------
+## ------------------------------
 #all columns containing
-myBatting %>% select(contains("X"))
+myBatting %>% 
+  select(contains("X"))
 
 
-## -----------------------------------------
+## ------------------------------
 #all columns starting with
-myBatting %>% select(starts_with("X"))
+myBatting %>% 
+  select(starts_with("X"))
 
 
-## -----------------------------------------
+## ------------------------------
 #multiple selections
-myBatting %>% select(starts_with("X"), ends_with("ID"), G)
+myBatting %>% 
+  select(starts_with("X"), ends_with("ID"), G)
 
 
-## -----------------------------------------
+## ------------------------------
 #reorder
-myBatting %>% select(playerID, HR, everything())
+myBatting %>% 
+  select(playerID, HR, everything())
 
 
-## -----------------------------------------
+## ------------------------------
 #rename our previous
 myBatting %>% 
   select(starts_with("X"), ends_with("ID"), G) %>% 
@@ -353,57 +357,57 @@ myBatting %>%
 knitr::include_graphics("../img/createVarVisualF.png")
 
 
-## ----eval=TRUE----------------------------
+## ----eval=TRUE-----------------
 library(fivethirtyeight)
 fandango
 
 
-## -----------------------------------------
+## ------------------------------
 ##Create an average rottentomatoes score variable
 fandango %>% 
   mutate(avgRotten = (rottentomatoes + rottentomatoes_user)/2)
 
 
-## -----------------------------------------
+## ------------------------------
 #can't see it!
 fandango %>% 
   mutate(avgRotten = (rottentomatoes + rottentomatoes_user)/2) %>% 
   select(film, year, avgRotten, everything())
 
 
-## -----------------------------------------
+## ------------------------------
 fandango %>% 
   mutate(avgRotten = (rottentomatoes + rottentomatoes_user)/2, 
          avgMeta = (metacritic_norm + metacritic_user_nom)/2) %>%
   select(film, year, avgRotten, avgMeta, everything())
 
 
-## -----------------------------------------
+## ------------------------------
 fandango %>% 
   select(rottentomatoes) %>% 
   mutate(avg = mean(rottentomatoes), sd = sd(rottentomatoes))
 
 
-## -----------------------------------------
+## ------------------------------
 fandango %>% 
   select(year, rottentomatoes) %>% 
   group_by(year) %>% 
   mutate(avg = mean(rottentomatoes), sd = sd(rottentomatoes))
 
 
-## -----------------------------------------
+## ------------------------------
 fandango %>% 
   select(year, rottentomatoes) %>% 
   group_by(year) %>% 
   summarize(avg = mean(rottentomatoes), sd = sd(rottentomatoes))
 
 
-## -----------------------------------------
+## ------------------------------
 myAirquality <- as_tibble(airquality)
 myAirquality
 
 
-## -----------------------------------------
+## ------------------------------
 myAirquality <- myAirquality %>% 
   mutate(Status = if_else(Wind >= 15, "HighWind",
                           if_else(Wind >= 10, "Windy",
@@ -415,7 +419,7 @@ myAirquality
 knitr::include_graphics("../img/longWideF.png")
 
 
-## ----echo=TRUE----------------------------
+## ----echo=TRUE-----------------
 titanicData <- read_csv("titanic.csv")
 #convert survival status to a factor
 titanicData$survived <- as.factor(titanicData$survived)
@@ -426,12 +430,12 @@ levels(titanicData$survived) #R knows it isn't numeric now
 titanicData$survived[1] <- "5"
 
 
-## ----reread,echo = TRUE-------------------
+## ----reread,echo = TRUE--------
 levels(titanicData$survived) <- c("Died", "Survived")
 levels(titanicData$survived)
 
 
-## ----echo=TRUE----------------------------
+## ----echo=TRUE-----------------
 titanicData <- read_csv("titanic.csv")
 titanicData$mySurvived <- as.factor(titanicData$survived)
 levels(titanicData$mySurvived) <- c("Died", "Survived")
