@@ -4,7 +4,7 @@ subtitle: "TeachingWithR workshop presented at USCOTS"
 author: "Matthew Beckman & Justin Post"
 date: "June 25, 2021"
 output:
-  html_document:
+  github_document:
     df_print: paged
 ---
 
