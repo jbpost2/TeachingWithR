@@ -7,8 +7,6 @@ output: github_document
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
-<a href = "https://jbpost2.github.io/TeachingWithR/"><button type="button">Workshop Home</button></a> 
-
 
 Below you'll find the presentation files for the course and the exercises we'll do during the hands on sessions.  
 
@@ -234,3 +232,15 @@ The course provides participants an introduction to utilizing R for writing repr
 I am in the process of updating this material.  It will be ready by the first week of August (since that is when I have to teach it :).
 
 <hr>
+
+<h4> <a href = "https://dtkaplan.github.io/DataComputingEbook/" target = "_blank">Data Computing eBook</a></h4>
+
+
+This eBook (link)[https://dtkaplan.github.io/DataComputingEbook/] by Danny Kaplan and Matt Beckman is a free resource for an introduction to R course.  The book has been used as a primary textbook for undergraduate courses that teach an introduction to R & `tidyverse` with no assumed prerequisites in statistics or programming.  The book includes chapters devoted to basic RStudio IDE, data wrangling, visualization, and other topics useful for data processing & exploration.  
+
+<hr>
+
+<br>
+
+<a href = "https://jbpost2.github.io/TeachingWithR/"><button type="button">Workshop Home</button></a> 
+
