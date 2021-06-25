@@ -167,7 +167,7 @@ we often use R code to bring in images and things like that).
     background: #333;
     background-image: linear-gradient(to right, #ccc, #333, #ccc);">
 
-### Cheat Sheets
+#### Cheat Sheets
 
 <div class="row">
 
@@ -281,7 +281,7 @@ we often use R code to bring in images and things like that).
 
 <hr>
 
-### Other Courses
+#### Other Courses
 
 Justin teaches the following three courses for [Data
 Matters](https://datamatters.org/), a week-long series of one and

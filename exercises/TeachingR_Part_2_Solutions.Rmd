@@ -36,10 +36,12 @@ library(dcData)
 
 ## 2.2 Data Intake: `BabyNames`
 
-- **Task 1:** Read `BabyNames` data from `dcData` into your R environment 
+- **Task 1:** Read `BabyNames` data from `dcData` into your R environment using the `data()` function  
     - Locate the `BabyNames` object in the Environment pane  
     - Double click the object name to open a spreadsheet View  
     - Spreadsheet view includes basic sorting capability  
+
+Use the spreadsheet view to answer the following:  
 
 - **Task 2:** how many total rows of data are included?  
 

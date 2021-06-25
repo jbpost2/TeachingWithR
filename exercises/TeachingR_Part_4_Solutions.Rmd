@@ -42,7 +42,7 @@ This document was last modified `r lubridate::now()`.
 
 <hr> 
 
-## 4.1 Combine our Data Sets with `bind_rows( )`
+## 4.1 Combine our Data Sets with `dplyr::bind_rows( )`
 
 <hr> 
 
