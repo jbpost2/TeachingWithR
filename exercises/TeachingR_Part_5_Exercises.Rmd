@@ -41,7 +41,7 @@ This document was last modified `r lubridate::now()`.
 
 <hr> 
 
-```{r echo=TRUE, include=FALSE}
+```{r echo=TRUE, message=FALSE}
 # libraries
 library(tidyverse)
 library(dcData)

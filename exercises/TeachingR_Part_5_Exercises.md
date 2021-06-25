@@ -39,13 +39,35 @@ Some famous persons by each name of the family include:
     Matthew. “Matthew the Apostle” (Matt’s namesake) was third on that
     particular list: <https://playback.fm/people/first-name/matthew>
 
-This document was last modified 2021-06-25 12:28:46.
+This document was last modified 2021-06-25 12:31:45.
 
 <hr>
 
 # Summaries of Name Popularity
 
 <hr>
+
+``` r
+# libraries
+library(tidyverse)
+library(dcData)
+
+# data intake
+data("BabyNames", package = "dcData")
+
+BabyNamesSupp <- 
+  read_csv("https://jbpost2.github.io/TeachingWithR/datasets/BabyNamesSupp.csv",  
+           col_types = cols(sex = col_character()))  
+
+BabyNames2020 <- 
+  read_csv("https://jbpost2.github.io/TeachingWithR/datasets/yob2020.txt", 
+           col_names = FALSE, col_types = cols(X2 = col_character())) %>%
+  rename(name = X1, sex = X2, count = X3) %>%  
+  mutate(year = 2020) 
+
+# Combine data sources
+BabyNamesFull <- bind_rows(BabyNames, BabyNamesSupp, BabyNames2020)
+```
 
 According to US Social Security data from 1880 through 2020, “Matthew”
 was the most frequently occurring name in the family.

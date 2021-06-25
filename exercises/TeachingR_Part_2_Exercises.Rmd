@@ -48,7 +48,7 @@ The file "BabyNameSupp.csv" includes a few years of more recent data to augment 
 **Important:** The starter code **will** produce a warning message!  Don't worry, it's part of the exercise!
 
 
-```{r include=FALSE}
+```{r echo=TRUE, message=FALSE}
 # starter code for BabyNamesSupp 
 library(tidyverse)
 

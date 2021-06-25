@@ -51,6 +51,24 @@ the data and complete the tasks.
 **Important:** The starter code **will** produce a warning message!
 Don’t worry, it’s part of the exercise!
 
+``` r
+# starter code for BabyNamesSupp 
+library(tidyverse)
+
+BabyNamesSupp <- 
+  read_csv("https://jbpost2.github.io/TeachingWithR/datasets/BabyNamesSupp.csv")
+```
+
+    ## Warning: 84619 parsing failures.
+    ##   row col           expected actual                                                                 file
+    ## 19208 sex 1/0/T/F/TRUE/FALSE      M 'https://jbpost2.github.io/TeachingWithR/datasets/BabyNamesSupp.csv'
+    ## 19209 sex 1/0/T/F/TRUE/FALSE      M 'https://jbpost2.github.io/TeachingWithR/datasets/BabyNamesSupp.csv'
+    ## 19210 sex 1/0/T/F/TRUE/FALSE      M 'https://jbpost2.github.io/TeachingWithR/datasets/BabyNamesSupp.csv'
+    ## 19211 sex 1/0/T/F/TRUE/FALSE      M 'https://jbpost2.github.io/TeachingWithR/datasets/BabyNamesSupp.csv'
+    ## 19212 sex 1/0/T/F/TRUE/FALSE      M 'https://jbpost2.github.io/TeachingWithR/datasets/BabyNamesSupp.csv'
+    ## ..... ... .................. ...... ....................................................................
+    ## See problems(...) for more details.
+
 -   **Task 1:** Read the warning message carefully; what seems to have
     gone wrong?
 
