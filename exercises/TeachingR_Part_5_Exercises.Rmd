@@ -141,3 +141,10 @@ We want to create a graph that highlights the change in popularity among the nam
 - **Task 6** (Challenge): plot the trend for each name as a relative frequency, rather than raw counts
 
 
+<hr>
+
+
+<br>
+
+<a href = "https://jbpost2.github.io/TeachingWithR/CourseFiles.html"><button type="button">Course Files Page</button></a> 
+

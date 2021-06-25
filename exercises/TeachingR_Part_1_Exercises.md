@@ -22,8 +22,8 @@ the following can be accomplished:
 
 ## 1.2 Configuration Details Handy for Teaching
 
-**Task:** Visit “RStudio \>\> Tools \>\> Global Options” and locate the
-following:
+**Task:** Visit “RStudio &gt;&gt; Tools &gt;&gt; Global Options” and
+locate the following:
 
 1.  Pane Layout
 2.  “Rainbow parenthesis”
@@ -37,3 +37,10 @@ following:
 # Part 2. Import Data
 
 We’ll see how to bring in data shortly…
+
+<hr>
+
+<br>
+
+<a href = "https://jbpost2.github.io/TeachingWithR/CourseFiles.html"><button type="button">Course
+Files Page</button></a>

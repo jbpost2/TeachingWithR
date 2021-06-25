@@ -144,3 +144,12 @@ BabyNamesFull %>%
 # Part 5. Graph it
 
 [coming up next...]
+
+<hr>
+
+
+<br>
+
+<a href = "https://jbpost2.github.io/TeachingWithR/CourseFiles.html"><button type="button">Course Files Page</button></a> 
+
+

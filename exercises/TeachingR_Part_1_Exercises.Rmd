@@ -42,3 +42,10 @@ output:
 
 We'll see how to bring in data shortly...
 
+<hr>
+
+
+<br>
+
+<a href = "https://jbpost2.github.io/TeachingWithR/CourseFiles.html"><button type="button">Course Files Page</button></a> 
+

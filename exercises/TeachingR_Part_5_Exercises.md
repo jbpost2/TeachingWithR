@@ -7,11 +7,11 @@ June 25, 2021
 
 Here, we join an analysis already in progress…
 
-  - Part 1 (RStudio IDE Scavenger Hunt) has been omitted from the
+-   Part 1 (RStudio IDE Scavenger Hunt) has been omitted from the
     following analysis.
-  - Part 2 (Import Data), Part 3 (R Markdown), and Part 4 (Data
+-   Part 2 (Import Data), Part 3 (R Markdown), and Part 4 (Data
     Wrangling) have been blended for the purposes of our investigation
-  - **Part 5 Exercises Follow**
+-   **Part 5 Exercises Follow**
 
 <hr>
 
@@ -22,7 +22,7 @@ Here, we join an analysis already in progress…
 We’re investigating the popularity of names in the US each year. Matt
 has chosen to investigate the names of each person in his immediate
 family: Matthew, Sarah, Eden, Jack, and Hazel. They’re his favorite
-people, and also his favorite names\! He’s feeling torn about how to
+people, and also his favorite names! He’s feeling torn about how to
 include his son Jack in the analysis. Jack’s legal name is “Jon” but he
 is nearly always called “Jack”–the spelling of “Jon” honors Scandinavian
 heritage on both sides of the family, and the nickname “Jack”
@@ -30,16 +30,16 @@ specifically honors his great-grandfather.
 
 Some famous persons by each name of the family include:
 
-  - Sarah Jessica Parker
-  - Eden Hazard
-  - Jack (Jackie) Robinson
-  - Hazel Findlay
-  - Richard Stallman. Seriously, the first hit of an Internet search for
-    “famous Matthew” was Richard Stallman (\!) whose given name is…
+-   Sarah Jessica Parker
+-   Eden Hazard
+-   Jack (Jackie) Robinson
+-   Hazel Findlay
+-   Richard Stallman. Seriously, the first hit of an Internet search for
+    “famous Matthew” was Richard Stallman (!) whose given name is…
     Matthew. “Matthew the Apostle” (Matt’s namesake) was third on that
     particular list: <https://playback.fm/people/first-name/matthew>
 
-This document was last modified 2021-06-25 10:14:38.
+This document was last modified 2021-06-25 10:29:11.
 
 <hr>
 
@@ -61,6 +61,8 @@ BabyNamesFull %>%
     arrange(desc(total))
 ```
 
+    ## `summarise()` ungrouping output (override with `.groups` argument)
+
 <div data-pagedtable="false">
 
 <script data-pagedtable-source type="application/json">
@@ -80,7 +82,7 @@ BabyNamesFull %>%
     arrange(name)
 ```
 
-    ## `summarise()` has grouped output by 'name'. You can override using the `.groups` argument.
+    ## `summarise()` regrouping output by 'name' (override with `.groups` argument)
 
 <div data-pagedtable="false">
 
@@ -94,7 +96,7 @@ Matt joined Penn State University in 2015, and coincidentally his son
 Jack was born earlier that year. Interestingly, the name “Jack” was more
 popular than “Sarah” in 2015, despite the fact that “Sarah” had been far
 more common when all years had been combined. Perhaps more surprisingly,
-the name “Hazel” was nearly as common as “Sarah” in that year\!
+the name “Hazel” was nearly as common as “Sarah” in that year!
 
 ``` r
 BabyNamesFull %>%
@@ -103,6 +105,8 @@ BabyNamesFull %>%
     summarise(total = sum(count, na.rm = TRUE)) %>% 
     arrange(desc(total))
 ```
+
+    ## `summarise()` ungrouping output (override with `.groups` argument)
 
 <div data-pagedtable="false">
 
@@ -120,7 +124,7 @@ BabyNamesFull %>%
     arrange(name)
 ```
 
-    ## `summarise()` has grouped output by 'name'. You can override using the `.groups` argument.
+    ## `summarise()` regrouping output by 'name' (override with `.groups` argument)
 
 <div data-pagedtable="false">
 
@@ -139,40 +143,47 @@ BabyNamesFull %>%
 We want to create a graph that highlights the change in popularity among
 the names you have chosen over the years.
 
-  - **Task 1:** sketch (by hand) the plot you plan to make
-    
-      - note which variables are aligned to various aesthetics of your
-        plot
-      - does your plot include multiple layers?
+-   **Task 1:** sketch (by hand) the plot you plan to make
 
-  - **Task 2:** is your data set aligned to the intended features of
+    -   note which variables are aligned to various aesthetics of your
+        plot
+    -   does your plot include multiple layers?
+
+-   **Task 2:** is your data set aligned to the intended features of
     this plot?
-    
-      - do you need to summarise or mutate the data before creating the
+
+    -   do you need to summarise or mutate the data before creating the
         plot you have in mind?
-      - do you need to filter the data to show a desired subset, or will
+    -   do you need to filter the data to show a desired subset, or will
         all rows of the data be included?
-      - when data are aligned to the needs of your plot, we sometimes
+    -   when data are aligned to the needs of your plot, we sometimes
         call this a “glyph-ready” data set
 
-  - **Task 3:** run `esquisse::esquisser(GlyphReadyDataSet)` to draft a
+-   **Task 3:** run `esquisse::esquisser(GlyphReadyDataSet)` to draft a
     plot
-    
-      - `esquisser( )` allows you to prototype various plot features,
+
+    -   `esquisser( )` allows you to prototype various plot features,
         and then view the corresponding `ggplot2` code for your plot
-      - When you are satisfied, copy the R code and paste into Rmd code
+    -   When you are satisfied, copy the R code and paste into Rmd code
         chunk
-      - run the R code chunk to reproduce your plot in R Markdown
-      - modifiy the plot code as needed to better align with the plot
+    -   run the R code chunk to reproduce your plot in R Markdown
+    -   modifiy the plot code as needed to better align with the plot
         you intend (i.e., the one you sketched by hand).
-      - ideally, you’ll soon skip the `esquisser( )` step as you get
+    -   ideally, you’ll soon skip the `esquisser( )` step as you get
         moer comfortable with the `ggplot2` framework
 
-  - **Task 4:** clean up axis labels, add a title, etc if you have not
+-   **Task 4:** clean up axis labels, add a title, etc if you have not
     already done so.
 
-  - **Task 5** (Challenge): add a layer to somehow display overall birth
+-   **Task 5** (Challenge): add a layer to somehow display overall birth
     trend for context
 
-  - **Task 6** (Challenge): plot the trend for each name as a relative
+-   **Task 6** (Challenge): plot the trend for each name as a relative
     frequency, rather than raw counts
+
+<hr>
+
+<br>
+
+<a href = "https://jbpost2.github.io/TeachingWithR/CourseFiles.html"><button type="button">Course
+Files Page</button></a>

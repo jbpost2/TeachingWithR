@@ -65,7 +65,7 @@ tail(BabyNamesSupp)
 
 Note: you might hang onto the RStudio default text provided in the new R
 Markdown file for the moment… it’s packed with tiny examples that will
-come in handy\!
+come in handy!
 
 <hr>
 
@@ -73,7 +73,7 @@ come in handy\!
 
 We’ll be investigating the popularity of names in the US each year.
 Choose a few (4-5) names to investigate to you–friends, family, TV
-character, colleagues in the workshop\!
+character, colleagues in the workshop!
 
 <hr>
 
@@ -86,15 +86,15 @@ Jack, & Hazel.
 
 ## 3.2 Update yaml Header
 
-  - **Task 1:** “Knit” the document to render the initial HTML document
+-   **Task 1:** “Knit” the document to render the initial HTML document
 
-  - **Task 2:** update yaml header as necessary to include an
+-   **Task 2:** update yaml header as necessary to include an
     informative title, author name, & relevant date.
-    
-      - “Knit” to verify update
-      - in general, Knit very often as you get the hang of the new tools
 
-<!-- end list -->
+    -   “Knit” to verify update
+    -   in general, Knit very often as you get the hang of the new tools
+
+<!-- -->
 
     ---
     title: "Add a title"
@@ -121,31 +121,31 @@ document, but here is some example text
 
 ## 3.3 Add Narrative & Code Chunk
 
-  - **Task 1:** Write a bit of narrative to introduce the project (no R
+-   **Task 1:** Write a bit of narrative to introduce the project (no R
     code)
-      - Which names have you chosen to investigate and why?  
-      - “Knit”  
-      - Add a bullet list of “famous” persons that share the name  
-      - “Knit”  
-      - Note: it really isn’t important *what* you write, we’re just
+    -   Which names have you chosen to investigate and why?  
+    -   “Knit”  
+    -   Add a bullet list of “famous” persons that share the name  
+    -   “Knit”  
+    -   Note: it really isn’t important *what* you write, we’re just
         practicing a few elements of R Markdown syntax.
-  - **Task 2:** create an R code chunk to set up for the investigation:
-      - call the `tidyverse` and `dcData` packages  
-      - data intake:
-          - `BabyNames` from `dcData` package  
-          - `BabyNamesSupp.csv` using `read_csv( )`  
-      - Although we had done much of this work previously, writing it
+-   **Task 2:** create an R code chunk to set up for the investigation:
+    -   call the `tidyverse` and `dcData` packages  
+    -   data intake:
+        -   `BabyNames` from `dcData` package  
+        -   `BabyNamesSupp.csv` using `read_csv( )`  
+    -   Although we had done much of this work previously, writing it
         into a code chunk within your R Markdown document more closely
         connects the analysis to your narrative, and takes a big step
         toward reproducibility.
-  - **Task 3:** Just for fun, add a note at the end of your document
+-   **Task 3:** Just for fun, add a note at the end of your document
     with a time/date stamp reflecting when the analysis was last
     modified. Call the R function `now()` directly from `lubridate`
     package INLINE for the time stamp.
-      - For example, “These notes were last modified 2021-06-25
-        10:13:57”  
-      - “Knit” (notice the time stamp)  
-      - “Knit” again (notice the time stamp)
+    -   For example, “These notes were last modified 2021-06-25
+        10:27:38”  
+    -   “Knit” (notice the time stamp)  
+    -   “Knit” again (notice the time stamp)
 
 <hr>
 
@@ -158,7 +158,7 @@ of soft-wrapped text, and no formatting of any kind is imposed:
 
 I’ve chosen to investigate the names of each person in my immediate
 family: Matthew, Sarah, Eden, Jack, and Hazel. They’re my favorite
-people, and also my favorite names\! I’m a bit torn about how I’ll
+people, and also my favorite names! I’m a bit torn about how I’ll
 include my son Jack in the analysis. His legal name is “Jon” but he is
 nearly always called “Jack”–the spelling of “Jon” honors our
 scandinavian heritage on both sides of the family, and the nickname
@@ -166,12 +166,12 @@ scandinavian heritage on both sides of the family, and the nickname
 
 Some famous persons by each name of the family include:
 
-  - Sarah Jessica Parker
-  - Eden Hazard
-  - Jack (Jackie) Robinson
-  - Hazel Findlay
-  - Richard Stallman. Seriously, the first hit of my Internet search for
-    “famous Matthew” was Richard Stallman (\!) whose given name is…
+-   Sarah Jessica Parker
+-   Eden Hazard
+-   Jack (Jackie) Robinson
+-   Hazel Findlay
+-   Richard Stallman. Seriously, the first hit of my Internet search for
+    “famous Matthew” was Richard Stallman (!) whose given name is…
     Matthew. “Matthew the Apostle” (my namesake) was third on that
     particular list: <https://playback.fm/people/first-name/matthew>
 
@@ -192,7 +192,7 @@ Task 3.3.3
 
 Here’s the code I used:
 
-    This document was last modified 2021-06-25 10:13:57.
+    This document was last modified 2021-06-25 10:27:39.
 
 <hr>
 
@@ -204,23 +204,23 @@ file in different formats. If you know the syntax, you can update the
 (tiny) menu arrow next to the “Knit (yarn)” icon revealing a few common
 choices.
 
-  - **Task 1:** MS Word
-      - only if you have Microsoft Word installed on your computer
+-   **Task 1:** MS Word
+    -   only if you have Microsoft Word installed on your computer
         already
-      - use choice drop-down next to the “Knit (yarn)” shortcut
-      - alternatively, update yaml with “`output: word_document`”
-  - **Task 2:** PDF
-      - you may need this R command first:
+    -   use choice drop-down next to the “Knit (yarn)” shortcut
+    -   alternatively, update yaml with “`output: word_document`”
+-   **Task 2:** PDF
+    -   you may need this R command first:
         `tinytex::install_tinytex()`  
-      - use choice drop-down next to the “Knit (yarn)” shortcut
-      - `output: pdf_document`
-  - **Task 3:** R Notebook
-      - use choice drop-down next to the “Knit (yarn)” shortcut
-      - `output: html_notebook`
-      - note: the “Knit” button now says “Preview”–you will get the
+    -   use choice drop-down next to the “Knit (yarn)” shortcut
+    -   `output: pdf_document`
+-   **Task 3:** R Notebook
+    -   use choice drop-down next to the “Knit (yarn)” shortcut
+    -   `output: html_notebook`
+    -   note: the “Knit” button now says “Preview”–you will get the
         “Knit (yarn)” back when you revert to `output: html_document`
-      - can you spot any differences b/w R Notebook & R Markdown doc?
-  - **Task 4 (challenge):** add some LaTeX to include mathematics your
+    -   can you spot any differences b/w R Notebook & R Markdown doc?
+-   **Task 4 (challenge):** add some LaTeX to include mathematics your
     document (e.g, formula for the area of a circle) & “knit”
 
 <hr>
@@ -228,3 +228,10 @@ choices.
 # Part 4. Data wrangling
 
 \[coming up next…\]
+
+<hr>
+
+<br>
+
+<a href = "https://jbpost2.github.io/TeachingWithR/CourseFiles.html"><button type="button">Course
+Files Page</button></a>

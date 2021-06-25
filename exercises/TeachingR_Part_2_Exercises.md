@@ -9,36 +9,36 @@ June 25, 2021
 
 ## 2.1 Packages
 
-  - **Task 1:** call the `dcData` and `tidyverse` packages
-      - Note: `dcData` is installed from GitHub, so it requires an extra
+-   **Task 1:** call the `dcData` and `tidyverse` packages
+    -   Note: `dcData` is installed from GitHub, so it requires an extra
         step. You may have already done this from the instructions prior
         to the workshop, but it is shown again here if needed:
-      - `devtools::install_github("mdbeckman/dcData")`
-      - this might take a while (30+ sec?) depending on your Internet
+    -   `devtools::install_github("mdbeckman/dcData")`
+    -   this might take a while (30+ sec?) depending on your Internet
         connection
 
 <hr>
 
 ## 2.2 Data Intake: `BabyNames`
 
-  - **Task 1:** Read `BabyNames` data from `dcData` into your R
+-   **Task 1:** Read `BabyNames` data from `dcData` into your R
     environment using the `data()` function
-      - Locate the `BabyNames` object in the Environment pane  
-      - Double click the object name to open a spreadsheet View (a nice
+    -   Locate the `BabyNames` object in the Environment pane  
+    -   Double click the object name to open a spreadsheet View (a nice
         feature of RStudio)  
-      - Spreadsheet view includes basic sorting capability
+    -   Spreadsheet view includes basic sorting capability
 
 Use the spreadsheet view to answer the following:
 
-  - **Task 2:** how many total rows of data are included?
+-   **Task 2:** how many total rows of data are included?
 
-  - **Task 3:** describe what each row in the data *actually*
+-   **Task 3:** describe what each row in the data *actually*
     represents.
 
-  - **Task 4:** find the largest `count` in the `BabyNames` data. How
+-   **Task 4:** find the largest `count` in the `BabyNames` data. How
     would you interpret this result?
 
-  - **Task 5:** what are the max & min available `year` in the data?
+-   **Task 5:** what are the max & min available `year` in the data?
 
 <hr>
 
@@ -48,31 +48,31 @@ The file “BabyNameSupp.csv” includes a few years of more recent data to
 augment the `BabyNames` data. Run the starter code shown below to read
 the data and complete the tasks.
 
-**Important:** The starter code **will** produce a warning message\!
-Don’t worry, it’s part of the exercise\!
+**Important:** The starter code **will** produce a warning message!
+Don’t worry, it’s part of the exercise!
 
-  - **Task 1:** Read the warning message carefully; what seems to have
+-   **Task 1:** Read the warning message carefully; what seems to have
     gone wrong?
 
-  - **Task 2:** open the spreadsheet view to investigate
+-   **Task 2:** open the spreadsheet view to investigate
     `BabyNamesSupp`…
-    
-      - Which years of data are available to us in `BabyNamesSupp`?
-      - Can you confirm what seems to have gone wrong during the data
+
+    -   Which years of data are available to us in `BabyNamesSupp`?
+    -   Can you confirm what seems to have gone wrong during the data
         intake?
 
-  - **Task 3:** use the following R functions to investigate
+-   **Task 3:** use the following R functions to investigate
     `BabyNamesSupp` further:
-    
-      - `head(BabyNamesSupp)`
-      - `tail(BabyNamesSupp)`
-      - `str(BabyNamesSupp)`
 
-  - **Task 4 (Challenge):** Why did `read_csv( )` seem to have this
+    -   `head(BabyNamesSupp)`
+    -   `tail(BabyNamesSupp)`
+    -   `str(BabyNamesSupp)`
+
+-   **Task 4 (Challenge):** Why did `read_csv( )` seem to have this
     problem with the data intake? Any ideas how we might fix it?
-    
-      - Hint: “RStudio \>\> Help \>\> read\_csv”
-      - don’t worry about *actually* fixing it yet, just try to identify
+
+    -   Hint: “RStudio &gt;&gt; Help &gt;&gt; read\_csv”
+    -   don’t worry about *actually* fixing it yet, just try to identify
         root cause.
 
 At this point, we aren’t attempting to prepare the `BabyNamesSupp` data
@@ -84,11 +84,11 @@ will make the necessary corrections at that point.
 
 ## 2.4 Help Documentation for Data Sets
 
-Search “RStudio \>\> Help” to learn about the data…
+Search “RStudio &gt;&gt; Help” to learn about the data…
 
-  - **Task 1:** what can you learn about `BabyNames` data from RStudio
+-   **Task 1:** what can you learn about `BabyNames` data from RStudio
     Help?
-  - **Task 2:** what can you learn about `BabyNamesSupp` data from
+-   **Task 2:** what can you learn about `BabyNamesSupp` data from
     RStudio Help? What happened?
 
 <hr>
@@ -110,8 +110,13 @@ will make the necessary corrections at that point.
 
 Note: you might hang onto the RStudio default text provided in the new R
 Markdown file for the moment… it’s packed with tiny examples that will
-come in handy\!
+come in handy!
 
 \[coming up next…\]
 
 <hr>
+
+<br>
+
+<a href = "https://jbpost2.github.io/TeachingWithR/CourseFiles.html"><button type="button">Course
+Files Page</button></a>

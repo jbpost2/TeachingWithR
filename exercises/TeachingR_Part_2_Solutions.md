@@ -9,12 +9,12 @@ June 25, 2021
 
 ## 2.1 Packages
 
-  - **Task 1:** call the `dcData` and `tidyverse` packages
-      - Note: `dcData` is installed from GitHub, so it requires an extra
+-   **Task 1:** call the `dcData` and `tidyverse` packages
+    -   Note: `dcData` is installed from GitHub, so it requires an extra
         step. You may have already done this from the instructions prior
         to the workshop, but it is shown again here if needed:
-      - `devtools::install_github("mdbeckman/dcData")`
-      - this might take a while (30+ sec?) depending on your Internet
+    -   `devtools::install_github("mdbeckman/dcData")`
+    -   this might take a while (30+ sec?) depending on your Internet
         connection
 
 <hr>
@@ -28,14 +28,14 @@ June 25, 2021
 library(tidyverse)  # this actually loads a group of packages all at once
 ```
 
-    ## -- Attaching packages --------------------------------------- tidyverse 1.3.1 --
+    ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
 
-    ## v ggplot2 3.3.4     v purrr   0.3.4
-    ## v tibble  3.1.2     v dplyr   1.0.7
-    ## v tidyr   1.1.3     v stringr 1.4.0
-    ## v readr   1.4.0     v forcats 0.5.1
+    ## ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
+    ## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
+    ## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+    ## ✓ readr   1.3.1     ✓ forcats 0.5.0
 
-    ## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+    ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
     ## x dplyr::filter() masks stats::filter()
     ## x dplyr::lag()    masks stats::lag()
 
@@ -47,23 +47,23 @@ library(dcData)
 
 ## 2.2 Data Intake: `BabyNames`
 
-  - **Task 1:** Read `BabyNames` data from `dcData` into your R
+-   **Task 1:** Read `BabyNames` data from `dcData` into your R
     environment using the `data()` function
-      - Locate the `BabyNames` object in the Environment pane  
-      - Double click the object name to open a spreadsheet View  
-      - Spreadsheet view includes basic sorting capability
+    -   Locate the `BabyNames` object in the Environment pane  
+    -   Double click the object name to open a spreadsheet View  
+    -   Spreadsheet view includes basic sorting capability
 
 Use the spreadsheet view to answer the following:
 
-  - **Task 2:** how many total rows of data are included?
+-   **Task 2:** how many total rows of data are included?
 
-  - **Task 3:** describe what each row in the data *actually*
+-   **Task 3:** describe what each row in the data *actually*
     represents.
 
-  - **Task 4:** find the largest `count` in the `BabyNames` data. How
+-   **Task 4:** find the largest `count` in the `BabyNames` data. How
     would you interpret this result?
 
-  - **Task 5:** what are the max & min available `year` in the data?
+-   **Task 5:** what are the max & min available `year` in the data?
 
 <hr>
 
@@ -82,7 +82,7 @@ Task 2.2.3: The frequency of a given name, within a year, associated
 with a `sex`
 
 Task 2.2.4: According to US Social Security records, 1947 was a banner
-year to name a female Linda\!
+year to name a female Linda!
 
 Task 2.2.5: `BabyNames` data spans 1880 through 2013
 
@@ -94,16 +94,15 @@ The file “BabyNameSupp.csv” includes a few years of more recent data to
 augment the `BabyNames` data. Run the starter code shown below to read
 the data and complete the tasks.
 
-**Important:** The starter code **will** produce a warning message\!
-Don’t worry, it’s part of the exercise\!
+**Important:** The starter code **will** produce a warning message!
+Don’t worry, it’s part of the exercise!
 
 ``` r
 # starter code for BabyNamesSupp 
 BabyNamesSupp <- read_csv("https://jbpost2.github.io/TeachingWithR/datasets/BabyNamesSupp.csv")
 ```
 
-    ## 
-    ## -- Column specification --------------------------------------------------------
+    ## Parsed with column specification:
     ## cols(
     ##   name = col_character(),
     ##   sex = col_logical(),
@@ -121,28 +120,28 @@ BabyNamesSupp <- read_csv("https://jbpost2.github.io/TeachingWithR/datasets/Baby
     ## ..... ... .................. ...... ....................................................................
     ## See problems(...) for more details.
 
-  - **Task 1:** Read the warning message carefully; what seems to have
+-   **Task 1:** Read the warning message carefully; what seems to have
     gone wrong?
 
-  - **Task 2:** open the spreadsheet view to investigate
+-   **Task 2:** open the spreadsheet view to investigate
     `BabyNamesSupp`…
-    
-      - Which years of data are available to us in `BabyNamesSupp`?
-      - Can you confirm what seems to have gone wrong during the data
+
+    -   Which years of data are available to us in `BabyNamesSupp`?
+    -   Can you confirm what seems to have gone wrong during the data
         intake?
 
-  - **Task 3:** use the following R functions to investigate
+-   **Task 3:** use the following R functions to investigate
     `BabyNamesSupp` further:
-    
-      - `head(BabyNamesSupp)`
-      - `tail(BabyNamesSupp)`
-      - `str(BabyNamesSupp)`
 
-  - **Task 4 (Challenge):** Why did `read_csv( )` seem to have this
+    -   `head(BabyNamesSupp)`
+    -   `tail(BabyNamesSupp)`
+    -   `str(BabyNamesSupp)`
+
+-   **Task 4 (Challenge):** Why did `read_csv( )` seem to have this
     problem with the data intake? Any ideas how we might fix it?
-    
-      - Hint: “RStudio \>\> Help \>\> read\_csv”
-      - don’t worry about *actually* fixing it yet, just try to identify
+
+    -   Hint: “RStudio &gt;&gt; Help &gt;&gt; read\_csv”
+    -   don’t worry about *actually* fixing it yet, just try to identify
         root cause.
 
 At this point, we aren’t attempting to prepare the `BabyNamesSupp` data
@@ -192,12 +191,12 @@ tail(BabyNamesSupp)
 str(BabyNamesSupp)
 ```
 
-    ## spec_tbl_df [196,177 x 4] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+    ## tibble [196,177 × 4] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
     ##  $ name : chr [1:196177] "Emma" "Olivia" "Sophia" "Isabella" ...
     ##  $ sex  : logi [1:196177] FALSE FALSE FALSE FALSE FALSE FALSE ...
     ##  $ count: num [1:196177] 20941 19817 18628 17102 15708 ...
     ##  $ year : num [1:196177] 2014 2014 2014 2014 2014 ...
-    ##  - attr(*, "problems")= tibble [84,619 x 5] (S3: tbl_df/tbl/data.frame)
+    ##  - attr(*, "problems")= tibble [84,619 × 5] (S3: tbl_df/tbl/data.frame)
     ##   ..$ row     : int [1:84619] 19208 19209 19210 19211 19212 19213 19214 19215 19216 19217 ...
     ##   ..$ col     : chr [1:84619] "sex" "sex" "sex" "sex" ...
     ##   ..$ expected: chr [1:84619] "1/0/T/F/TRUE/FALSE" "1/0/T/F/TRUE/FALSE" "1/0/T/F/TRUE/FALSE" "1/0/T/F/TRUE/FALSE" ...
@@ -211,34 +210,34 @@ str(BabyNamesSupp)
     ##   ..   year = col_double()
     ##   .. )
 
-Task 2.3.4 (Challenge): The help documentation explains that `read_csv(
-)` guesses each variable type based on the first 1000 records. The data
-source had apparently sorted results such that the first 1000 (or more)
-rows were all “F” so `read_csv( )` concluded these to be logical (e.g.,
-TRUE or FALSE) data. Quite a reasonable default under most
-circumstances, but shows why we should always carefully inspect our data
-intake\!
+Task 2.3.4 (Challenge): The help documentation explains that
+`read_csv( )` guesses each variable type based on the first 1000
+records. The data source had apparently sorted results such that the
+first 1000 (or more) rows were all “F” so `read_csv( )` concluded these
+to be logical (e.g., TRUE or FALSE) data. Quite a reasonable default
+under most circumstances, but shows why we should always carefully
+inspect our data intake!
 
 <hr>
 
 ## 2.4 Help Documentation for Data Sets
 
-Search “RStudio \>\> Help” to learn about the data…
+Search “RStudio &gt;&gt; Help” to learn about the data…
 
-  - **Task 1:** what can you learn about `BabyNames` data from RStudio
+-   **Task 1:** what can you learn about `BabyNames` data from RStudio
     Help?
-  - **Task 2:** what can you learn about `BabyNamesSupp` data from
+-   **Task 2:** what can you learn about `BabyNamesSupp` data from
     RStudio Help? What happened?
 
 <hr>
 
 ### Solution
 
-Task 2.4.1: Lots\! Sice this is loaded from an R package, the package
+Task 2.4.1: Lots! Sice this is loaded from an R package, the package
 author can make additional information available to you that describes
 the data, explains the variables, provides a source, etc.
 
-Task 2.4.2: Nothing\! The data were read from an external file, so R
+Task 2.4.2: Nothing! The data were read from an external file, so R
 doesn’t have any information at all to share with us.
 
 <hr>
@@ -258,9 +257,9 @@ will make the necessary corrections at that point.
 
 ## Solution
 
-Task 2.5.1 (Challenge): visit “RStudio \>\> Help \>\> BabyNames \>\>
-Source” and then download the zip file to find the 2020 data inside.
-This can be read into R using `read_csv( )` even though the file
+Task 2.5.1 (Challenge): visit “RStudio &gt;&gt; Help &gt;&gt; BabyNames
+&gt;&gt; Source” and then download the zip file to find the 2020 data
+inside. This can be read into R using `read_csv( )` even though the file
 extension is `.txt` since the data are comma delimited. You may note
 that the structure of the data differs slightly from our two other
 sources, so we will need some new tools to process it for use.
@@ -273,8 +272,7 @@ BabyNames2020 <-
              col_names = FALSE)
 ```
 
-    ## 
-    ## -- Column specification --------------------------------------------------------
+    ## Parsed with column specification:
     ## cols(
     ##   X1 = col_character(),
     ##   X2 = col_logical(),
@@ -297,6 +295,13 @@ BabyNames2020 <-
 
 Note: you might hang onto the RStudio default text provided in the new R
 Markdown file for the moment… it’s packed with tiny examples that will
-come in handy\!
+come in handy!
 
 \[coming up next…\]
+
+<hr>
+
+<br>
+
+<a href = "https://jbpost2.github.io/TeachingWithR/CourseFiles.html"><button type="button">Course
+Files Page</button></a>

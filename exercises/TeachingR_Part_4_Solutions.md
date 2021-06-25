@@ -7,11 +7,11 @@ June 25, 2021
 
 Here, we join an analysis already in progress…
 
-  - Part 1 (RStudio IDE Scavenger Hunt) has been omitted from the
+-   Part 1 (RStudio IDE Scavenger Hunt) has been omitted from the
     following analysis.
-  - Part 2 (Import Data) and Part 3 (R Markdown) have been blended for
+-   Part 2 (Import Data) and Part 3 (R Markdown) have been blended for
     the purposes of our investigation
-  - **Part 4 (Data Wrangling) Exercises Follow**
+-   **Part 4 (Data Wrangling) Exercises Follow**
 
 <hr>
 
@@ -22,7 +22,7 @@ Here, we join an analysis already in progress…
 We’re investigating the popularity of names in the US each year. Matt
 has chosen to investigate the names of each person in his immediate
 family: Matthew, Sarah, Eden, Jack, and Hazel. They’re his favorite
-people, and also his favorite names\! He’s feeling torn about how to
+people, and also his favorite names! He’s feeling torn about how to
 include his son Jack in the analysis. Jack’s legal name is “Jon” but he
 is nearly always called “Jack”–the spelling of “Jon” honors Scandinavian
 heritage on both sides of the family, and the nickname “Jack”
@@ -30,16 +30,16 @@ specifically honors his great-grandfather.
 
 Some famous persons by each name of the family include:
 
-  - Sarah Jessica Parker
-  - Eden Hazard
-  - Jack (Jackie) Robinson
-  - Hazel Findlay
-  - Richard Stallman. Seriously, the first hit of an Internet search for
-    “famous Matthew” was Richard Stallman (\!) whose given name is…
+-   Sarah Jessica Parker
+-   Eden Hazard
+-   Jack (Jackie) Robinson
+-   Hazel Findlay
+-   Richard Stallman. Seriously, the first hit of an Internet search for
+    “famous Matthew” was Richard Stallman (!) whose given name is…
     Matthew. “Matthew the Apostle” (Matt’s namesake) was third on that
     particular list: <https://playback.fm/people/first-name/matthew>
 
-This document was last modified 2021-06-25 10:14:21.
+This document was last modified 2021-06-25 10:28:47.
 
 <hr>
 
@@ -51,9 +51,7 @@ This document was last modified 2021-06-25 10:14:21.
 
 <hr>
 
-  - **Task 1:** use the starter code below to read the 2020 data:
-
-<!-- end list -->
+-   **Task 1:** use the starter code below to read the 2020 data:
 
 ``` r
 BabyNames2020 <- 
@@ -61,11 +59,11 @@ BabyNames2020 <-
            col_names = FALSE, col_types = cols(X2 = col_character()))
 ```
 
-  - **Task 2:** the starter code from Task 4.1.1 includes a hint to
+-   **Task 2:** the starter code from Task 4.1.1 includes a hint to
     correct the issue discovered when reading the `BabyNamesSupp` csv
     data file. Can you fix the issue with the `sex` column type?
 
-  - **Task 3:** before we combine our three data sources, let’s align
+-   **Task 3:** before we combine our three data sources, let’s align
     them such that all three data sources are organized to include the
     same variables/columns, with the same names. Namely, the variables
     in the 2020 data should be renamed, and it needs a new variable to
@@ -73,7 +71,7 @@ BabyNames2020 <-
     are not important, as long as they have identical names in each data
     set to be combined.
 
-  - **Task 4:** use `bind_rows()` to combine `BabyNames` &
+-   **Task 4:** use `bind_rows()` to combine `BabyNames` &
     `BabyNamesSupp` & the 2020 data
 
 <hr>
@@ -84,14 +82,14 @@ BabyNames2020 <-
 library(tidyverse)
 ```
 
-    ## -- Attaching packages --------------------------------------- tidyverse 1.3.1 --
+    ## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.0 ──
 
-    ## v ggplot2 3.3.4     v purrr   0.3.4
-    ## v tibble  3.1.2     v dplyr   1.0.7
-    ## v tidyr   1.1.3     v stringr 1.4.0
-    ## v readr   1.4.0     v forcats 0.5.1
+    ## ✓ ggplot2 3.3.3     ✓ purrr   0.3.4
+    ## ✓ tibble  3.0.4     ✓ dplyr   1.0.2
+    ## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
+    ## ✓ readr   1.3.1     ✓ forcats 0.5.0
 
-    ## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+    ## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
     ## x dplyr::filter() masks stats::filter()
     ## x dplyr::lag()    masks stats::lag()
 
@@ -120,18 +118,18 @@ BabyNamesFull <- bind_rows(BabyNames, BabyNamesSupp, BabyNames2020)
 
 ## 4.2 Data Wrangling and Summaries
 
-  - **Task 1:** filter the data to include only the names you wish to
+-   **Task 1:** filter the data to include only the names you wish to
     investigate
 
-  - **Task 2:** for each name, compute the total frequency across all
+-   **Task 2:** for each name, compute the total frequency across all
     years of available data (1880 through 2020) and then arrange the
     results in descending order by total.
 
-  - **Task 3:** for each combination of name AND sex, compute the total
+-   **Task 3:** for each combination of name AND sex, compute the total
     frequency across all years of available data (1880 through 2020) and
     then arrange the results by name.
 
-  - **Task 4:** filter the year you joined your current institution (or
+-   **Task 4:** filter the year you joined your current institution (or
     any specific, meaningful year you like) and repeat tasks 2 and 3.
 
 <hr>
@@ -149,6 +147,8 @@ BabyNamesFull %>%
     arrange(desc(total))
 ```
 
+    ## `summarise()` ungrouping output (override with `.groups` argument)
+
 <div data-pagedtable="false">
 
 <script data-pagedtable-source type="application/json">
@@ -165,7 +165,7 @@ BabyNamesFull %>%
     arrange(name)
 ```
 
-    ## `summarise()` has grouped output by 'name'. You can override using the `.groups` argument.
+    ## `summarise()` regrouping output by 'name' (override with `.groups` argument)
 
 <div data-pagedtable="false">
 
@@ -184,6 +184,8 @@ BabyNamesFull %>%
     arrange(desc(total))
 ```
 
+    ## `summarise()` ungrouping output (override with `.groups` argument)
+
 <div data-pagedtable="false">
 
 <script data-pagedtable-source type="application/json">
@@ -200,7 +202,7 @@ BabyNamesFull %>%
     arrange(name)
 ```
 
-    ## `summarise()` has grouped output by 'name'. You can override using the `.groups` argument.
+    ## `summarise()` regrouping output by 'name' (override with `.groups` argument)
 
 <div data-pagedtable="false">
 
@@ -215,3 +217,10 @@ BabyNamesFull %>%
 # Part 5. Graph it
 
 \[coming up next…\]
+
+<hr>
+
+<br>
+
+<a href = "https://jbpost2.github.io/TeachingWithR/CourseFiles.html"><button type="button">Course
+Files Page</button></a>

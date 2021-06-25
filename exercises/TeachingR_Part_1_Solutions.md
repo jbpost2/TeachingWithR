@@ -22,19 +22,19 @@ the following can be accomplished:
 
 ### Solution
 
-1.  RStudio \>\> Session
-2.  RStudio \>\> File \>\> New File \>\> R Markdown
-3.  RStudio \>\> Packages \>\> Install \>\> \[type the package name in
-    the search bar\]
-4.  RStudio \>\> Help \>\> \[type “head” in search bar\]
-5.  RStudio \>\> File \>\> Import Dataset
+1.  RStudio &gt;&gt; Session
+2.  RStudio &gt;&gt; File &gt;&gt; New File &gt;&gt; R Markdown
+3.  RStudio &gt;&gt; Packages &gt;&gt; Install &gt;&gt; \[type the
+    package name in the search bar\]
+4.  RStudio &gt;&gt; Help &gt;&gt; \[type “head” in search bar\]
+5.  RStudio &gt;&gt; File &gt;&gt; Import Dataset
 
 <hr>
 
 ## 1.2 Configuration Details Handy for Teaching
 
-**Task:** Visit “RStudio \>\> Tools \>\> Global Options” and locate the
-following:
+**Task:** Visit “RStudio &gt;&gt; Tools &gt;&gt; Global Options” and
+locate the following:
 
 1.  Pane Layout
 2.  “Rainbow parenthesis”
@@ -47,11 +47,17 @@ following:
 
 ### Solution
 
-1.  Tools \>\> Global Options \>\> Pane Layout (in left-side navigation)
-2.  Tools \>\> Global Options \>\> Code \>\> Display
-3.  Tools \>\> Global Options \>\> Code \>\> Display
-4.  Tools \>\> Global Options \>\> Code \>\> Display
-5.  Tools \>\> Global Options \>\> Code \>\> Diagnostics
-6.  Tools \>\> Global Options \>\> Code \>\> Display
+1.  Tools &gt;&gt; Global Options &gt;&gt; Pane Layout (in left-side
+    navigation)
+2.  Tools &gt;&gt; Global Options &gt;&gt; Code &gt;&gt; Display
+3.  Tools &gt;&gt; Global Options &gt;&gt; Code &gt;&gt; Display
+4.  Tools &gt;&gt; Global Options &gt;&gt; Code &gt;&gt; Display
+5.  Tools &gt;&gt; Global Options &gt;&gt; Code &gt;&gt; Diagnostics
+6.  Tools &gt;&gt; Global Options &gt;&gt; Code &gt;&gt; Display
 
 <hr>
+
+<br>
+
+<a href = "https://jbpost2.github.io/TeachingWithR/CourseFiles.html"><button type="button">Course
+Files Page</button></a>
