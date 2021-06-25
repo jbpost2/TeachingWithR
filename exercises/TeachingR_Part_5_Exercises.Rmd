@@ -8,6 +8,7 @@ output:
     df_print: paged
 ---
 
+<hr> 
 
 Here, we join an analysis already in progress...  
 
@@ -15,8 +16,11 @@ Here, we join an analysis already in progress...
 - Part 2 (Import Data), Part 3 (R Markdown), and Part 4 (Data Wrangling) have been blended for the purposes of our investigation
 - **Part 5 Exercises Follow**
 
+<hr> 
 
 # Names to be investigated
+
+<hr> 
 
 We're investigating the popularity of names in the US each year. Matt has chosen to investigate the names of each person in his immediate family: Matthew, Sarah, Eden, Jack, and Hazel.  They're his favorite people, and also his favorite names!  He's feeling torn about how to include his son Jack in the analysis. Jack's legal name is "Jon" but he is nearly always called "Jack"--the spelling of "Jon" honors Scandinavian heritage on both sides of the family, and the nickname "Jack" specifically honors his great-grandfather.  
 
@@ -31,7 +35,11 @@ Some famous persons by each name of the family include:
 
 This document was last modified `r lubridate::now()`.
 
+<hr> 
+
 # Summaries of Name Popularity
+
+<hr> 
 
 ```{r include=FALSE}
 # libraries
@@ -101,9 +109,12 @@ BabyNamesFull %>%
 
 ```
 
+<hr> 
 
 
 # Part 5. Graph it
+
+<hr> 
 
 We want to create a graph that highlights the change in popularity among the names you have chosen over the years.
 

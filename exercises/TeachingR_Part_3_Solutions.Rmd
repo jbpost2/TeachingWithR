@@ -8,13 +8,17 @@ output:
     df_print: paged
 ---
 
+<hr> 
 
 # Part 1. RStudio IDE Scavenger Hunt
 
 [omitted for brevity...] 
 
+<hr> 
 
 # Part 2. Import Data (Code Recap)
+
+<hr> 
 
 ```{r message=FALSE, warning=FALSE}
 ## from instructions before workshop, if needed:
@@ -42,21 +46,25 @@ tail(BabyNamesSupp)
 
 ```
 
+<hr> 
 
 # Part 3. R Markdown 
 
 Note: you might hang onto the RStudio default text provided in the new R Markdown file for the moment... it's packed with tiny examples that will come in handy!
 
+<hr> 
 
 ## 3.1 Goal
 
 We'll be investigating the popularity of names in the US each year. Choose a few (4-5) names to investigate to you--friends, family, TV character, colleagues in the workshop! 
 
+<hr> 
 
 ### Solution (for example)
 
 Matt has chosen the names of his family members: Matthew, Sarah, Eden, Jack, & Hazel.
 
+<hr> 
 
 ## 3.2 Update yaml Header
 
@@ -76,6 +84,8 @@ output: html_document
 ---
 ````
 
+<hr> 
+
 ### Solution (for example)
 
 Task 3.2.2: Your yaml header should appear at the beginning of the Rmd document, but here is some example text
@@ -89,6 +99,7 @@ output: html_document
 ---
 ````
 
+<hr> 
 
 ## 3.3 Add Narrative & Code Chunk
 
@@ -111,6 +122,7 @@ output: html_document
     - "Knit" (notice the time stamp)  
     - "Knit" again (notice the time stamp)  
 
+<hr> 
 
 ### Solution 
 
@@ -151,6 +163,8 @@ Here's the code I used:
 This document was last modified `r lubridate::now()`.
 ````
 
+<hr> 
+
 ## 3.4 Render Various Output Formats
 
 R Markdown is a flexible syntax that can render the same .Rmd (text) file in different formats.  If you know the syntax, you can update the `output:` directly in the yaml header.  RStudio provides a shortcut as a (tiny) menu arrow next to the "Knit (yarn)" icon revealing a few common choices.
@@ -175,6 +189,7 @@ R Markdown is a flexible syntax that can render the same .Rmd (text) file in dif
 
 - **Task 4 (challenge):** add some LaTeX to include mathematics your document (e.g, formula for the area of a circle) & "knit" 
 
+<hr> 
 
 
 # Part 4. Data wrangling

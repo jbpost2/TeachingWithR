@@ -8,13 +8,19 @@ output:
     df_print: paged
 ---
 
+<hr> 
+
 Here, we join an analysis already in progress...  
 
 - Part 1 (RStudio IDE Scavenger Hunt) has been omitted from the following analysis. 
 - Part 2 (Import Data) is consolodated 
 - **Part 3 (Data Wrangling) Exercises Follow**  
 
+<hr> 
+
 ### Part 2. Import Data (Code Recap)
+
+<hr> 
 
 ```{r eval=FALSE}
 ## from instructions before workshop, if needed:
@@ -42,16 +48,19 @@ tail(BabyNamesSupp)
 
 ```
 
+<hr> 
 
 # Part 3. R Markdown 
 
 Note: you might hang onto the RStudio default text provided in the new R Markdown file for the moment... it's packed with tiny examples that will come in handy!
 
+<hr> 
 
 ## 3.1 Goal
 
 We'll be investigating the popularity of names in the US each year. Choose a few (4-5) names to investigate to you--friends, family, TV character, colleagues in the workshop! 
 
+<hr> 
 
 ## 3.2 Update yaml Header
 
@@ -71,7 +80,7 @@ output: html_document
 ---
 ````
 
-
+<hr> 
 
 ## 3.3 Add Narrative & Code Chunk
 
@@ -95,7 +104,7 @@ output: html_document
     - "Knit" again (notice the time stamp)  
 
 
-
+<hr> 
 
 ## 3.4 Render Various Output Formats
 
@@ -121,6 +130,7 @@ R Markdown is a flexible syntax that can render the same .Rmd (text) file in dif
 
 - **Task 4 (challenge):** add some LaTeX to include mathematics your document (e.g, formula for the area of a circle) & "knit" 
 
+<hr> 
 
 
 # Part 4. Data wrangling

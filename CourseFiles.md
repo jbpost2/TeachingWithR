@@ -47,7 +47,7 @@ bottom of the page\!
     <center>
       <span class="fa-stack fa-4x">
           <i class="fa fa-circle fa-stack-2x text-primary"></i>
-          <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1" target = "_blank">
+          <a href="https://jbpost2.github.io/TeachingWithR/slides/R_Markdown_Tidyverse.html#1" target = "_blank">
           <i class="fa fa-list fa-stack-1x fa-inverse"></i></a>
       </span>
       <a href="https://www4.stat.ncsu.edu/~post/TeachingWithR/R_Markdown_Tidyverse.html#1" target = "_blank">
@@ -118,8 +118,10 @@ we often use R code to bring in images and things like that).
 
 #### Exercise Sets
 
-  - <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_1-2_Exercises.html" target = "download">
-    Part 1 (RStudio IDE) and Part 2 (Data intake)</a>  
+  - <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_1_Exercises.html" target = "download">
+    Part 1 (RStudio IDE)</a>
+  - <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_2_Exercises.html" target = "download">
+    Part 2 (Data intake)</a>
   - <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_3_Exercises.html" target = "download">
     Part 3 (R Markdown)</a>  
   - <a href = "https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_4_Exercises.html" target = "download">
@@ -129,9 +131,12 @@ we often use R code to bring in images and things like that).
 
 #### Partial Solutions
 
-  - Part 1 and Part 2
-    ([Rmd](https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_1-2_Solutions.Rmd);
-    [html](https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_1-2_Solutions.html))
+  - Part 1
+    ([Rmd](https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_1_Solutions.Rmd);
+    [html](https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_1_Solutions.html))
+  - Part 2
+    ([Rmd](https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_2_Solutions.Rmd);
+    [html](https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_2_Solutions.html))
   - Part 3
     ([Rmd](https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_3_Solutions.Rmd);
     [html](https://jbpost2.github.io/TeachingWithR/exercises/TeachingR_Part_3_Solutions.html))
