@@ -46,7 +46,7 @@ This document was last modified `r lubridate::now()`.
 
 - **Task 1:** use the starter code below to read the 2020 data:
 
-```{r eval=FALSE}
+```{r echo=TRUE, eval=FALSE}
 BabyNames2020 <- 
   read_csv("https://jbpost2.github.io/TeachingWithR/datasets/yob2020.txt", 
            col_names = FALSE, col_types = cols(X2 = col_character()))
