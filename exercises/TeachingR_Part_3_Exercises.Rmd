@@ -22,7 +22,7 @@ Here, we join an analysis already in progress...
 
 <hr> 
 
-```{r eval=FALSE}
+```{r echo= TRUE, eval=FALSE}
 ## from instructions before workshop, if needed:
 # devtools::install_github("mdbeckman/dcData")
 

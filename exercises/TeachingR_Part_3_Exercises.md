@@ -106,7 +106,7 @@ character, colleagues in the workshop!
     modified. Call the R function `now()` directly from `lubridate`
     package INLINE for the time stamp.
     -   For example, “These notes were last modified 2021-06-25
-        10:27:15”  
+        12:25:12”  
     -   “Knit” (notice the time stamp)  
     -   “Knit” again (notice the time stamp)
 
