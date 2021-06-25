@@ -41,7 +41,7 @@ This document was last modified `r lubridate::now()`.
 
 <hr> 
 
-```{r include=FALSE}
+```{r echo=TRUE, include=FALSE}
 # libraries
 library(tidyverse)
 library(dcData)
@@ -67,7 +67,7 @@ BabyNamesFull <- bind_rows(BabyNames, BabyNamesSupp, BabyNames2020)
 
 According to US Social Security data from 1880 through 2020, "Matthew" was the most frequently occurring name in the family.  
 
-```{r}
+```{r echo=TRUE}
 # vector of names
 beckmans <- c("Matthew", "Sarah", "Eden", "Jack", "Hazel")
 
@@ -83,7 +83,7 @@ BabyNamesFull %>%
 We also learned that "Eden" was more balanced between the two sexes when compared to the other names in the family.
 
 
-```{r}
+```{r echo=TRUE}
 BabyNamesFull %>%
     filter(name %in% beckmans) %>%
     group_by(name, sex) %>%                          # Task 4.2.3
@@ -94,7 +94,7 @@ BabyNamesFull %>%
 Matt joined Penn State University in 2015, and coincidentally his son Jack was born earlier that year.  Interestingly, the name "Jack" was more popular than "Sarah" in 2015, despite the fact that "Sarah" had been far more common when all years had been combined.  Perhaps more surprisingly, the name "Hazel" was nearly as common as "Sarah" in that year!  
 
 
-```{r}
+```{r echo=TRUE}
 BabyNamesFull %>%
     filter(name %in% beckmans, year == 2015) %>%
     group_by(name) %>%
