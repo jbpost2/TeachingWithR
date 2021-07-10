@@ -2,6 +2,8 @@
 
 <a href = "https://jbpost2.github.io/TeachingWithR/CourseFiles.html"><button type="button">Course Files Page</button></a> 
 
+<a href = "https://jbpost2.github.io/TeachingWithR/CourseFiles.md"><button type="button">Course Files Page</button></a>   
+
 ## Schedule
 
 - Friday, June 25, 11:00 am – 1:00 pm ET
