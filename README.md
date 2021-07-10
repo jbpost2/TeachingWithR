@@ -2,7 +2,7 @@
 
 <a href = "https://jbpost2.github.io/TeachingWithR/CourseFiles.html"><button type="button">Course Files Page</button></a> 
 
-<a href = "https://jbpost2.github.io/TeachingWithR/CourseFiles.md"><button type="button">Course Files Page</button></a>   
+<a href = "https://github.com/jbpost2/TeachingWithR/blob/main/CourseFiles.md"><button type="button">Course Files Page</button></a>   
 
 ## Schedule
 
